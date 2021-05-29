@@ -113,9 +113,7 @@ if __name__ == '__main__':
         print("")
 
     else:
-        all_attacker = np.random.choice(range(args.total_users), attacker_num, replace=False)
-        print("all attacker: ", all_attacker) 
-        print("")
+        exit()
         
     
     all_users = [i for i in range(args.total_users)]
