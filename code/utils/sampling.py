@@ -1,3 +1,9 @@
+'''
+
+This code is based on
+https://github.com/Suyi32/Learning-to-Detect-Malicious-Clients-for-Robust-FL/blob/main/src/utils/sampling.py
+
+'''
 
 import numpy as np
 from torchvision import datasets, transforms
