@@ -44,7 +44,7 @@ if __name__ == '__main__':
     parser.add_argument('--dataset', type=str, default='mnist', help="name of dataset")
     parser.add_argument('--gpu', type=int, default=0, help="GPU ID, -1 for CPU")
     parser.add_argument('--verbose', action='store_true', help='verbose print')
-    parser.add_argument('--seed', type=int, default=32, help='random seed (default: 1)')
+    parser.add_argument('--seed', type=int, default=32, help='random seed')
 
     parser.add_argument('--shuffle', action='store_true', help='shuffle or not')
     parser.add_argument('--target_random', action='store_true', help='target label random or not')
