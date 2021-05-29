@@ -16,16 +16,7 @@ def test_img_poison(net_g, datatest, args):
     net_g.eval()
     # testing
     test_loss = 0
-    if args.dataset == "mnist":
-        correct  = torch.tensor([0.0] * 10)
-        gold_all = torch.tensor([0.0] * 10)
-    elif args.dataset == "fmnist":
-        correct  = torch.tensor([0.0] * 10)
-        gold_all = torch.tensor([0.0] * 10)
-    elif args.dataset == "femnist":
-        correct  = torch.tensor([0.0] * 62)
-        gold_all = torch.tensor([0.0] * 62)
-    elif args.dataset == 'cifar10':
+    if args.dataset == "fmnist":
         correct  = torch.tensor([0.0] * 10)
         gold_all = torch.tensor([0.0] * 10)
     else:
