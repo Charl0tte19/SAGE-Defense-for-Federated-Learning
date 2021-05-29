@@ -57,33 +57,23 @@ if __name__ == '__main__':
     args.device = torch.device('cuda:{}'.format(args.gpu) if torch.cuda.is_available() and args.gpu != -1 else 'cpu')
     print(args)
     
-    if(args.dataset=="mnist"):
+    if(args.dataset=="fmnist"):
         
-    	trans_mnist = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))])
-    	dataset_train = datasets.MNIST('../data/mnist/', train=True, download=True, transform=trans_mnist)
-    	dataset_test = datasets.MNIST('../data/mnist/', train=False, download=True, transform=trans_mnist)
-    
-    	dict_users, idxs_labels = my_noniid(dataset_train, args)
-
-    	img_size = dataset_train[0][0].shape
-
-    	torch.manual_seed(args.seed)
-    	net_glob = CNN_Model().to(args.device)
-    
-    elif(args.dataset=="fmnist"):
-
         transform = transforms.Compose([transforms.ToTensor()])
         dataset_train = datasets.FashionMNIST(
             root='../data/fmnist', train=True, download=True, transform=transform)
         
         dataset_test = datasets.FashionMNIST(
             root='../data/fmnist', train=False, download=True, transform=transform)
-        
 
         dict_users, idxs_labels = my_noniid(dataset_train, args)
 
         torch.manual_seed(args.seed)                     
         net_glob = Network().to(args.device)
+    
+    else:
+        print('just for fmnist')
+        exit()
 
     print(net_glob)
 
@@ -119,9 +109,7 @@ if __name__ == '__main__':
         print("")
 
     else:
-        all_attacker = np.random.choice(range(args.total_users), attacker_num, replace=False)
-        print('all attacker:',all_attacker)
-        print("")
+        exit()
     
     if(args.attack_mode == "poison"):
         attacker_idxs = []
@@ -140,7 +128,6 @@ if __name__ == '__main__':
             
             if(attack_set[1]==attack_set[0]):
                 break
-    
 
  
     if(args.attack_mode=='poison'):
@@ -177,14 +164,7 @@ if __name__ == '__main__':
 
                 w_locals.append(copy.deepcopy(w))
                 loss_locals.append(copy.deepcopy(loss))
-
-
-            else:
-                local = LocalUpdate_1(args=args, dataset=dataset_train, idxs=idxs_labels[0][dict_users[idx]], user_idx=idx, attack_idxs=all_attacker, round=round)
-                w, loss, attack_flag, count_1 = local.train(net=copy.deepcopy(net_glob).to(args.device))
-                
-                w_locals.append(copy.deepcopy(w))
-                loss_locals.append(copy.deepcopy(loss))                                                     
+                                            
 
             
         print( "{}/{} are attackers with {} attack".format(len(attacker_idxs), args.sample_users, args.attack_mode) )
