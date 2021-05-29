@@ -243,10 +243,9 @@ if __name__ == '__main__':
                 exit()
         
             pre_net_glob = copy.deepcopy(net_glob_backup[client].state_dict())
-            # copy weight to net_glob
+            
             net_glob_backup[client].load_state_dict(w_glob)
 
-            # print loss
             loss_avg = np.sum(loss_locals[client] * user_weights)
 
 
