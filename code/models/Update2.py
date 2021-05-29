@@ -1,3 +1,7 @@
+'''
+This code is based on
+https://github.com/Suyi32/Learning-to-Detect-Malicious-Clients-for-Robust-FL/blob/main/src/models/Update.py
+'''
 
 import torch
 from torch import nn
