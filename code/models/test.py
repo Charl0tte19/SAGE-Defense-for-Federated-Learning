@@ -1,6 +1,7 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @python: 3.6
+'''
+This code is based on
+https://github.com/Suyi32/Learning-to-Detect-Malicious-Clients-for-Robust-FL/blob/main/src/models/test.py
+'''
 
 import torch
 from torch import nn
