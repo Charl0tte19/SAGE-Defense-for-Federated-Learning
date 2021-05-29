@@ -1,3 +1,7 @@
+'''
+This code is based on
+https://github.com/Suyi32/Learning-to-Detect-Malicious-Clients-for-Robust-FL/blob/main/src/main_regression.py
+'''
 
 import copy
 import numpy as np
