@@ -217,10 +217,6 @@ if __name__ == '__main__':
                     
                     if(attack_flag):
                         attacker_idxs[client].append(idx)
-                
-                else:
-                    local = LocalUpdate_1(args=args, dataset=dataset_train, idxs=idxs_labels[0][dict_users[idx]], user_idx=idx, attack_idxs=all_attacker, round=round)
-                    w, loss, attack_flag, count_1 = local.train(net=net_glob_backup[client].to(args.device))
 
                 w_locals[client].append(copy.deepcopy(w))
                 loss_locals[client].append(copy.deepcopy(loss))                                                     
