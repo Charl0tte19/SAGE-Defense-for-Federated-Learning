@@ -2,7 +2,7 @@
 
 ratio_list="0.1 0.2 0.3 0.4 0.5"
 
-loc="/home/ubuntu//My_FL/src/mnist/seed_32/command"
+loc="/home/ubuntu//My_FL/code/mnist/seed_32/command"
 
 seed="seed_32"
 
