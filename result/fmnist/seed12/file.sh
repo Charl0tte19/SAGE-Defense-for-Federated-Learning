@@ -1,6 +1,6 @@
 #!/bin/bash
 seed="seed_12"
-hom="/home/ubuntu/My_FL/src/fmnist/"$seed
+hom="/home/ubuntu/My_FL/code/fmnist/"$seed
 c="/command"
 noniid="0.4 0.8"
 ratio_list="0.1 0.2 0.3 0.4 0.5"
