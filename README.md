@@ -162,7 +162,7 @@ Please check the path before running each sh script.
 
 ## Result Charts
 
-We show the complete version of the result charts in ./result/chart/.
+We show the complete version of the result charts in [./result/chart/](https://github.com/Charl0tte19/SAGE-Defense-for-Federated-Learning/tree/main/result/chart).
 
 ### - Example ( MNIST, non-IID degree K = 0.4, case LD )
 
