@@ -2,8 +2,8 @@
 
 ratio_list="0.1 0.2 0.3 0.4 0.5"
 ratio_list_scale="0.01 0.02 0.03 0.04 0.05"
-seed="seed_12"
-seed_num="12"
+seed="seed_32"
+seed_num="32"
 where="mnist"
 where_origin="mnist_origin"
 folder_noniid_04="notScale_0"
