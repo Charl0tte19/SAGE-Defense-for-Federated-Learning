@@ -172,10 +172,10 @@ We show the complete version of the result charts in [result/](https://github.co
 
 ## Comments of each file
 
-```
+```diff
 code/                      
     fmnist/                
-        file.sh                              <font color=#808080># code of creating the orders to run after*.sh for all cases.</font>
+        file.sh                              # code of creating the orders to run after*.sh for all cases.
         make_dir.sh                          # code for creating directories noniid_0.4/ and noniid_0.8/
         temp.py                              # code that supporting file.sh
     mnist/                 
