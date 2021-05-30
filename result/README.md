@@ -1,6 +1,6 @@
 # Result Charts
 
-## Fashion-MNIST, non-IID degree K = 0.4
+### Fashion-MNIST, non-IID degree K = 0.4
 
  Attack ratio  | Number of attackers assigned to each subset in each group | Average number of attackers assigned to each subset in each group | Validation accuracy
  ------------- |-------------| ----------- | --------------
