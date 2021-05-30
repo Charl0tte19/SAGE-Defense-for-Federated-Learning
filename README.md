@@ -175,7 +175,7 @@ Please check the path before running each sh script.
 
 We show the complete version of the result charts in [result/](https://github.com/Charl0tte19/SAGE-Defense-for-Federated-Learning/tree/main/result).
 
-### - Example ( MNIST, non-IID degree K = 0.4, case LD )
+#### - Example ( MNIST, non-IID degree K = 0.4, case LD )
 
  Attack ratio  | Number of attackers assigned to each subset in each group | Average number of attackers assigned to each subset in each group | Validation accuracy
  ------------- |-------------| ----------- | --------------
