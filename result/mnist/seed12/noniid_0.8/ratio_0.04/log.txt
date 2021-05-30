@@ -1,0 +1,1532 @@
+Namespace(aggregation='FedAvg', attack_mode='poison', attack_ratio=0.04, attacker_file='./mnist/seed_12/noniid_0.8/ratio_0.04/attacker.txt', bs=128, dataset='mnist', device=device(type='cuda', index=0), epochs=80, frequency=1, gpu=0, local_bs=10, local_ep=5, local_file='./mnist/seed_12/noniid_0.8/ratio_0.04/local.txt', lr=0.01, model_path='./mnist/seed_12/noniid_0.8/ratio_0.04/final.pt', momentum=0.5, noniid=0.8, num_attacker=100, pretrained_model='./mnist/seed_12/noniid_0.8/ratio_0.04/poison_0.04_Scale_0.pt(9).pt1', sample_users=100, scale=True, seed=12, shuffle=False, target_label=7, target_random=True, test_label_acc=True, total_users=1000, vae_model='', verbose=False)
+non-iid_per_local:  43
+iid_per_local:  11
+label 0 : 5336
+example -> idx: 4682 = 0
+label 1 : 6112
+example -> idx: 10259 = 1
+label 2 : 5358
+example -> idx: 16221 = 2
+label 3 : 5504
+example -> idx: 19899 = 3
+label 4 : 5247
+example -> idx: 25383 = 4
+label 5 : 4872
+example -> idx: 28423 = 5
+label 6 : 5347
+example -> idx: 33381 = 6
+label 7 : 5597
+example -> idx: 40801 = 7
+label 8 : 5254
+example -> idx: 45823 = 8
+label 9 : 5373
+example -> idx: 50151 = 9
+
+0 :  136
+1 :  912
+2 :  158
+3 :  304
+4 :  47
+5 :  0
+6 :  147
+7 :  397
+8 :  54
+9 :  173
+
+[0, 1, 2, 3, 4, 6, 7, 8, 9]
+[0, 1, 2, 3, 4, 6, 7, 9]
+[0, 1, 2, 3, 6, 7, 9]
+[0, 1, 2, 3, 7, 9]
+[0, 1, 3, 7, 9]
+[0, 1, 3, 7]
+[1, 3, 7]
+[1, 3]
+[1]
+0 :  0
+1 :  29
+2 :  0
+3 :  0
+4 :  0
+5 :  0
+6 :  0
+7 :  0
+8 :  0
+9 :  0
+
+[]
+0 :  0
+1 :  0
+2 :  0
+3 :  0
+4 :  0
+5 :  0
+6 :  0
+7 :  0
+8 :  0
+9 :  0
+
+
+[32704 36281 33178 32554 37609 34233 36418 34370 34880 35936 33498 37562
+ 35098 33931 37193 37707 33924 32800 37501 33513 33716 33182 35257 33539
+ 34361 35557 36012 35440 37228 33603 37133 36896 34553 33357 37406 37772
+ 34123 35832 34753 35584 33072 34833 32503  2539  7415 13161 21131 26765
+ 28223 39212 48178 49301 11420]
+[6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+ 6 6 6 6 6 6 0 1 2 3 4 5 7 8 9 1]
+CNN_Model(
+  (cnn1): Conv2d(1, 16, kernel_size=(5, 5), stride=(1, 1))
+  (relu1): ReLU()
+  (maxpool1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (cnn2): Conv2d(16, 32, kernel_size=(5, 5), stride=(1, 1))
+  (relu2): ReLU()
+  (maxpool2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (fc1): Linear(in_features=512, out_features=10, bias=True)
+)
+locals:  [516, 523, 18, 531, 540, 541, 28, 543, 33, 547, 548, 555, 558, 54, 61, 576, 66, 72, 73, 588, 592, 596, 85, 88, 604, 620, 110, 623, 622, 126, 640, 643, 644, 139, 657, 658, 156, 669, 670, 164, 168, 686, 693, 705, 199, 201, 209, 729, 731, 732, 229, 230, 237, 754, 244, 253, 784, 274, 281, 287, 803, 292, 809, 819, 313, 830, 836, 327, 842, 333, 845, 343, 344, 863, 366, 374, 383, 898, 387, 906, 394, 398, 912, 407, 927, 416, 929, 940, 433, 438, 443, 452, 981, 990, 483, 484, 998, 497, 506, 511, 3, 6, 10, 11, 23, 536, 27, 542, 34, 36, 551, 557, 46, 49, 566, 577, 578, 579, 595, 600, 606, 99, 100, 617, 108, 109, 113, 116, 118, 130, 131, 137, 650, 653, 148, 662, 159, 684, 182, 696, 698, 703, 203, 727, 728, 735, 746, 235, 236, 752, 249, 763, 767, 770, 771, 265, 270, 786, 791, 279, 793, 794, 302, 818, 309, 826, 323, 839, 844, 339, 353, 868, 871, 885, 888, 890, 379, 385, 386, 389, 908, 396, 399, 406, 937, 426, 945, 948, 952, 447, 458, 975, 464, 978, 470, 983, 474, 997, 488, 503, 7, 519, 524, 525, 14, 528, 17, 19, 21, 24, 539, 546, 552, 556, 568, 64, 65, 70, 584, 589, 590, 607, 98, 616, 107, 112, 115, 124, 127, 647, 135, 151, 665, 666, 153, 676, 169, 170, 681, 180, 697, 192, 710, 712, 716, 723, 211, 213, 224, 226, 758, 762, 250, 261, 778, 782, 276, 790, 283, 798, 296, 299, 301, 821, 827, 829, 326, 841, 843, 332, 865, 355, 869, 872, 368, 896, 899, 909, 402, 914, 916, 917, 419, 932, 424, 949, 962, 963, 965, 455, 969, 970, 460, 461, 469, 476, 480, 992, 492, 495]
+target_label: [7]
+
+number of attacker:  3
+all attacker:  [153, 898, 767]
+
+Randomly selected 100/300 users for federated learning. 16:42:33
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round   0, Average loss 0.123413 ===
+100 users; time 16:42:49
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.893700 loss: 0.416042
+ Testing Label Acc: [0.9857142567634583, 0.9859030842781067, 0.9263566136360168, 0.9277227520942688, 0.9164969325065613, 0.804932713508606, 0.962421715259552, 0.5379377603530884, 0.9476386308670044, 0.9345887303352356]
+ Testing Avg Label Acc : 0.8929713189601898
+ Poison Acc: 0.46206225680933855
+======
+Model_Weight_Norm : tensor(0.)
+Model_weight_Slope: tensor(0.)
+Test end 16:42:51
+-------------------------------------------------------------------------
+
+round_time:  17.9462947845459
+
+Randomly selected 100/300 users for federated learning. 16:42:51
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round   1, Average loss 0.092907 ===
+100 users; time 16:43:04
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.932000 loss: 0.247179
+ Testing Label Acc: [0.9846938848495483, 0.9867841601371765, 0.9312015771865845, 0.9425742626190186, 0.9185336232185364, 0.8430493474006653, 0.9540709853172302, 0.8842412233352661, 0.9271047115325928, 0.9335976243019104]
+ Testing Avg Label Acc : 0.9305851399898529
+ Poison Acc: 0.11575875486381323
+======
+Model_Weight_Norm : tensor(0.1602)
+Model_weight_Slope: tensor(0.1602)
+Test end 16:43:07
+-------------------------------------------------------------------------
+
+round_time:  15.351603269577026
+
+Randomly selected 100/300 users for federated learning. 16:43:07
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round   2, Average loss 0.117885 ===
+100 users; time 16:43:19
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.881200 loss: 0.44853
+ Testing Label Acc: [0.9867346882820129, 0.983259916305542, 0.911821722984314, 0.9455445408821106, 0.9338085651397705, 0.8363228440284729, 0.9582463502883911, 0.3784046769142151, 0.9517453908920288, 0.9276511669158936]
+ Testing Avg Label Acc : 0.8813539862632751
+ Poison Acc: 0.6215953307392996
+======
+Model_Weight_Norm : tensor(0.2210)
+Model_weight_Slope: tensor(0.0609)
+Test end 16:43:22
+-------------------------------------------------------------------------
+
+round_time:  15.330505609512329
+
+Randomly selected 100/300 users for federated learning. 16:43:22
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round   3, Average loss 0.093215 ===
+100 users; time 16:43:35
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.937100 loss: 0.239148
+ Testing Label Acc: [0.9857142567634583, 0.9885462522506714, 0.930232584476471, 0.9495049715042114, 0.9236252307891846, 0.8912556171417236, 0.9613778591156006, 0.8793774247169495, 0.9178645014762878, 0.9345887303352356]
+ Testing Avg Label Acc : 0.9362087428569794
+ Poison Acc: 0.12062256809338522
+======
+Model_Weight_Norm : tensor(0.1723)
+Model_weight_Slope: tensor(-0.0488)
+Test end 16:43:37
+-------------------------------------------------------------------------
+
+round_time:  15.344210386276245
+
+Randomly selected 100/300 users for federated learning. 16:43:37
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round   4, Average loss 0.086220 ===
+100 users; time 16:43:50
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.922000 loss: 0.278984
+ Testing Label Acc: [0.9867346882820129, 0.9850220084190369, 0.9282945990562439, 0.9326732754707336, 0.9287168979644775, 0.878923773765564, 0.9572024941444397, 0.7422178983688354, 0.9404517412185669, 0.9345887303352356]
+ Testing Avg Label Acc : 0.9214826107025147
+ Poison Acc: 0.25778210116731515
+======
+Model_Weight_Norm : tensor(0.1022)
+Model_weight_Slope: tensor(-0.0701)
+Test end 16:43:52
+-------------------------------------------------------------------------
+
+round_time:  15.266011953353882
+
+Randomly selected 100/300 users for federated learning. 16:43:52
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round   5, Average loss 0.103578 ===
+100 users; time 16:44:06
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.885600 loss: 0.417263
+ Testing Label Acc: [0.9877551198005676, 0.9841409921646118, 0.913759708404541, 0.9277227520942688, 0.9287168979644775, 0.7780268788337708, 0.9603340029716492, 0.47081711888313293, 0.9579055309295654, 0.9395440816879272]
+ Testing Avg Label Acc : 0.8848723083734512
+ Poison Acc: 0.5291828793774319
+======
+Model_Weight_Norm : tensor(0.1742)
+Model_weight_Slope: tensor(0.0720)
+Test end 16:44:08
+-------------------------------------------------------------------------
+
+round_time:  15.990822792053223
+
+Randomly selected 100/300 users for federated learning. 16:44:08
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round   6, Average loss 0.091975 ===
+100 users; time 16:44:22
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.939100 loss: 0.226428
+ Testing Label Acc: [0.9857142567634583, 0.9885462522506714, 0.930232584476471, 0.9455445408821106, 0.9409368634223938, 0.8867713212966919, 0.9592902064323425, 0.8842412233352661, 0.9260780215263367, 0.9345887303352356]
+ Testing Avg Label Acc : 0.9381944000720978
+ Poison Acc: 0.11575875486381323
+======
+Model_Weight_Norm : tensor(0.1646)
+Model_weight_Slope: tensor(-0.0096)
+Test end 16:44:24
+-------------------------------------------------------------------------
+
+round_time:  15.629537343978882
+
+Randomly selected 100/300 users for federated learning. 16:44:24
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round   7, Average loss 0.079258 ===
+100 users; time 16:44:37
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.924200 loss: 0.27684
+ Testing Label Acc: [0.9867346882820129, 0.9885462522506714, 0.9360465407371521, 0.9306930899620056, 0.9562118053436279, 0.9136771559715271, 0.962421715259552, 0.7052529454231262, 0.9373716711997986, 0.9246779084205627]
+ Testing Avg Label Acc : 0.9241633772850036
+ Poison Acc: 0.29474708171206226
+======
+Model_Weight_Norm : tensor(0.1171)
+Model_weight_Slope: tensor(-0.0476)
+Test end 16:44:39
+-------------------------------------------------------------------------
+
+round_time:  15.29414439201355
+
+Randomly selected 100/300 users for federated learning. 16:44:39
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round   8, Average loss 0.100887 ===
+100 users; time 16:44:52
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.905800 loss: 0.362996
+ Testing Label Acc: [0.9867346882820129, 0.9885462522506714, 0.9312015771865845, 0.9356435537338257, 0.9480651617050171, 0.8901345133781433, 0.962421715259552, 0.5408560037612915, 0.9394250512123108, 0.9365708827972412]
+ Testing Avg Label Acc : 0.905959939956665
+ Poison Acc: 0.4591439688715953
+======
+Model_Weight_Norm : tensor(0.1503)
+Model_weight_Slope: tensor(0.0332)
+Test end 16:44:55
+-------------------------------------------------------------------------
+
+round_time:  15.364704370498657
+
+Randomly selected 100/300 users for federated learning. 16:44:55
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round   9, Average loss 0.071061 ===
+100 users; time 16:45:08
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.942400 loss: 0.215227
+ Testing Label Acc: [0.9857142567634583, 0.9885462522506714, 0.9244186282157898, 0.9425742626190186, 0.9521384835243225, 0.8968609571456909, 0.9603340029716492, 0.8920233249664307, 0.9383983612060547, 0.935579776763916]
+ Testing Avg Label Acc : 0.9416588306427002
+ Poison Acc: 0.10797665369649806
+======
+Model_Weight_Norm : tensor(0.1477)
+Model_weight_Slope: tensor(-0.0025)
+Test end 16:45:10
+-------------------------------------------------------------------------
+
+round_time:  15.275414943695068
+
+Randomly selected 100/300 users for federated learning. 16:45:10
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  10, Average loss 0.077661 ===
+100 users; time 16:45:23
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.926700 loss: 0.261984
+ Testing Label Acc: [0.9877551198005676, 0.9867841601371765, 0.9263566136360168, 0.9475247263908386, 0.9317718744277954, 0.8822869658470154, 0.9551148414611816, 0.7461089491844177, 0.9527720808982849, 0.9454905986785889]
+ Testing Avg Label Acc : 0.9261965930461884
+ Poison Acc: 0.2538910505836576
+======
+Model_Weight_Norm : tensor(0.1106)
+Model_weight_Slope: tensor(-0.0371)
+Test end 16:45:25
+-------------------------------------------------------------------------
+
+round_time:  15.290347814559937
+
+Randomly selected 100/300 users for federated learning. 16:45:25
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  11, Average loss 0.081036 ===
+100 users; time 16:45:38
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.927600 loss: 0.263211
+ Testing Label Acc: [0.9867346882820129, 0.9894273281097412, 0.934108555316925, 0.9475247263908386, 0.9501018524169922, 0.8755605220794678, 0.962421715259552, 0.7431906461715698, 0.941478431224823, 0.9395440816879272]
+ Testing Avg Label Acc : 0.927009254693985
+ Poison Acc: 0.25680933852140075
+======
+Model_Weight_Norm : tensor(0.0979)
+Model_weight_Slope: tensor(-0.0127)
+Test end 16:45:41
+-------------------------------------------------------------------------
+
+round_time:  15.370023727416992
+
+Randomly selected 100/300 users for federated learning. 16:45:41
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  12, Average loss 0.062775 ===
+100 users; time 16:45:54
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.944600 loss: 0.191299
+ Testing Label Acc: [0.9857142567634583, 0.9894273281097412, 0.940891444683075, 0.9465346336364746, 0.9419552087783813, 0.9147982001304626, 0.9634655714035034, 0.9017509818077087, 0.9147843718528748, 0.9395440816879272]
+ Testing Avg Label Acc : 0.9438866078853607
+ Poison Acc: 0.09824902723735408
+======
+Model_Weight_Norm : tensor(0.1048)
+Model_weight_Slope: tensor(0.0069)
+Test end 16:45:56
+-------------------------------------------------------------------------
+
+round_time:  15.480930805206299
+
+Randomly selected 100/300 users for federated learning. 16:45:56
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round  13, Average loss 0.095832 ===
+100 users; time 16:46:09
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.884400 loss: 0.411465
+ Testing Label Acc: [0.9897959232330322, 0.983259916305542, 0.934108555316925, 0.9623762369155884, 0.9378818869590759, 0.8217488527297974, 0.9603340029716492, 0.3472762703895569, 0.9609856009483337, 0.9464816451072693]
+ Testing Avg Label Acc : 0.884424889087677
+ Poison Acc: 0.6527237354085603
+======
+Model_Weight_Norm : tensor(0.2354)
+Model_weight_Slope: tensor(0.1306)
+Test end 16:46:12
+-------------------------------------------------------------------------
+
+round_time:  15.364527225494385
+
+Randomly selected 100/300 users for federated learning. 16:46:12
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  14, Average loss 0.076353 ===
+100 users; time 16:46:24
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.947200 loss: 0.198127
+ Testing Label Acc: [0.9857142567634583, 0.9894273281097412, 0.9418604373931885, 0.9544554352760315, 0.9562118053436279, 0.9047085046768188, 0.9603340029716492, 0.8920233249664307, 0.9394250512123108, 0.9405351877212524]
+ Testing Avg Label Acc : 0.946469533443451
+ Poison Acc: 0.10797665369649806
+======
+Model_Weight_Norm : tensor(0.1692)
+Model_weight_Slope: tensor(-0.0662)
+Test end 16:46:27
+-------------------------------------------------------------------------
+
+round_time:  15.181885480880737
+
+Randomly selected 100/300 users for federated learning. 16:46:27
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  15, Average loss 0.051378 ===
+100 users; time 16:46:39
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.949700 loss: 0.17705
+ Testing Label Acc: [0.9877551198005676, 0.9911894202232361, 0.9399224519729614, 0.9544554352760315, 0.9490835070610046, 0.8979820609092712, 0.9645093679428101, 0.9289883375167847, 0.9363449811935425, 0.9375619292259216]
+ Testing Avg Label Acc : 0.9487792611122131
+ Poison Acc: 0.07101167315175097
+======
+Model_Weight_Norm : tensor(0.0734)
+Model_weight_Slope: tensor(-0.0958)
+Test end 16:46:42
+-------------------------------------------------------------------------
+
+round_time:  15.273929834365845
+
+Randomly selected 100/300 users for federated learning. 16:46:42
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  16, Average loss 0.070882 ===
+100 users; time 16:46:55
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.929900 loss: 0.247912
+ Testing Label Acc: [0.9928571581840515, 0.9903083443641663, 0.9389534592628479, 0.9524752497673035, 0.951120138168335, 0.8867713212966919, 0.9572024941444397, 0.7295719981193542, 0.9527720808982849, 0.9425173401832581]
+ Testing Avg Label Acc : 0.9294549584388733
+ Poison Acc: 0.2704280155642023
+======
+Model_Weight_Norm : tensor(0.1382)
+Model_weight_Slope: tensor(0.0648)
+Test end 16:46:58
+-------------------------------------------------------------------------
+
+round_time:  15.52754521369934
+
+Randomly selected 100/300 users for federated learning. 16:46:58
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  17, Average loss 0.057435 ===
+100 users; time 16:47:13
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.948700 loss: 0.173881
+ Testing Label Acc: [0.9867346882820129, 0.9903083443641663, 0.9476743936538696, 0.9495049715042114, 0.9399185180664062, 0.9192824959754944, 0.9603340029716492, 0.905642032623291, 0.9332649111747742, 0.9474727511405945]
+ Testing Avg Label Acc : 0.948013710975647
+ Poison Acc: 0.0943579766536965
+======
+Model_Weight_Norm : tensor(0.1009)
+Model_weight_Slope: tensor(-0.0373)
+Test end 16:47:15
+-------------------------------------------------------------------------
+
+round_time:  17.577754020690918
+
+Randomly selected 100/300 users for federated learning. 16:47:15
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  18, Average loss 0.047075 ===
+100 users; time 16:47:30
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.950700 loss: 0.162897
+ Testing Label Acc: [0.9867346882820129, 0.9903083443641663, 0.9486433863639832, 0.9475247263908386, 0.9480651617050171, 0.9181614518165588, 0.9613778591156006, 0.9221789836883545, 0.9342916011810303, 0.9425173401832581]
+ Testing Avg Label Acc : 0.949980354309082
+ Poison Acc: 0.07782101167315175
+======
+Model_Weight_Norm : tensor(0.0506)
+Model_weight_Slope: tensor(-0.0503)
+Test end 16:47:33
+-------------------------------------------------------------------------
+
+round_time:  17.68669080734253
+
+Randomly selected 100/300 users for federated learning. 16:47:33
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  19, Average loss 0.044201 ===
+100 users; time 16:47:47
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.951100 loss: 0.158117
+ Testing Label Acc: [0.9867346882820129, 0.9885462522506714, 0.9505813717842102, 0.9485148787498474, 0.9409368634223938, 0.9147982001304626, 0.9603340029716492, 0.9270427823066711, 0.9404517412185669, 0.9454905986785889]
+ Testing Avg Label Acc : 0.9503431379795074
+ Poison Acc: 0.07295719844357977
+======
+Model_Weight_Norm : tensor(0.0432)
+Model_weight_Slope: tensor(-0.0074)
+Test end 16:47:49
+-------------------------------------------------------------------------
+
+round_time:  16.652341604232788
+
+Randomly selected 100/300 users for federated learning. 16:47:49
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  20, Average loss 0.042041 ===
+100 users; time 16:48:02
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.952300 loss: 0.153387
+ Testing Label Acc: [0.9867346882820129, 0.9859030842781067, 0.9457364082336426, 0.9524752497673035, 0.9480651617050171, 0.915919303894043, 0.962421715259552, 0.9328793883323669, 0.9486653208732605, 0.9375619292259216]
+ Testing Avg Label Acc : 0.9516362249851227
+ Poison Acc: 0.06712062256809338
+======
+Model_Weight_Norm : tensor(0.0367)
+Model_weight_Slope: tensor(-0.0065)
+Test end 16:48:05
+-------------------------------------------------------------------------
+
+round_time:  15.344761848449707
+
+Randomly selected 100/300 users for federated learning. 16:48:05
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  21, Average loss 0.058272 ===
+100 users; time 16:48:18
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.933600 loss: 0.219308
+ Testing Label Acc: [0.9908163547515869, 0.9867841601371765, 0.9370155334472656, 0.9603960514068604, 0.9399185180664062, 0.8878923654556274, 0.9634655714035034, 0.7597275972366333, 0.9599589109420776, 0.9454905986785889]
+ Testing Avg Label Acc : 0.9331465661525726
+ Poison Acc: 0.24027237354085604
+======
+Model_Weight_Norm : tensor(0.1645)
+Model_weight_Slope: tensor(0.1278)
+Test end 16:48:20
+-------------------------------------------------------------------------
+
+round_time:  15.409159898757935
+
+Randomly selected 100/300 users for federated learning. 16:48:20
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  22, Average loss 0.065265 ===
+100 users; time 16:48:33
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.940200 loss: 0.218337
+ Testing Label Acc: [0.9908163547515869, 0.983259916305542, 0.9389534592628479, 0.9603960514068604, 0.9551934599876404, 0.915919303894043, 0.9676409363746643, 0.7898832559585571, 0.9548254609107971, 0.9435084462165833]
+ Testing Avg Label Acc : 0.9400396645069122
+ Poison Acc: 0.21011673151750973
+======
+Model_Weight_Norm : tensor(0.1077)
+Model_weight_Slope: tensor(-0.0568)
+Test end 16:48:36
+-------------------------------------------------------------------------
+
+round_time:  15.387975931167603
+
+Randomly selected 100/300 users for federated learning. 16:48:36
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  23, Average loss 0.072103 ===
+100 users; time 16:48:48
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.944100 loss: 0.214993
+ Testing Label Acc: [0.9918367266654968, 0.9814978241920471, 0.9467054009437561, 0.9564356207847595, 0.9643584489822388, 0.9237667918205261, 0.962421715259552, 0.8151751160621643, 0.9579055309295654, 0.9395440816879272]
+ Testing Avg Label Acc : 0.9439647257328033
+ Poison Acc: 0.18482490272373542
+======
+Model_Weight_Norm : tensor(0.0897)
+Model_weight_Slope: tensor(-0.0179)
+Test end 16:48:51
+-------------------------------------------------------------------------
+
+round_time:  15.323854684829712
+
+Randomly selected 100/300 users for federated learning. 16:48:51
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  24, Average loss 0.049251 ===
+100 users; time 16:49:04
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.954400 loss: 0.164153
+ Testing Label Acc: [0.9908163547515869, 0.9859030842781067, 0.9486433863639832, 0.9584158658981323, 0.9521384835243225, 0.9271300435066223, 0.9665970802307129, 0.911478579044342, 0.9568788409233093, 0.9415262341499329]
+ Testing Avg Label Acc : 0.9539527952671051
+ Poison Acc: 0.08852140077821012
+======
+Model_Weight_Norm : tensor(0.0935)
+Model_weight_Slope: tensor(0.0038)
+Test end 16:49:06
+-------------------------------------------------------------------------
+
+round_time:  15.296082258224487
+
+Randomly selected 100/300 users for federated learning. 16:49:06
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round  25, Average loss 0.080391 ===
+100 users; time 16:49:19
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.887300 loss: 0.392626
+ Testing Label Acc: [0.9928571581840515, 0.9894273281097412, 0.9379844665527344, 0.9564356207847595, 0.9439918398857117, 0.8867713212966919, 0.9645093679428101, 0.3151750862598419, 0.953798770904541, 0.9395440816879272]
+ Testing Avg Label Acc : 0.888049504160881
+ Poison Acc: 0.6848249027237354
+======
+Model_Weight_Norm : tensor(0.2456)
+Model_weight_Slope: tensor(0.1520)
+Test end 16:49:22
+-------------------------------------------------------------------------
+
+round_time:  15.298648595809937
+
+Randomly selected 100/300 users for federated learning. 16:49:22
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round  26, Average loss 0.106845 ===
+100 users; time 16:49:34
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.932400 loss: 0.291178
+ Testing Label Acc: [0.9928571581840515, 0.9894273281097412, 0.9350775480270386, 0.9633663296699524, 0.958248496055603, 0.9002242088317871, 0.9655532240867615, 0.7217898964881897, 0.9568788409233093, 0.9385530352592468]
+ Testing Avg Label Acc : 0.9321976065635681
+ Poison Acc: 0.2782101167315175
+======
+Model_Weight_Norm : tensor(0.1448)
+Model_weight_Slope: tensor(-0.1008)
+Test end 16:49:37
+-------------------------------------------------------------------------
+
+round_time:  15.2405526638031
+
+Randomly selected 100/300 users for federated learning. 16:49:37
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  27, Average loss 0.075586 ===
+100 users; time 16:49:50
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.945900 loss: 0.221857
+ Testing Label Acc: [0.9918367266654968, 0.9911894202232361, 0.9360465407371521, 0.9584158658981323, 0.9501018524169922, 0.9215246438980103, 0.9645093679428101, 0.8404669165611267, 0.9558521509170532, 0.9454905986785889]
+ Testing Avg Label Acc : 0.9455434083938599
+ Poison Acc: 0.15953307392996108
+======
+Model_Weight_Norm : tensor(0.1070)
+Model_weight_Slope: tensor(-0.0378)
+Test end 16:49:53
+-------------------------------------------------------------------------
+
+round_time:  16.148752212524414
+
+Randomly selected 100/300 users for federated learning. 16:49:53
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  28, Average loss 0.052753 ===
+100 users; time 16:50:07
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.956700 loss: 0.162978
+ Testing Label Acc: [0.9918367266654968, 0.9894273281097412, 0.9418604373931885, 0.9504950642585754, 0.9490835070610046, 0.9405829310417175, 0.9676409363746643, 0.9357976913452148, 0.9558521509170532, 0.9405351877212524]
+ Testing Avg Label Acc : 0.9563111960887909
+ Poison Acc: 0.06420233463035019
+======
+Model_Weight_Norm : tensor(0.1024)
+Model_weight_Slope: tensor(-0.0047)
+Test end 16:50:09
+-------------------------------------------------------------------------
+
+round_time:  16.213974952697754
+
+Randomly selected 100/300 users for federated learning. 16:50:09
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  29, Average loss 0.060792 ===
+100 users; time 16:50:22
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.947300 loss: 0.202851
+ Testing Label Acc: [0.9918367266654968, 0.9920704960823059, 0.9525193572044373, 0.9584158658981323, 0.9562118053436279, 0.9293721914291382, 0.9718163013458252, 0.8249027132987976, 0.9486653208732605, 0.9444994926452637]
+ Testing Avg Label Acc : 0.9470310270786285
+ Poison Acc: 0.17509727626459143
+======
+Model_Weight_Norm : tensor(0.1214)
+Model_weight_Slope: tensor(0.0190)
+Test end 16:50:24
+-------------------------------------------------------------------------
+
+round_time:  15.232715129852295
+
+Randomly selected 100/300 users for federated learning. 16:50:24
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  30, Average loss 0.051350 ===
+100 users; time 16:50:37
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.957400 loss: 0.153326
+ Testing Label Acc: [0.9897959232330322, 0.9903083443641663, 0.9515503644943237, 0.9544554352760315, 0.9602851271629333, 0.9405829310417175, 0.9655532240867615, 0.9212062358856201, 0.953798770904541, 0.9425173401832581]
+ Testing Avg Label Acc : 0.9570053696632386
+ Poison Acc: 0.07879377431906615
+======
+Model_Weight_Norm : tensor(0.0893)
+Model_weight_Slope: tensor(-0.0321)
+Test end 16:50:39
+-------------------------------------------------------------------------
+
+round_time:  15.060723781585693
+
+Randomly selected 100/300 users for federated learning. 16:50:39
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  31, Average loss 0.057811 ===
+100 users; time 16:50:52
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.944200 loss: 0.204522
+ Testing Label Acc: [0.9918367266654968, 0.9894273281097412, 0.9505813717842102, 0.9544554352760315, 0.9562118053436279, 0.9405829310417175, 0.9634655714035034, 0.7889105081558228, 0.9579055309295654, 0.9484637975692749]
+ Testing Avg Label Acc : 0.9441841006278991
+ Poison Acc: 0.21108949416342412
+======
+Model_Weight_Norm : tensor(0.1250)
+Model_weight_Slope: tensor(0.0357)
+Test end 16:50:55
+-------------------------------------------------------------------------
+
+round_time:  15.250396728515625
+
+Randomly selected 100/300 users for federated learning. 16:50:55
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  32, Average loss 0.043286 ===
+100 users; time 16:51:08
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.959700 loss: 0.149485
+ Testing Label Acc: [0.9877551198005676, 0.9903083443641663, 0.9573643207550049, 0.9475247263908386, 0.9623218178749084, 0.9663677215576172, 0.9655532240867615, 0.9212062358856201, 0.9517453908920288, 0.9454905986785889]
+ Testing Avg Label Acc : 0.9595637500286103
+ Poison Acc: 0.07879377431906615
+======
+Model_Weight_Norm : tensor(0.0910)
+Model_weight_Slope: tensor(-0.0340)
+Test end 16:51:10
+-------------------------------------------------------------------------
+
+round_time:  15.331269264221191
+
+Randomly selected 100/300 users for federated learning. 16:51:10
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  33, Average loss 0.039328 ===
+100 users; time 16:51:23
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.959000 loss: 0.140972
+ Testing Label Acc: [0.9877551198005676, 0.9903083443641663, 0.9583333134651184, 0.9465346336364746, 0.951120138168335, 0.9730941653251648, 0.962421715259552, 0.929961085319519, 0.941478431224823, 0.9474727511405945]
+ Testing Avg Label Acc : 0.9588479697704315
+ Poison Acc: 0.07003891050583658
+======
+Model_Weight_Norm : tensor(0.0499)
+Model_weight_Slope: tensor(-0.0411)
+Test end 16:51:25
+-------------------------------------------------------------------------
+
+round_time:  15.269670963287354
+
+Randomly selected 100/300 users for federated learning. 16:51:25
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  34, Average loss 0.035673 ===
+100 users; time 16:51:38
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.959000 loss: 0.134042
+ Testing Label Acc: [0.9897959232330322, 0.9850220084190369, 0.9505813717842102, 0.9584158658981323, 0.9551934599876404, 0.9506726264953613, 0.9561586380004883, 0.9406614899635315, 0.9568788409233093, 0.9435084462165833]
+ Testing Avg Label Acc : 0.9586888670921325
+ Poison Acc: 0.05933852140077821
+======
+Model_Weight_Norm : tensor(0.0446)
+Model_weight_Slope: tensor(-0.0053)
+Test end 16:51:41
+-------------------------------------------------------------------------
+
+round_time:  15.369080066680908
+
+Randomly selected 100/300 users for federated learning. 16:51:41
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  35, Average loss 0.035250 ===
+100 users; time 16:51:53
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.958100 loss: 0.133159
+ Testing Label Acc: [0.9918367266654968, 0.9894273281097412, 0.9476743936538696, 0.9594059586524963, 0.9521384835243225, 0.9372197389602661, 0.9613778591156006, 0.9426069855690002, 0.9496920108795166, 0.9444994926452637]
+ Testing Avg Label Acc : 0.9575878977775574
+ Poison Acc: 0.057392996108949414
+======
+Model_Weight_Norm : tensor(0.0340)
+Model_weight_Slope: tensor(-0.0106)
+Test end 16:51:56
+-------------------------------------------------------------------------
+
+round_time:  15.32718825340271
+
+Randomly selected 100/300 users for federated learning. 16:51:56
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  36, Average loss 0.030891 ===
+100 users; time 16:52:09
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.960600 loss: 0.129788
+ Testing Label Acc: [0.9908163547515869, 0.9903083443641663, 0.9554263353347778, 0.9594059586524963, 0.9521384835243225, 0.9495515823364258, 0.9634655714035034, 0.9533073902130127, 0.9466118812561035, 0.9405351877212524]
+ Testing Avg Label Acc : 0.9601567089557648
+ Poison Acc: 0.04669260700389105
+======
+Model_Weight_Norm : tensor(0.0326)
+Model_weight_Slope: tensor(-0.0013)
+Test end 16:52:11
+-------------------------------------------------------------------------
+
+round_time:  15.36793828010559
+
+Randomly selected 100/300 users for federated learning. 16:52:11
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  37, Average loss 0.054281 ===
+100 users; time 16:52:24
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.944100 loss: 0.192277
+ Testing Label Acc: [0.9908163547515869, 0.9885462522506714, 0.9583333134651184, 0.9613861441612244, 0.9613034725189209, 0.9327354431152344, 0.9655532240867615, 0.7723735570907593, 0.9589322209358215, 0.9504460096359253]
+ Testing Avg Label Acc : 0.9440425992012024
+ Poison Acc: 0.22762645914396887
+======
+Model_Weight_Norm : tensor(0.1810)
+Model_weight_Slope: tensor(0.1483)
+Test end 16:52:27
+-------------------------------------------------------------------------
+
+round_time:  15.322773456573486
+
+Randomly selected 100/300 users for federated learning. 16:52:27
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round  38, Average loss 0.084722 ===
+100 users; time 16:52:39
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.901200 loss: 0.349393
+ Testing Label Acc: [0.9928571581840515, 0.9894273281097412, 0.9476743936538696, 0.9574257135391235, 0.9541751742362976, 0.8890134692192078, 0.9749478101730347, 0.40175098180770874, 0.9579055309295654, 0.9524281620979309]
+ Testing Avg Label Acc : 0.9017605721950531
+ Poison Acc: 0.5982490272373541
+======
+Model_Weight_Norm : tensor(0.2237)
+Model_weight_Slope: tensor(0.0427)
+Test end 16:52:42
+-------------------------------------------------------------------------
+
+round_time:  15.373095035552979
+
+Randomly selected 100/300 users for federated learning. 16:52:42
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  39, Average loss 0.079727 ===
+100 users; time 16:52:55
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.948700 loss: 0.219105
+ Testing Label Acc: [0.9928571581840515, 0.9876651763916016, 0.9457364082336426, 0.9554455280303955, 0.9562118053436279, 0.9417040348052979, 0.9655532240867615, 0.8336575627326965, 0.9599589109420776, 0.9474727511405945]
+ Testing Avg Label Acc : 0.9486262559890747
+ Poison Acc: 0.16634241245136186
+======
+Model_Weight_Norm : tensor(0.1259)
+Model_weight_Slope: tensor(-0.0977)
+Test end 16:52:57
+-------------------------------------------------------------------------
+
+round_time:  15.380605697631836
+
+Randomly selected 100/300 users for federated learning. 16:52:57
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  40, Average loss 0.065712 ===
+100 users; time 16:53:10
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.953700 loss: 0.194275
+ Testing Label Acc: [0.9908163547515869, 0.9903083443641663, 0.9505813717842102, 0.9663366079330444, 0.9531568288803101, 0.9349775910377502, 0.9707724452018738, 0.8696498274803162, 0.9558521509170532, 0.9514370560646057]
+ Testing Avg Label Acc : 0.9533888578414917
+ Poison Acc: 0.1303501945525292
+======
+Model_Weight_Norm : tensor(0.0984)
+Model_weight_Slope: tensor(-0.0275)
+Test end 16:53:13
+-------------------------------------------------------------------------
+
+round_time:  15.382137537002563
+
+Randomly selected 100/300 users for federated learning. 16:53:13
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  41, Average loss 0.061789 ===
+100 users; time 16:53:26
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.949300 loss: 0.205681
+ Testing Label Acc: [0.9908163547515869, 0.9920704960823059, 0.9457364082336426, 0.9603960514068604, 0.9663951396942139, 0.9327354431152344, 0.9676409363746643, 0.8326848149299622, 0.9599589109420776, 0.9425173401832581]
+ Testing Avg Label Acc : 0.9490951895713806
+ Poison Acc: 0.16731517509727625
+======
+Model_Weight_Norm : tensor(0.0929)
+Model_weight_Slope: tensor(-0.0056)
+Test end 16:53:28
+-------------------------------------------------------------------------
+
+round_time:  15.373332977294922
+
+Randomly selected 100/300 users for federated learning. 16:53:28
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  42, Average loss 0.068099 ===
+100 users; time 16:53:41
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.948500 loss: 0.206189
+ Testing Label Acc: [0.9897959232330322, 0.9903083443641663, 0.9486433863639832, 0.9574257135391235, 0.9541751742362976, 0.9349775910377502, 0.9665970802307129, 0.8307393193244934, 0.9568788409233093, 0.9534192085266113]
+ Testing Avg Label Acc : 0.948296058177948
+ Poison Acc: 0.16926070038910507
+======
+Model_Weight_Norm : tensor(0.0877)
+Model_weight_Slope: tensor(-0.0052)
+Test end 16:53:44
+-------------------------------------------------------------------------
+
+round_time:  15.382462501525879
+
+Randomly selected 100/300 users for federated learning. 16:53:44
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  43, Average loss 0.045668 ===
+100 users; time 16:53:56
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.960800 loss: 0.142026
+ Testing Label Acc: [0.9887754917144775, 0.9903083443641663, 0.9525193572044373, 0.9564356207847595, 0.9602851271629333, 0.9405829310417175, 0.968684732913971, 0.9377431869506836, 0.9548254609107971, 0.9534192085266113]
+ Testing Avg Label Acc : 0.9603579461574554
+ Poison Acc: 0.0622568093385214
+======
+Model_Weight_Norm : tensor(0.1035)
+Model_weight_Slope: tensor(0.0158)
+Test end 16:53:59
+-------------------------------------------------------------------------
+
+round_time:  15.374418497085571
+
+Randomly selected 100/300 users for federated learning. 16:53:59
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  44, Average loss 0.055375 ===
+100 users; time 16:54:12
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.948400 loss: 0.198164
+ Testing Label Acc: [0.9897959232330322, 0.9920704960823059, 0.9525193572044373, 0.9643564224243164, 0.9674134254455566, 0.9271300435066223, 0.9739039540290833, 0.8132295608520508, 0.9568788409233093, 0.9444994926452637]
+ Testing Avg Label Acc : 0.9481797516345978
+ Poison Acc: 0.1867704280155642
+======
+Model_Weight_Norm : tensor(0.1210)
+Model_weight_Slope: tensor(0.0174)
+Test end 16:54:14
+-------------------------------------------------------------------------
+
+round_time:  15.413140773773193
+
+Randomly selected 100/300 users for federated learning. 16:54:14
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  45, Average loss 0.062723 ===
+100 users; time 16:54:27
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.947200 loss: 0.215665
+ Testing Label Acc: [0.9887754917144775, 0.9903083443641663, 0.9583333134651184, 0.9643564224243164, 0.9572301506996155, 0.9282511472702026, 0.9759916663169861, 0.7966926097869873, 0.9599589109420776, 0.9504460096359253]
+ Testing Avg Label Acc : 0.9470344066619873
+ Poison Acc: 0.20330739299610895
+======
+Model_Weight_Norm : tensor(0.0969)
+Model_weight_Slope: tensor(-0.0241)
+Test end 16:54:30
+-------------------------------------------------------------------------
+
+round_time:  15.331915616989136
+
+Randomly selected 100/300 users for federated learning. 16:54:30
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  46, Average loss 0.045183 ===
+100 users; time 16:54:42
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.960900 loss: 0.141704
+ Testing Label Acc: [0.9887754917144775, 0.9920704960823059, 0.9544573426246643, 0.9623762369155884, 0.9602851271629333, 0.9405829310417175, 0.9676409363746643, 0.9348248839378357, 0.953798770904541, 0.9494549036026001]
+ Testing Avg Label Acc : 0.9604267120361328
+ Poison Acc: 0.0651750972762646
+======
+Model_Weight_Norm : tensor(0.1051)
+Model_weight_Slope: tensor(0.0082)
+Test end 16:54:45
+-------------------------------------------------------------------------
+
+round_time:  15.392779350280762
+
+Randomly selected 100/300 users for federated learning. 16:54:45
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  47, Average loss 0.054967 ===
+100 users; time 16:54:58
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.948000 loss: 0.198139
+ Testing Label Acc: [0.9908163547515869, 0.9885462522506714, 0.9515503644943237, 0.9663366079330444, 0.9623218178749084, 0.9293721914291382, 0.9707724452018738, 0.8025291562080383, 0.9599589109420776, 0.9563924670219421]
+ Testing Avg Label Acc : 0.9478596568107605
+ Poison Acc: 0.19747081712062256
+======
+Model_Weight_Norm : tensor(0.1144)
+Model_weight_Slope: tensor(0.0092)
+Test end 16:55:00
+-------------------------------------------------------------------------
+
+round_time:  15.345763444900513
+
+Randomly selected 100/300 users for federated learning. 16:55:00
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  48, Average loss 0.063192 ===
+100 users; time 16:55:13
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.951300 loss: 0.192078
+ Testing Label Acc: [0.9908163547515869, 0.9911894202232361, 0.9505813717842102, 0.9693069458007812, 0.9562118053436279, 0.926008939743042, 0.9676409363746643, 0.8472762703895569, 0.9548254609107971, 0.9554013609886169]
+ Testing Avg Label Acc : 0.950925886631012
+ Poison Acc: 0.15272373540856032
+======
+Model_Weight_Norm : tensor(0.1008)
+Model_weight_Slope: tensor(-0.0136)
+Test end 16:55:15
+-------------------------------------------------------------------------
+
+round_time:  14.720689535140991
+
+Randomly selected 100/300 users for federated learning. 16:55:15
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  49, Average loss 0.059436 ===
+100 users; time 16:55:24
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.950700 loss: 0.193142
+ Testing Label Acc: [0.9897959232330322, 0.9876651763916016, 0.9573643207550049, 0.9712871313095093, 0.9501018524169922, 0.9058296084403992, 0.9749478101730347, 0.8463035225868225, 0.9620122909545898, 0.9563924670219421]
+ Testing Avg Label Acc : 0.9501700103282928
+ Poison Acc: 0.15369649805447472
+======
+Model_Weight_Norm : tensor(0.0923)
+Model_weight_Slope: tensor(-0.0085)
+Test end 16:55:27
+-------------------------------------------------------------------------
+
+round_time:  11.635205507278442
+
+Randomly selected 100/300 users for federated learning. 16:55:27
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  50, Average loss 0.041880 ===
+100 users; time 16:55:36
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.962300 loss: 0.134818
+ Testing Label Acc: [0.9908163547515869, 0.9903083443641663, 0.9525193572044373, 0.9633663296699524, 0.9562118053436279, 0.939461886882782, 0.9749478101730347, 0.9426069855690002, 0.9568788409233093, 0.9514370560646057]
+ Testing Avg Label Acc : 0.9618554770946502
+ Poison Acc: 0.057392996108949414
+======
+Model_Weight_Norm : tensor(0.0965)
+Model_weight_Slope: tensor(0.0042)
+Test end 16:55:39
+-------------------------------------------------------------------------
+
+round_time:  11.756260871887207
+
+Randomly selected 100/300 users for federated learning. 16:55:39
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  51, Average loss 0.051331 ===
+100 users; time 16:55:49
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.947700 loss: 0.1994
+ Testing Label Acc: [0.9908163547515869, 0.9903083443641663, 0.9486433863639832, 0.9683168530464172, 0.9562118053436279, 0.9338564872741699, 0.9707724452018738, 0.798638105392456, 0.9599589109420776, 0.9583746194839478]
+ Testing Avg Label Acc : 0.9475897312164306
+ Poison Acc: 0.20136186770428016
+======
+Model_Weight_Norm : tensor(0.1299)
+Model_weight_Slope: tensor(0.0334)
+Test end 16:55:52
+-------------------------------------------------------------------------
+
+round_time:  13.474892854690552
+
+Randomly selected 100/300 users for federated learning. 16:55:52
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round  52, Average loss 0.078977 ===
+100 users; time 16:56:06
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.925000 loss: 0.298209
+ Testing Label Acc: [0.9908163547515869, 0.992951512336731, 0.9467054009437561, 0.9683168530464172, 0.9551934599876404, 0.9069506525993347, 0.9728600978851318, 0.5963035225868225, 0.9558521509170532, 0.9653121829032898]
+ Testing Avg Label Acc : 0.9251262187957764
+ Poison Acc: 0.4036964980544747
+======
+Model_Weight_Norm : tensor(0.1624)
+Model_weight_Slope: tensor(0.0325)
+Test end 16:56:09
+-------------------------------------------------------------------------
+
+round_time:  16.96147322654724
+
+Randomly selected 100/300 users for federated learning. 16:56:09
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  53, Average loss 0.054252 ===
+100 users; time 16:56:22
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.962100 loss: 0.145444
+ Testing Label Acc: [0.9897959232330322, 0.9920704960823059, 0.9515503644943237, 0.9653465151786804, 0.9623218178749084, 0.9529147744178772, 0.968684732913971, 0.9231517314910889, 0.953798770904541, 0.9583746194839478]
+ Testing Avg Label Acc : 0.9618009746074676
+ Poison Acc: 0.07684824902723736
+======
+Model_Weight_Norm : tensor(0.1429)
+Model_weight_Slope: tensor(-0.0196)
+Test end 16:56:24
+-------------------------------------------------------------------------
+
+round_time:  15.357796907424927
+
+Randomly selected 100/300 users for federated learning. 16:56:24
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  54, Average loss 0.053700 ===
+100 users; time 16:56:37
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.950600 loss: 0.192928
+ Testing Label Acc: [0.9897959232330322, 0.992951512336731, 0.9496123790740967, 0.9643564224243164, 0.9633401036262512, 0.9428251385688782, 0.9676409363746643, 0.8122568130493164, 0.9589322209358215, 0.9633300304412842]
+ Testing Avg Label Acc : 0.9505041480064392
+ Poison Acc: 0.1877431906614786
+======
+Model_Weight_Norm : tensor(0.1038)
+Model_weight_Slope: tensor(-0.0391)
+Test end 16:56:40
+-------------------------------------------------------------------------
+
+round_time:  15.29271650314331
+
+Randomly selected 100/300 users for federated learning. 16:56:40
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  55, Average loss 0.057529 ===
+100 users; time 16:56:53
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.953800 loss: 0.18741
+ Testing Label Acc: [0.9877551198005676, 0.9920704960823059, 0.9544573426246643, 0.9663366079330444, 0.951120138168335, 0.9484304785728455, 0.9718163013458252, 0.8482490181922913, 0.9517453908920288, 0.9643211364746094]
+ Testing Avg Label Acc : 0.9536302030086518
+ Poison Acc: 0.1517509727626459
+======
+Model_Weight_Norm : tensor(0.0951)
+Model_weight_Slope: tensor(-0.0087)
+Test end 16:56:55
+-------------------------------------------------------------------------
+
+round_time:  15.74195408821106
+
+Randomly selected 100/300 users for federated learning. 16:56:55
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  56, Average loss 0.059249 ===
+100 users; time 16:57:08
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.951200 loss: 0.194495
+ Testing Label Acc: [0.9908163547515869, 0.9920704960823059, 0.9437984228134155, 0.9693069458007812, 0.9633401036262512, 0.9271300435066223, 0.9697285890579224, 0.8365758657455444, 0.9609856009483337, 0.9554013609886169]
+ Testing Avg Label Acc : 0.950915378332138
+ Poison Acc: 0.16342412451361868
+======
+Model_Weight_Norm : tensor(0.0828)
+Model_weight_Slope: tensor(-0.0124)
+Test end 16:57:11
+-------------------------------------------------------------------------
+
+round_time:  15.461566686630249
+
+Randomly selected 100/300 users for federated learning. 16:57:11
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round  57, Average loss 0.077785 ===
+100 users; time 16:57:24
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.934200 loss: 0.279098
+ Testing Label Acc: [0.9918367266654968, 0.9867841601371765, 0.9496123790740967, 0.9653465151786804, 0.9389002323150635, 0.9495515823364258, 0.9707724452018738, 0.6692606806755066, 0.9630390405654907, 0.9613478779792786]
+ Testing Avg Label Acc : 0.934645164012909
+ Poison Acc: 0.33073929961089493
+======
+Model_Weight_Norm : tensor(0.1595)
+Model_weight_Slope: tensor(0.0767)
+Test end 16:57:26
+-------------------------------------------------------------------------
+
+round_time:  15.393818378448486
+
+Randomly selected 100/300 users for federated learning. 16:57:26
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  58, Average loss 0.069141 ===
+100 users; time 16:57:39
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.954900 loss: 0.184994
+ Testing Label Acc: [0.9897959232330322, 0.9920704960823059, 0.9563953280448914, 0.9643564224243164, 0.9562118053436279, 0.9439461827278137, 0.9645093679428101, 0.8647859692573547, 0.9599589109420776, 0.9544103145599365]
+ Testing Avg Label Acc : 0.9546440720558167
+ Poison Acc: 0.13521400778210116
+======
+Model_Weight_Norm : tensor(0.1222)
+Model_weight_Slope: tensor(-0.0373)
+Test end 16:57:42
+-------------------------------------------------------------------------
+
+round_time:  15.36545181274414
+
+Randomly selected 100/300 users for federated learning. 16:57:42
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  59, Average loss 0.043253 ===
+100 users; time 16:57:54
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.963900 loss: 0.132326
+ Testing Label Acc: [0.9887754917144775, 0.9920704960823059, 0.9583333134651184, 0.9594059586524963, 0.9592667818069458, 0.9562780261039734, 0.9676409363746643, 0.9435797929763794, 0.9589322209358215, 0.9514370560646057]
+ Testing Avg Label Acc : 0.9635720074176788
+ Poison Acc: 0.05642023346303502
+======
+Model_Weight_Norm : tensor(0.0947)
+Model_weight_Slope: tensor(-0.0275)
+Test end 16:57:57
+-------------------------------------------------------------------------
+
+round_time:  15.272249698638916
+
+Randomly selected 100/300 users for federated learning. 16:57:57
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  60, Average loss 0.051552 ===
+100 users; time 16:58:10
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.955000 loss: 0.175671
+ Testing Label Acc: [0.9897959232330322, 0.9920704960823059, 0.9670542478561401, 0.9683168530464172, 0.9623218178749084, 0.9405829310417175, 0.9665970802307129, 0.8463035225868225, 0.9589322209358215, 0.9554013609886169]
+ Testing Avg Label Acc : 0.9547376453876495
+ Poison Acc: 0.15369649805447472
+======
+Model_Weight_Norm : tensor(0.1150)
+Model_weight_Slope: tensor(0.0204)
+Test end 16:58:12
+-------------------------------------------------------------------------
+
+round_time:  15.42211365699768
+
+Randomly selected 100/300 users for federated learning. 16:58:12
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round  61, Average loss 0.073305 ===
+100 users; time 16:58:27
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.916500 loss: 0.317411
+ Testing Label Acc: [0.9897959232330322, 0.9903083443641663, 0.9476743936538696, 0.9683168530464172, 0.9389002323150635, 0.9271300435066223, 0.9739039540290833, 0.5048637986183167, 0.9620122909545898, 0.9682854413986206]
+ Testing Avg Label Acc : 0.9171191275119781
+ Poison Acc: 0.49513618677042803
+======
+Model_Weight_Norm : tensor(0.1671)
+Model_weight_Slope: tensor(0.0521)
+Test end 16:58:30
+-------------------------------------------------------------------------
+
+round_time:  17.621793746948242
+
+Randomly selected 100/300 users for federated learning. 16:58:30
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round  62, Average loss 0.088755 ===
+100 users; time 16:58:45
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.943300 loss: 0.268368
+ Testing Label Acc: [0.9918367266654968, 0.9920704960823059, 0.9563953280448914, 0.9702970385551453, 0.9562118053436279, 0.9338564872741699, 0.9718163013458252, 0.7461089491844177, 0.9620122909545898, 0.9524281620979309]
+ Testing Avg Label Acc : 0.94330335855484
+ Poison Acc: 0.2538910505836576
+======
+Model_Weight_Norm : tensor(0.1346)
+Model_weight_Slope: tensor(-0.0325)
+Test end 16:58:48
+-------------------------------------------------------------------------
+
+round_time:  17.66042709350586
+
+Randomly selected 100/300 users for federated learning. 16:58:48
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  63, Average loss 0.068037 ===
+100 users; time 16:59:03
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.955500 loss: 0.185991
+ Testing Label Acc: [0.9908163547515869, 0.9911894202232361, 0.9505813717842102, 0.9663366079330444, 0.958248496055603, 0.9372197389602661, 0.9707724452018738, 0.8696498274803162, 0.9640657305717468, 0.9534192085266113]
+ Testing Avg Label Acc : 0.9552299201488494
+ Poison Acc: 0.1303501945525292
+======
+Model_Weight_Norm : tensor(0.1136)
+Model_weight_Slope: tensor(-0.0210)
+Test end 16:59:05
+-------------------------------------------------------------------------
+
+round_time:  17.701377630233765
+
+Randomly selected 100/300 users for federated learning. 16:59:05
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  64, Average loss 0.057843 ===
+100 users; time 16:59:20
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.955400 loss: 0.181388
+ Testing Label Acc: [0.9908163547515869, 0.9876651763916016, 0.9641472697257996, 0.9663366079330444, 0.9429734945297241, 0.9506726264953613, 0.9728600978851318, 0.8608949184417725, 0.9620122909545898, 0.9544103145599365]
+ Testing Avg Label Acc : 0.9552789151668548
+ Poison Acc: 0.13910505836575876
+======
+Model_Weight_Norm : tensor(0.0867)
+Model_weight_Slope: tensor(-0.0268)
+Test end 16:59:23
+-------------------------------------------------------------------------
+
+round_time:  17.659270524978638
+
+Randomly selected 100/300 users for federated learning. 16:59:23
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round  65, Average loss 0.075254 ===
+100 users; time 16:59:38
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.929600 loss: 0.299487
+ Testing Label Acc: [0.9908163547515869, 0.9920704960823059, 0.9476743936538696, 0.9663366079330444, 0.9378818869590759, 0.9226457476615906, 0.9707724452018738, 0.6391050815582275, 0.9650924205780029, 0.9653121829032898]
+ Testing Avg Label Acc : 0.9297707617282868
+ Poison Acc: 0.36089494163424124
+======
+Model_Weight_Norm : tensor(0.1627)
+Model_weight_Slope: tensor(0.0760)
+Test end 16:59:41
+-------------------------------------------------------------------------
+
+round_time:  17.623638153076172
+
+Randomly selected 100/300 users for federated learning. 16:59:41
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round  66, Average loss 0.085855 ===
+100 users; time 16:59:56
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.947400 loss: 0.245876
+ Testing Label Acc: [0.9897959232330322, 0.9903083443641663, 0.9651162624359131, 0.9623762369155884, 0.9409368634223938, 0.9338564872741699, 0.9749478101730347, 0.792801558971405, 0.9589322209358215, 0.9633300304412842]
+ Testing Avg Label Acc : 0.9472401738166809
+ Poison Acc: 0.20719844357976655
+======
+Model_Weight_Norm : tensor(0.1300)
+Model_weight_Slope: tensor(-0.0327)
+Test end 16:59:58
+-------------------------------------------------------------------------
+
+round_time:  17.477721452713013
+
+Randomly selected 100/300 users for federated learning. 16:59:58
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  67, Average loss 0.064504 ===
+100 users; time 17:00:13
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.955800 loss: 0.185454
+ Testing Label Acc: [0.9908163547515869, 0.992951512336731, 0.9554263353347778, 0.9633663296699524, 0.9429734945297241, 0.9360986351966858, 0.9697285890579224, 0.881322979927063, 0.9568788409233093, 0.9643211364746094]
+ Testing Avg Label Acc : 0.9553884208202362
+ Poison Acc: 0.11867704280155641
+======
+Model_Weight_Norm : tensor(0.1010)
+Model_weight_Slope: tensor(-0.0290)
+Test end 17:00:16
+-------------------------------------------------------------------------
+
+round_time:  17.510433435440063
+
+Randomly selected 100/300 users for federated learning. 17:00:16
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  68, Average loss 0.059140 ===
+100 users; time 17:00:31
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.956700 loss: 0.175292
+ Testing Label Acc: [0.9918367266654968, 0.9885462522506714, 0.961240291595459, 0.9643564224243164, 0.9521384835243225, 0.945067286491394, 0.9697285890579224, 0.8745136260986328, 0.9579055309295654, 0.959365725517273]
+ Testing Avg Label Acc : 0.9564698934555054
+ Poison Acc: 0.1254863813229572
+======
+Model_Weight_Norm : tensor(0.0844)
+Model_weight_Slope: tensor(-0.0166)
+Test end 17:00:33
+-------------------------------------------------------------------------
+
+round_time:  17.648080825805664
+
+Randomly selected 100/300 users for federated learning. 17:00:33
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  69, Average loss 0.059500 ===
+100 users; time 17:00:47
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.957800 loss: 0.175343
+ Testing Label Acc: [0.9918367266654968, 0.992951512336731, 0.9583333134651184, 0.9613861441612244, 0.9572301506996155, 0.939461886882782, 0.9697285890579224, 0.881322979927063, 0.9599589109420776, 0.962338924407959]
+ Testing Avg Label Acc : 0.957454913854599
+ Poison Acc: 0.11867704280155641
+======
+Model_Weight_Norm : tensor(0.0888)
+Model_weight_Slope: tensor(0.0044)
+Test end 17:00:50
+-------------------------------------------------------------------------
+
+round_time:  16.29493236541748
+
+Randomly selected 100/300 users for federated learning. 17:00:50
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round  70, Average loss 0.076337 ===
+100 users; time 17:01:03
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.923800 loss: 0.309284
+ Testing Label Acc: [0.9928571581840515, 0.9885462522506714, 0.9370155334472656, 0.9663366079330444, 0.9490835070610046, 0.9002242088317871, 0.9697285890579224, 0.6050583720207214, 0.9681724905967712, 0.962338924407959]
+ Testing Avg Label Acc : 0.9239361643791199
+ Poison Acc: 0.3949416342412451
+======
+Model_Weight_Norm : tensor(0.1459)
+Model_weight_Slope: tensor(0.0572)
+Test end 17:01:06
+-------------------------------------------------------------------------
+
+round_time:  16.04992127418518
+
+Randomly selected 100/300 users for federated learning. 17:01:06
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  71, Average loss 0.068535 ===
+100 users; time 17:01:19
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.959000 loss: 0.173905
+ Testing Label Acc: [0.9918367266654968, 0.9920704960823059, 0.9505813717842102, 0.9683168530464172, 0.9623218178749084, 0.9439461827278137, 0.9665970802307129, 0.8891050815582275, 0.9620122909545898, 0.9603567719459534]
+ Testing Avg Label Acc : 0.9587144672870636
+ Poison Acc: 0.11089494163424124
+======
+Model_Weight_Norm : tensor(0.1279)
+Model_weight_Slope: tensor(-0.0180)
+Test end 17:01:21
+-------------------------------------------------------------------------
+
+round_time:  15.807534217834473
+
+Randomly selected 100/300 users for federated learning. 17:01:21
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round  72, Average loss 0.073594 ===
+100 users; time 17:01:35
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.930700 loss: 0.302225
+ Testing Label Acc: [0.9928571581840515, 0.9894273281097412, 0.9437984228134155, 0.9693069458007812, 0.9613034725189209, 0.9181614518165588, 0.9645093679428101, 0.6420233249664307, 0.966119110584259, 0.9613478779792786]
+ Testing Avg Label Acc : 0.9308854460716247
+ Poison Acc: 0.35797665369649806
+======
+Model_Weight_Norm : tensor(0.1452)
+Model_weight_Slope: tensor(0.0173)
+Test end 17:01:37
+-------------------------------------------------------------------------
+
+round_time:  15.546651840209961
+
+Randomly selected 100/300 users for federated learning. 17:01:37
+0/100 are attackers with poison attack
+ count(target label):  100
+=== Round  73, Average loss 0.051673 ===
+100 users; time 17:01:50
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.962900 loss: 0.140315
+ Testing Label Acc: [0.9897959232330322, 0.9903083443641663, 0.9554263353347778, 0.9613861441612244, 0.9592667818069458, 0.9618834257125854, 0.9728600978851318, 0.9192606806755066, 0.953798770904541, 0.9633300304412842]
+ Testing Avg Label Acc : 0.9627316534519196
+ Poison Acc: 0.08073929961089495
+======
+Model_Weight_Norm : tensor(0.1470)
+Model_weight_Slope: tensor(0.0018)
+Test end 17:01:52
+-------------------------------------------------------------------------
+
+round_time:  15.509883165359497
+
+Randomly selected 100/300 users for federated learning. 17:01:52
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  74, Average loss 0.055233 ===
+100 users; time 17:02:05
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.954500 loss: 0.180146
+ Testing Label Acc: [0.9867346882820129, 0.9903083443641663, 0.9699612259864807, 0.9663366079330444, 0.951120138168335, 0.931614339351654, 0.9728600978851318, 0.8433852195739746, 0.9609856009483337, 0.9682854413986206]
+ Testing Avg Label Acc : 0.9541591703891754
+ Poison Acc: 0.1566147859922179
+======
+Model_Weight_Norm : tensor(0.1091)
+Model_weight_Slope: tensor(-0.0379)
+Test end 17:02:08
+-------------------------------------------------------------------------
+
+round_time:  15.600966691970825
+
+Randomly selected 100/300 users for federated learning. 17:02:08
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  75, Average loss 0.058160 ===
+100 users; time 17:02:21
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.957100 loss: 0.178558
+ Testing Label Acc: [0.9928571581840515, 0.992951512336731, 0.9525193572044373, 0.9653465151786804, 0.9653767943382263, 0.9428251385688782, 0.9665970802307129, 0.8647859692573547, 0.9609856009483337, 0.9643211364746094]
+ Testing Avg Label Acc : 0.9568566262722016
+ Poison Acc: 0.13521400778210116
+======
+Model_Weight_Norm : tensor(0.0898)
+Model_weight_Slope: tensor(-0.0193)
+Test end 17:02:24
+-------------------------------------------------------------------------
+
+round_time:  15.70641827583313
+
+Randomly selected 100/300 users for federated learning. 17:02:24
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round  76, Average loss 0.075245 ===
+100 users; time 17:02:37
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.925900 loss: 0.305444
+ Testing Label Acc: [0.9928571581840515, 0.9876651763916016, 0.9544573426246643, 0.9623762369155884, 0.9287168979644775, 0.9114349484443665, 0.9749478101730347, 0.6138132214546204, 0.9609856009483337, 0.973240852355957]
+ Testing Avg Label Acc : 0.9260495245456696
+ Poison Acc: 0.3861867704280156
+======
+Model_Weight_Norm : tensor(0.1565)
+Model_weight_Slope: tensor(0.0667)
+Test end 17:02:39
+-------------------------------------------------------------------------
+
+round_time:  15.527668476104736
+
+Randomly selected 100/300 users for federated learning. 17:02:39
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  77, Average loss 0.070005 ===
+100 users; time 17:02:52
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.959100 loss: 0.171835
+ Testing Label Acc: [0.9918367266654968, 0.9894273281097412, 0.9554263353347778, 0.9722772240638733, 0.9613034725189209, 0.9338564872741699, 0.968684732913971, 0.8891050815582275, 0.9630390405654907, 0.962338924407959]
+ Testing Avg Label Acc : 0.9587295353412628
+ Poison Acc: 0.11089494163424124
+======
+Model_Weight_Norm : tensor(0.1263)
+Model_weight_Slope: tensor(-0.0302)
+Test end 17:02:55
+-------------------------------------------------------------------------
+
+round_time:  15.559907913208008
+
+Randomly selected 100/300 users for federated learning. 17:02:55
+1/100 are attackers with poison attack
+ count(target label):  100
+=== Round  78, Average loss 0.056184 ===
+100 users; time 17:03:08
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.957500 loss: 0.175474
+ Testing Label Acc: [0.9887754917144775, 0.9911894202232361, 0.9573643207550049, 0.9683168530464172, 0.9602851271629333, 0.9360986351966858, 0.9759916663169861, 0.8725680708885193, 0.9589322209358215, 0.962338924407959]
+ Testing Avg Label Acc : 0.9571860730648041
+ Poison Acc: 0.12743190661478598
+======
+Model_Weight_Norm : tensor(0.0822)
+Model_weight_Slope: tensor(-0.0440)
+Test end 17:03:10
+-------------------------------------------------------------------------
+
+round_time:  15.526376724243164
+
+Randomly selected 100/300 users for federated learning. 17:03:10
+2/100 are attackers with poison attack
+ count(target label):  100
+=== Round  79, Average loss 0.074400 ===
+100 users; time 17:03:23
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.931400 loss: 0.294737
+ Testing Label Acc: [0.9928571581840515, 0.9920704960823059, 0.9467054009437561, 0.9683168530464172, 0.9633401036262512, 0.9215246438980103, 0.968684732913971, 0.6342412233352661, 0.9630390405654907, 0.9653121829032898]
+ Testing Avg Label Acc : 0.931609183549881
+ Poison Acc: 0.3657587548638132
+======
+Model_Weight_Norm : tensor(0.1465)
+Model_weight_Slope: tensor(0.0643)
+Test end 17:03:26
+-------------------------------------------------------------------------
+
+round_time:  15.541373014450073
+
+total_time:  1252.5749633312225
+=== End ===
