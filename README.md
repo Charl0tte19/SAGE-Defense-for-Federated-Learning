@@ -169,6 +169,12 @@ bash ./origin3_fmnist.sh
 bash ./origin4_fmnist.sh
 ```
 
+6. Test the trained global model.
+
+```
+bash ./testing_fmnist.sh
+```
+
 Please check the path before running each sh script.
 
 ## Result Charts
