@@ -20,5 +20,5 @@ You can also build the environment and install the requirements as follows.
 ```
 conda create -n SAGE python=3.8
 source activate SAGE
-pip install -r requirement.txt 
+pip install -r requirements.txt 
 ```
