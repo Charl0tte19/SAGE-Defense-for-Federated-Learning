@@ -27,4 +27,11 @@ pip install -r requirements.txt
 
 ### 1. Run a single case
 
-For example, run the case (Fashion-MNIST, non-IID degree K = 0.4)
+#### For example, run the case (Fashion-MNIST, non-IID degree K = 0.4)
+
+Train the model by SAGE
+
+```
+python -u main_shuffle_fmnist.py --gpu 0 --seed 32 --dataset="fmnist" --epoch 20 --noniid 0.4 --attack_mode="poison" --attack_ratio 0.2 --test_label_acc --target_random --shuffle --model_path="./fmnist/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.pt" 2>&1 | tee ./fmnist/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.txt
+```
+
