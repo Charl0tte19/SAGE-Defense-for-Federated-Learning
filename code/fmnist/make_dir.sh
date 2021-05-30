@@ -10,5 +10,3 @@ done
 mkdir noniid_0.4
 mv ra* noniid_0.4/
 cp -r noniid_0.4 noniid_0.8
-mkdir noniid_0.4/command/
-mkdir noniid_0.8/command/
