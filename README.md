@@ -187,7 +187,7 @@ We show the complete version of the result charts in [result/](https://github.co
  ------------- |-------------| ----------- | --------------
  0.3      | ![alt text](https://raw.githubusercontent.com/Charl0tte19/SAGE-Defense-for-Federated-Learning/main/result/chart/amount/noniid_0.4_ratio_0.3_mnist_regroup.png) | ![alt text](https://raw.githubusercontent.com/Charl0tte19/SAGE-Defense-for-Federated-Learning/main/result/chart/amount/noniid_0.4_ratio_0.3_mnist_attacker_in_group.png) | ![alt text](https://github.com/Charl0tte19/SAGE-Defense-for-Federated-Learning/blob/main/result/chart/accuracy/noniid_0.4_ratio_0.3_mnist_acc.png)
 
-## Comments of each file
+## Descriptions of each file
 
 ```
 code/                      
