@@ -173,10 +173,45 @@ We show the complete version of the result charts in [result/](https://github.co
 ## Comments of each file
 
 ```
-code/                      # Code for our experiments.
+code/                      
     fmnist/                # Store the master models and training logs for fmnist
+        file.sh
+        make_dir.sh
+        temp.py
     mnist/                 # Store the master models and training logs for mnist
-    models/                # CNN models code
-    utils/                 #
-    *.py                   #
+        file.sh
+        make_dir.sh
+        temp.py
+    models/                
+        Fed.py
+        Nets.py
+        Update.py
+        Update2.py
+        test.py
+        test2.py
+    sh_scripts_fmnist/
+        after*.sh
+        origin*.sh
+        shuffle*.sh
+    sh_scripts_mnist/
+        after*.sh
+        origin*.sh
+        shuffle*.sh
+    utils/
+        sampling.py
+    after_preprocess_FL_fmnist.py
+    after_preprocess_FL_mnist.py
+    main_origin_fmnist.py
+    main_origin_mnist.py
+    main_shuffle_fmnist.py
+    main_shuffle_mnist.py
+    test_trained_models_fmnist.py
+    test_trained_models_mnist.py
+result/
+    chart/
+    fmnist/
+    mnist/
+    acc_between_SAGE_and_FL.ipynb/
+    attacker_in_each_group.ipynb/
+    avg_attacker_in_each_group.ipynb/
 ```
