@@ -172,7 +172,7 @@ We show the complete version of the result charts in [result/](https://github.co
 
 ## Comments of each file
 
-```diff
+```
 code/                      
     fmnist/                
         file.sh                              # code of creating the orders to run after*.sh for all cases.
@@ -214,5 +214,4 @@ result/
     acc_between_SAGE_and_FL.ipynb            # jupyter notebook for drawing accuracy
     attacker_in_each_group.ipynb             # jupyter notebook for drawing amount of attackers assigned to each subset in each group
     avg_attacker_in_each_group.ipynb         # jupyter notebook for drawing average amount of attackers assigned to each subset in each group
-# 123
 ```
