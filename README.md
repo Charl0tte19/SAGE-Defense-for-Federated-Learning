@@ -22,3 +22,9 @@ conda create -n SAGE python=3.8
 source activate SAGE
 pip install -r requirements.txt 
 ```
+
+## Reproduce the results
+
+### 1. Run a single case
+
+For example, run the case (Fashion-MNIST, non-IID degree K = 0.4)
