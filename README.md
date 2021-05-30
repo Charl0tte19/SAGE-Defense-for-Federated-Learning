@@ -55,6 +55,8 @@ python -u after_preprocess_FL_fmnist.py --dataset=fmnist --noniid 0.4 --seed 32 
 python -u main_origin_fmnist.py --gpu 0 --seed 32 --epoch 100 --noniid 0.4 --attack_mode="poison" --attack_ratio 0.2 --test_label_acc --target_random --dataset="fmnist" --model_path="./fmnist/origin/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.pt" 2>&1 | tee ./fmnist/origin/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.txt
 ```
 
+
+
 #### For another example, run the case (MNIST, non-IID degree K = 0.8, attack ratio = 0.02)
 
 run the following code in ./code/
