@@ -204,10 +204,12 @@ code/
         after*.sh                            # script for running after_preprocess_FL_fmnist.py for all cases
         origin*.sh                           # script for running main_origin_fmnist.py for all cases
         shuffle*.sh                          # script for running main_shuffle_fmnist.py for all cases
+        testing_fmnist.sh                    # script for running test_trained_models_fmnist.py for all cases
     sh_scripts_mnist/
         after*.sh                            # script for running after_preprocess_FL_mnist.py for all cases
         origin*.sh                           # script for running main_origin_mnist.py for all cases
         shuffle*.sh                          # script for running main_shuffle_mnist.py for all cases
+        testing_mnist.sh                    # script for running test_trained_models_mnist.py for all cases
     utils/
         sampling.py                          # code of sampling the dataset
     after_preprocess_FL_fmnist.py            # code of training the global model after SAGE for fmnist.
@@ -225,4 +227,6 @@ result/
     acc_between_SAGE_and_FL.ipynb            # jupyter notebook for drawing accuracy
     attacker_in_each_group.ipynb             # jupyter notebook for drawing amount of attackers assigned to each subset in each group
     avg_attacker_in_each_group.ipynb         # jupyter notebook for drawing average amount of attackers assigned to each subset in each group
+    read.sh                                  # creating some required *.txt of SAGE for drawing the result charts
+    read_origin.sh                           # creating some required *.txt of typical FL for drawing the result charts 
 ```
