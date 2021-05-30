@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 ### - Run a single case
 
-#### For example, run the case (Fashion-MNIST, non-IID degree K = 0.4)
+#### For example, run the case (Fashion-MNIST, non-IID degree K = 0.4, attack ratio = 0.2)
 
 run the following code in ./code/
 
@@ -53,4 +53,32 @@ python -u after_preprocess_FL_fmnist.py --dataset=fmnist --noniid 0.4 --seed 32 
 
 ```
 python -u main_origin_fmnist.py --gpu 0 --seed 32 --epoch 100 --noniid 0.4 --attack_mode="poison" --attack_ratio 0.2 --test_label_acc --target_random --dataset="fmnist" --model_path="./fmnist/origin/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.pt" 2>&1 | tee ./fmnist/origin/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.txt
+```
+
+#### For another example, run the case (MNIST, non-IID degree K = 0.8, attack ratio = 0.02)
+
+run the following code in ./code/
+
+1. Train the model by SAGE.
+
+```
+python -u main_shuffle_mnist.py --gpu 0 --seed 32 --dataset="mnist" --scale --epoch 20 --noniid 0.8 --attack_mode="poison" --attack_ratio 0.02 --test_label_acc --target_random --shuffle --model_path="./mnist/noniid_0.8/ratio_0.02/poison_${ratio4}0.02_Scale_0.pt" 2>&1 | tee ./mnist/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.txt
+```
+
+2. Create the directories ./code/mnist/noniid_0.4/ and ./code/mnist/noniid_0.8/.
+
+```
+bash ./mnist/make_dir.sh
+```
+
+3. Continue to train the model by FL after SAGE. Assume that the best master model is No.6 master model.
+
+```
+python -u after_preprocess_FL_mnist.py --seed 12 --epoch 80 --noniid 0.8 --attack_ratio 0.02 --test_label_acc --target_random --scale --model_path=./mnist/seed_12/noniid_0.8/ratio_0.02/final.pt --pretrained_model=./mnist/seed_12/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.pt(4).pt1 --local_file=./mnist/seed_12/noniid_0.8/ratio_0.02/local.txt --attacker_file=./mnist/seed_12/noniid_0.8/ratio_0.02/attacker.txt 2>&1 | tee ./mnist/noniid_0.8/ratio_0.02/log.txt
+```
+
+4. Train the model by typical FL.
+
+```
+python -u main_origin_mnist.py --gpu 0 --seed 32 --scale --epoch 100 --noniid 0.8 --attack_mode="poison" --attack_ratio 0.02 --test_label_acc --target_random --dataset="mnist" --model_path="./mnist/origin/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.pt" 2>&1 | tee ./mnist/origin/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.txt
 ```
