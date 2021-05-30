@@ -1,6 +1,6 @@
 #!/bin/bash
 seed="seed_32"
-hom="/home/ubuntu/My_FL/src/mnist/"$seed
+hom="/home/ubuntu/My_FL/code/mnist/"$seed
 c="/command"
 noniid="0.4 0.8"
 ratio_list="0.1 0.2 0.3 0.4 0.5"
