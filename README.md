@@ -39,13 +39,9 @@ python -u main_shuffle_fmnist.py --gpu 0 --seed 32 --dataset="fmnist" --epoch 20
 
 2. Create the directories ./code/fmnist/noniid_0.4/ and ./code/fmnist/noniid_0.8/.
 
-   Enter the ./fmnist/.
-
 ```
-bash make_dir.sh
+bash ./fmnist/make_dir.sh
 ```
-
-   Back to the ../
 
 3. Continue to train the model by FL after SAGE. Assume that the best master model is No.6 master model.
 
