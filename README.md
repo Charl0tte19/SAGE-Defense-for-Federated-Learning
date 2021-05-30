@@ -174,44 +174,44 @@ We show the complete version of the result charts in [result/](https://github.co
 
 ```
 code/                      
-    fmnist/                # Store the master models and training logs for fmnist
-        file.sh
-        make_dir.sh
-        temp.py
-    mnist/                 # Store the master models and training logs for mnist
-        file.sh
-        make_dir.sh
-        temp.py
+    fmnist/                
+        file.sh                              # code of creating the orders to run after*.sh for all cases.
+        make_dir.sh                          # code for creating directories noniid_0.4/ and noniid_0.8/
+        temp.py                              # code that supporting file.sh
+    mnist/                 
+        file.sh                              # code of creating the orders to run after*.sh for all cases.
+        make_dir.sh                          # code for creating directories noniid_0.4/ and noniid_0.8/
+        temp.py                              # code that supporting file.sh
     models/                
-        Fed.py
-        Nets.py
-        Update.py
-        Update2.py
-        test.py
-        test2.py
+        Fed.py                               # code of FedAvg
+        Nets.py                              # code of CNN models
+        Update.py                            # code of poisoning, training and testing the models for mnist
+        Update2.py                           # code of poisoning, training and testing the models for fmnist
+        test.py                              # code of validating the master models for mnist
+        test2.py                             # code of validating the master models for fmnist 
     sh_scripts_fmnist/
-        after*.sh
-        origin*.sh
-        shuffle*.sh
+        after*.sh                            # script for running after_preprocess_FL_fmnist.py for all cases
+        origin*.sh                           # script for running main_origin_fmnist.py for all cases
+        shuffle*.sh                          # script for running main_shuffle_fmnist.py for all cases
     sh_scripts_mnist/
-        after*.sh
-        origin*.sh
-        shuffle*.sh
+        after*.sh                            # script for running after_preprocess_FL_mnist.py for all cases
+        origin*.sh                           # script for running main_origin_mnist.py for all cases
+        shuffle*.sh                          # script for running main_shuffle_mnist.py for all cases
     utils/
-        sampling.py
-    after_preprocess_FL_fmnist.py
-    after_preprocess_FL_mnist.py
-    main_origin_fmnist.py
-    main_origin_mnist.py
-    main_shuffle_fmnist.py
-    main_shuffle_mnist.py
-    test_trained_models_fmnist.py
-    test_trained_models_mnist.py
+        sampling.py                          # code of sampling the dataset
+    after_preprocess_FL_fmnist.py            # code of training the global model after SAGE for fmnist.
+    after_preprocess_FL_mnist.py             # code of training the global model after SAGE for mnist.
+    main_origin_fmnist.py                    # code of training the master models by typical FL for fmnist.
+    main_origin_mnist.py                     # code of training the master models by typical FL for mnist.
+    main_shuffle_fmnist.py                   # code of training the master models by SAGE for fmnist.
+    main_shuffle_mnist.py                    # code of training the master models by SAGE for mnist.
+    test_trained_models_fmnist.py            # code of testing the trained global model for fmnist.
+    test_trained_models_mnist.py             # code of testing the trained global model for mnist.
 result/
-    chart/
-    fmnist/
-    mnist/
-    acc_between_SAGE_and_FL.ipynb/
-    attacker_in_each_group.ipynb/
-    avg_attacker_in_each_group.ipynb/
+    chart/                                   # *.png of result charts
+    fmnist/                                  # the master models and training logs for fmnist (seed_12)
+    mnist/                                   # the master models and training logs for mnist (seed_12)
+    acc_between_SAGE_and_FL.ipynb            # jupyter notebook for drawing accuracy
+    attacker_in_each_group.ipynb             # jupyter notebook for drawing amount of attackers assigned to each subset in each group
+    avg_attacker_in_each_group.ipynb         # jupyter notebook for drawing average amount of attackers assigned to each subset in each group
 ```
