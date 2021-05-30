@@ -31,16 +31,16 @@ pip install -r requirements.txt
 
 run the following code in ./code/
 
-1. Train the model by SAGE.
-
-```
-python -u main_shuffle_fmnist.py --gpu 0 --seed 32 --dataset="fmnist" --epoch 20 --noniid 0.4 --attack_mode="poison" --attack_ratio 0.2 --test_label_acc --target_random --shuffle --model_path="./fmnist/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.pt" 2>&1 | tee ./fmnist/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.txt
-```
-
-2. Create the directories ./fmnist/noniid_0.4/ and ./fmnist/noniid_0.8/.
+1. Create the directories ./fmnist/noniid_0.4/ and ./fmnist/noniid_0.8/.
 
 ```
 bash ./fmnist/make_dir.sh
+```
+
+2. Train the model by SAGE.
+
+```
+python -u main_shuffle_fmnist.py --gpu 0 --seed 32 --dataset="fmnist" --epoch 20 --noniid 0.4 --attack_mode="poison" --attack_ratio 0.2 --test_label_acc --target_random --shuffle --model_path="./fmnist/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.pt" 2>&1 | tee ./fmnist/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.txt
 ```
 
 3. Continue to train the model by FL after SAGE. Assume that the best master model is No.6 master model.
@@ -52,6 +52,9 @@ python -u after_preprocess_FL_fmnist.py --dataset=fmnist --noniid 0.4 --seed 32 
 4. Train the model by typical FL.
 
 ```
+mkdir ./fmnist/origin/
+cp ./fmnist/make_dir.sh ./fmnist/origin
+bash ./fmnist/origin/make_dir.sh
 python -u main_origin_fmnist.py --gpu 0 --seed 32 --epoch 100 --noniid 0.4 --attack_mode="poison" --attack_ratio 0.2 --test_label_acc --target_random --dataset="fmnist" --model_path="./fmnist/origin/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.pt" 2>&1 | tee ./fmnist/origin/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.txt
 ```
 
@@ -62,16 +65,16 @@ ___
 
 run the following code in ./code/
 
-1. Train the model by SAGE.
-
-```
-python -u main_shuffle_mnist.py --gpu 0 --seed 32 --dataset="mnist" --scale --epoch 20 --noniid 0.8 --attack_mode="poison" --attack_ratio 0.02 --test_label_acc --target_random --shuffle --model_path="./mnist/noniid_0.8/ratio_0.02/poison_${ratio4}0.02_Scale_0.pt" 2>&1 | tee ./mnist/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.txt
-```
-
-2. Create the directories ./mnist/noniid_0.4/ and ./mnist/noniid_0.8/.
+1. Create the directories ./mnist/noniid_0.4/ and ./mnist/noniid_0.8/.
 
 ```
 bash ./mnist/make_dir.sh
+```
+
+2. Train the model by SAGE.
+
+```
+python -u main_shuffle_mnist.py --gpu 0 --seed 32 --dataset="mnist" --scale --epoch 20 --noniid 0.8 --attack_mode="poison" --attack_ratio 0.02 --test_label_acc --target_random --shuffle --model_path="./mnist/noniid_0.8/ratio_0.02/poison_${ratio4}0.02_Scale_0.pt" 2>&1 | tee ./mnist/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.txt
 ```
 
 3. Continue to train the model by FL after SAGE. Assume that the best master model is No.6 master model.
@@ -83,6 +86,9 @@ python -u after_preprocess_FL_mnist.py --seed 12 --epoch 80 --noniid 0.8 --attac
 4. Train the model by typical FL.
 
 ```
+mkdir ./mnist/origin/
+cp ./mnist/make_dir.sh ./mnist/origin
+bash ./mnist/origin/make_dir.sh
 python -u main_origin_mnist.py --gpu 0 --seed 32 --scale --epoch 100 --noniid 0.8 --attack_mode="poison" --attack_ratio 0.02 --test_label_acc --target_random --dataset="mnist" --model_path="./mnist/origin/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.pt" 2>&1 | tee ./mnist/origin/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.txt
 ```
 ___
@@ -95,19 +101,19 @@ run the following code in ./code/
 
 1. Move all sh scripts from ./sh_scripts_fmnist/ to ./
 
-2. Train the model by SAGE.
+2. Create the directories ./fmnist/noniid_0.4/ and ./fmnist/noniid_0.8/.
+
+```
+bash ./fmnist/make_dir.sh
+```
+
+3. Train the model by SAGE.
 
 ```
 bash ./shuffle1_fmnist.sh
 bash ./shuffle2_fmnist.sh
 bash ./shuffle3_fmnist.sh
 bash ./shuffle4_fmnist.sh
-```
-
-3. Create the directories ./fmnist/noniid_0.4/ and ./fmnist/noniid_0.8/.
-
-```
-bash ./fmnist/make_dir.sh
 ```
 
 4. Create the directories for the chosen seed. Assume the seed is 32.
@@ -131,11 +137,14 @@ bash ./after4_fmnist.sh
 5. Train the model by typical FL.
 
 ```
+mkdir ./fmnist/origin/
+cp ./fmnist/make_dir.sh ./fmnist/origin
+bash ./fmnist/origin/make_dir.sh
 bash ./origin1_fmnist.sh
 bash ./origin2_fmnist.sh
 bash ./origin3_fmnist.sh
 bash ./origin4_fmnist.sh
 ```
 
-Please check the path when run each sh scripts.
+Please check the path before running each sh script.
 
