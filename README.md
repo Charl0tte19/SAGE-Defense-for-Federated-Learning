@@ -172,7 +172,7 @@ We show the complete version of the result charts in [result/](https://github.co
 
 ## Comments of each file
 
-```python
+```javascript
 code/                      
     fmnist/                
         file.sh                              # code of creating the orders to run after*.sh for all cases.
