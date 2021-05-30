@@ -1,0 +1,3325 @@
+Namespace(aggregation='FedAvg', attack_mode='poison', attack_ratio=0.02, bs=128, dataset='fmnist', device=device(type='cuda', index=0), epochs=20, frequency=1, gpu=0, local_bs=10, local_ep=5, lr=0.01, model_path='./fmnist/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.pt', momentum=0.5, noniid=0.8, num_clients=10, num_users=100, scale=True, seed=12, shuffle=True, target_label=7, target_random=True, test_label_acc=True, total_users=1000, verbose=False, wait=3)
+non-iid_per_local:  43
+iid_per_local:  11
+label 0 : 5370
+example -> idx: 4932 = 0
+label 1 : 5416
+example -> idx: 7551 = 1
+label 2 : 5398
+example -> idx: 12925 = 2
+label 3 : 5395
+example -> idx: 18882 = 3
+label 4 : 5367
+example -> idx: 25079 = 4
+label 5 : 5409
+example -> idx: 31639 = 5
+label 6 : 5435
+example -> idx: 33296 = 6
+label 7 : 5445
+example -> idx: 37999 = 7
+label 8 : 5384
+example -> idx: 47402 = 8
+label 9 : 5381
+example -> idx: 50913 = 9
+
+0 :  170
+1 :  216
+2 :  198
+3 :  195
+4 :  167
+5 :  209
+6 :  235
+7 :  245
+8 :  184
+9 :  181
+
+[0, 1, 2, 3, 5, 6, 7, 8, 9]
+[0, 1, 2, 3, 5, 6, 7, 9]
+[0, 1, 2, 3, 5, 6, 7]
+[0, 1, 2, 5, 6, 7]
+[0, 1, 2, 6, 7]
+[1, 2, 6, 7]
+[1, 2, 7]
+[1, 2]
+[1]
+[]
+0 :  0
+1 :  0
+2 :  0
+3 :  0
+4 :  0
+5 :  0
+6 :  0
+7 :  0
+8 :  0
+9 :  0
+
+0 :  0
+1 :  0
+2 :  0
+3 :  0
+4 :  0
+5 :  0
+6 :  0
+7 :  0
+8 :  0
+9 :  0
+
+
+[35616 36391 36303 37460 35625 35523 37255 33002 36290 36639 34150 37406
+ 35752 35301 36139 35631 36864 34042 32848 35246 35560 34148 36068 35493
+ 37602 35759 35603 33105 35426 33753 33751 37504 35355 37670 36182 33054
+ 35753 32872 37328 37182 37570 35548 34080  1234  7340 11336 20328 24816
+ 30748 39303 44235 52544]
+[6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+ 6 6 6 6 6 6 0 1 2 3 4 5 7 8 9]
+Network(
+  (layer1): Sequential(
+    (0): Conv2d(1, 16, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+    (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (layer2): Sequential(
+    (0): Conv2d(16, 32, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+    (3): Dropout(p=0.5, inplace=False)
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=1568, out_features=10, bias=True)
+)
+target_label: [2]
+
+450
+563
+803
+270
+301
+75
+987
+440
+602
+738
+681
+463
+372
+502
+201
+908
+88
+27
+983
+94
+number of attacker:  20
+all attacker:  [450, 563, 803, 270, 301, 75, 987, 440, 602, 738, 681, 463, 372, 502, 201, 908, 88, 27, 983, 94]
+
+good:  []
+normal:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+bad:  []
+Client 0
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   0, Average loss 1.382856 ===
+ 100 users; time 16:04:16
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 1
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   0, Average loss 1.430574 ===
+ 100 users; time 16:04:34
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 2
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   0, Average loss 1.509185 ===
+ 100 users; time 16:04:51
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 3
+ 5/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   0, Average loss 1.582745 ===
+ 100 users; time 16:05:09
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 4
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   0, Average loss 1.424680 ===
+ 100 users; time 16:05:26
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 5
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   0, Average loss 1.373766 ===
+ 100 users; time 16:05:43
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   0, Average loss 1.391911 ===
+ 100 users; time 16:06:01
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.5892000198364258 loss: 1.61584
+ Testing Label Acc: [0.7620000243186951, 0.4869999885559082, 0.6959999799728394, 0.8629999756813049, 0.11500000208616257, 0.1850000023841858, 0.09600000083446503, 0.9049999713897705, 0.8429999947547913, 0.9399999976158142]
+ Testing Avg Label Acc : 0.5891999937593937
+ Testing Std Label Acc : 0.3233220632766273
+ Poison Acc: 0.304
+======
+
+Client 7
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   0, Average loss 1.405713 ===
+ 100 users; time 16:06:18
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 8
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   0, Average loss 1.480940 ===
+ 100 users; time 16:06:35
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 9
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   0, Average loss 1.350144 ===
+ 100 users; time 16:06:52
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.609000027179718 loss: 1.63866
+ Testing Label Acc: [0.7080000042915344, 0.8840000033378601, 0.07500000298023224, 0.8299999833106995, 0.8220000267028809, 0.15600000321865082, 0.07900000363588333, 0.9810000061988831, 0.7639999985694885, 0.7910000085830688]
+ Testing Avg Label Acc : 0.6090000040829182
+ Testing Std Label Acc : 0.3385903135094136
+ Poison Acc: 0.925
+======
+
+Test end 16:06:57
+-------------------------------------------------------------------------
+
+acc_list:  [(9, 0.609000027179718), (6, 0.5892000198364258), (0, 0.10000000149011612), (1, 0.10000000149011612), (2, 0.10000000149011612), (3, 0.10000000149011612), (4, 0.10000000149011612), (5, 0.10000000149011612), (7, 0.10000000149011612), (8, 0.10000000149011612)]
+acc_avg_difference:  0.1998199997842312
+Acc_Avg (total global): 0.1998199997842312
+Acc_Std (total global): 0.30619123767860407
+
+shuffle_clients (in good): []
+
+shuffle_clients (in normal): [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Shuffle in normal!
+
+shuffle_clients (in bad): []
+
+max_local_ep_time:  12.272797584533691
+round_time:  17.456180095672607
+
+good:  []
+normal:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+bad:  []
+Client 0
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   1, Average loss 0.511108 ===
+ 100 users; time 16:07:10
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.5587000250816345 loss: 1.51736
+ Testing Label Acc: [0.47600001096725464, 0.7400000095367432, 0.00800000037997961, 0.6010000109672546, 0.2290000021457672, 0.11400000005960464, 0.8799999952316284, 0.8709999918937683, 0.7289999723434448, 0.9390000104904175]
+ Testing Avg Label Acc : 0.5587000004015863
+ Testing Std Label Acc : 0.32025366369759306
+ Poison Acc: 0.992
+======
+
+Client 1
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   1, Average loss 0.674858 ===
+ 100 users; time 16:07:27
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.4618000090122223 loss: 1.67976
+ Testing Label Acc: [0.9860000014305115, 0.7950000166893005, 0.0, 0.0949999988079071, 0.19200000166893005, 0.0020000000949949026, 0.17000000178813934, 0.8220000267028809, 0.6129999756813049, 0.9430000185966492]
+ Testing Avg Label Acc : 0.4618000041460618
+ Testing Std Label Acc : 0.38563242099760575
+ Poison Acc: 1.0
+======
+
+Client 2
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   1, Average loss 0.509217 ===
+ 100 users; time 16:07:44
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.6705999970436096 loss: 1.46917
+ Testing Label Acc: [0.6940000057220459, 0.7409999966621399, 0.11599999666213989, 0.75, 0.7820000052452087, 0.6079999804496765, 0.3499999940395355, 0.8960000276565552, 0.8489999771118164, 0.9200000166893005]
+ Testing Avg Label Acc : 0.6706000000238419
+ Testing Std Label Acc : 0.24152317146892027
+ Poison Acc: 0.884
+======
+
+Client 3
+ 5/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   1, Average loss 0.525576 ===
+ 100 users; time 16:08:02
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.19920000433921814 loss: 2.1849
+ Testing Label Acc: [0.5879999995231628, 0.4169999957084656, 0.0, 0.007000000216066837, 0.0, 0.0, 0.8769999742507935, 0.0, 0.0, 0.10300000011920929]
+ Testing Avg Label Acc : 0.1991999969817698
+ Testing Std Label Acc : 0.30043527801311937
+ Poison Acc: 1.0
+======
+
+Client 4
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   1, Average loss 0.517187 ===
+ 100 users; time 16:08:19
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 5
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   1, Average loss 0.678222 ===
+ 100 users; time 16:08:36
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.5400999784469604 loss: 1.6191
+ Testing Label Acc: [0.6320000290870667, 0.7990000247955322, 0.0, 0.4000000059604645, 0.0, 0.1720000058412552, 0.8029999732971191, 0.9580000042915344, 0.7850000262260437, 0.8519999980926514]
+ Testing Avg Label Acc : 0.5401000067591667
+ Testing Std Label Acc : 0.3485729354693332
+ Poison Acc: 1.0
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   1, Average loss 0.650346 ===
+ 100 users; time 16:08:54
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7325000166893005 loss: 0.928884
+ Testing Label Acc: [0.746999979019165, 0.9409999847412109, 0.36800000071525574, 0.7639999985694885, 0.8140000104904175, 0.7649999856948853, 0.23999999463558197, 0.8920000195503235, 0.878000020980835, 0.9160000085830688]
+ Testing Avg Label Acc : 0.7325000002980232
+ Testing Std Label Acc : 0.22540463925419077
+ Poison Acc: 0.632
+======
+
+Client 7
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   1, Average loss 0.659049 ===
+ 100 users; time 16:09:11
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.5755000114440918 loss: 1.51878
+ Testing Label Acc: [0.7450000047683716, 0.722000002861023, 0.0, 0.7820000052452087, 0.7229999899864197, 0.009999999776482582, 0.32199999690055847, 0.9210000038146973, 0.6039999723434448, 0.9259999990463257]
+ Testing Avg Label Acc : 0.5754999974742532
+ Testing Std Label Acc : 0.3275479360158212
+ Poison Acc: 1.0
+======
+
+Client 8
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   1, Average loss 0.559521 ===
+ 100 users; time 16:09:29
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.49079999327659607 loss: 1.73508
+ Testing Label Acc: [0.15800000727176666, 0.0, 0.0, 0.7979999780654907, 0.0, 0.5220000147819519, 0.9039999842643738, 0.8479999899864197, 0.7580000162124634, 0.9200000166893005]
+ Testing Avg Label Acc : 0.49080000072717667
+ Testing Std Label Acc : 0.3850570847859
+ Poison Acc: 1.0
+======
+
+Client 9
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   1, Average loss 0.724295 ===
+ 100 users; time 16:09:46
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.5697000026702881 loss: 1.52227
+ Testing Label Acc: [0.8029999732971191, 0.9879999756813049, 0.0, 0.37599998712539673, 0.5799999833106995, 0.9670000076293945, 0.11599999666213989, 0.628000020980835, 0.40299999713897705, 0.8360000252723694]
+ Testing Avg Label Acc : 0.5696999967098236
+ Testing Std Label Acc : 0.3251741222469318
+ Poison Acc: 1.0
+======
+
+Test end 16:09:51
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.7325000166893005), (2, 0.6705999970436096), (7, 0.5755000114440918), (9, 0.5697000026702881), (0, 0.5587000250816345), (5, 0.5400999784469604), (8, 0.49079999327659607), (1, 0.4618000090122223), (3, 0.19920000433921814), (4, 0.10000000149011612)]
+acc_avg_difference:  0.29007000056793913
+Acc_Avg (total global): 0.48989000035217034
+Acc_Std (total global): 0.31596012519494154
+
+shuffle_clients (in good): []
+
+shuffle_clients (in normal): [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Shuffle in normal!
+
+shuffle_clients (in bad): []
+
+max_local_ep_time:  12.316145658493042
+round_time:  17.73100972175598
+
+good:  []
+normal:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+bad:  []
+Client 0
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   2, Average loss 0.389921 ===
+ 100 users; time 16:10:04
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7146000266075134 loss: 0.802162
+ Testing Label Acc: [0.7689999938011169, 0.9570000171661377, 0.26600000262260437, 0.8140000104904175, 0.40799999237060547, 0.8709999918937683, 0.3970000147819519, 0.8169999718666077, 0.9200000166893005, 0.9269999861717224]
+ Testing Avg Label Acc : 0.7145999997854233
+ Testing Std Label Acc : 0.24289141511247667
+ Poison Acc: 0.734
+======
+
+Client 1
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   2, Average loss 0.381758 ===
+ 100 users; time 16:10:21
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 2
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   2, Average loss 0.363918 ===
+ 100 users; time 16:10:39
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7160999774932861 loss: 0.802448
+ Testing Label Acc: [0.7710000276565552, 0.9559999704360962, 0.16599999368190765, 0.8299999833106995, 0.6639999747276306, 0.9020000100135803, 0.3869999945163727, 0.8240000009536743, 0.7699999809265137, 0.890999972820282]
+ Testing Avg Label Acc : 0.7160999909043312
+ Testing Std Label Acc : 0.23808966601035914
+ Poison Acc: 0.834
+======
+
+Client 3
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   2, Average loss 0.388249 ===
+ 100 users; time 16:10:56
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 4
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   2, Average loss 0.416579 ===
+ 100 users; time 16:11:14
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.6599000096321106 loss: 1.23602
+ Testing Label Acc: [0.9160000085830688, 0.9629999995231628, 0.0, 0.6729999780654907, 0.8209999799728394, 0.5799999833106995, 0.04899999871850014, 0.8809999823570251, 0.7749999761581421, 0.9409999847412109]
+ Testing Avg Label Acc : 0.659899989143014
+ Testing Std Label Acc : 0.33760670601216314
+ Poison Acc: 1.0
+======
+
+Client 5
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   2, Average loss 0.407651 ===
+ 100 users; time 16:11:31
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.738099992275238 loss: 0.764812
+ Testing Label Acc: [0.7850000262260437, 0.9470000267028809, 0.4020000100135803, 0.8790000081062317, 0.7639999985694885, 0.8970000147819519, 0.17000000178813934, 0.7419999837875366, 0.8539999723434448, 0.9409999847412109]
+ Testing Avg Label Acc : 0.7381000027060509
+ Testing Std Label Acc : 0.24123202503654723
+ Poison Acc: 0.598
+======
+
+Client 6
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   2, Average loss 0.550238 ===
+ 100 users; time 16:11:49
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.691100001335144 loss: 1.05942
+ Testing Label Acc: [0.8149999976158142, 0.9589999914169312, 0.14399999380111694, 0.8489999771118164, 0.531000018119812, 0.6190000176429749, 0.2529999911785126, 0.8840000033378601, 0.9049999713897705, 0.9520000219345093]
+ Testing Avg Label Acc : 0.6910999983549118
+ Testing Std Label Acc : 0.2802082964942591
+ Poison Acc: 0.856
+======
+
+Client 7
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   2, Average loss 0.458600 ===
+ 100 users; time 16:12:06
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 8
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   2, Average loss 0.359556 ===
+ 100 users; time 16:12:23
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 9
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   2, Average loss 0.451740 ===
+ 100 users; time 16:12:41
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7330999970436096 loss: 1.02174
+ Testing Label Acc: [0.7760000228881836, 0.8989999890327454, 0.3009999990463257, 0.8370000123977661, 0.75, 0.8640000224113464, 0.28999999165534973, 0.828000009059906, 0.8389999866485596, 0.9470000267028809]
+ Testing Avg Label Acc : 0.7331000059843064
+ Testing Std Label Acc : 0.22507796989106715
+ Poison Acc: 0.699
+======
+
+Test end 16:12:46
+-------------------------------------------------------------------------
+
+acc_list:  [(5, 0.738099992275238), (9, 0.7330999970436096), (2, 0.7160999774932861), (0, 0.7146000266075134), (6, 0.691100001335144), (4, 0.6599000096321106), (1, 0.10000000149011612), (3, 0.10000000149011612), (7, 0.10000000149011612), (8, 0.10000000149011612)]
+acc_avg_difference:  0.02460000166436649
+Acc_Avg (total global): 0.46528999868780385
+Acc_Std (total global): 0.27651060785568726
+
+shuffle_clients (in good): []
+
+shuffle_clients (in normal): [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Shuffle in normal!
+
+shuffle_clients (in bad): []
+
+max_local_ep_time:  12.257622718811035
+round_time:  17.598061323165894
+
+good:  []
+normal:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+bad:  []
+Client 0
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   3, Average loss 0.297569 ===
+ 100 users; time 16:12:59
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7278000116348267 loss: 0.851133
+ Testing Label Acc: [0.7459999918937683, 0.8989999890327454, 0.17900000512599945, 0.8840000033378601, 0.859000027179718, 0.875, 0.2199999988079071, 0.8420000076293945, 0.8659999966621399, 0.9079999923706055]
+ Testing Avg Label Acc : 0.7278000012040138
+ Testing Std Label Acc : 0.267689297092577
+ Poison Acc: 0.821
+======
+
+Client 1
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   3, Average loss 0.311609 ===
+ 100 users; time 16:13:16
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7240999937057495 loss: 1.11301
+ Testing Label Acc: [0.7940000295639038, 0.8700000047683716, 0.04899999871850014, 0.902999997138977, 0.7049999833106995, 0.765999972820282, 0.4339999854564667, 0.8370000123977661, 0.9169999957084656, 0.9660000205039978]
+ Testing Avg Label Acc : 0.724100000038743
+ Testing Std Label Acc : 0.26621211920058396
+ Poison Acc: 0.951
+======
+
+Client 2
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   3, Average loss 0.363090 ===
+ 100 users; time 16:13:34
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.6676999926567078 loss: 1.16794
+ Testing Label Acc: [0.7110000252723694, 0.9739999771118164, 0.0, 0.7689999938011169, 0.8669999837875366, 0.5080000162124634, 0.11599999666213989, 0.9409999847412109, 0.8730000257492065, 0.9179999828338623]
+ Testing Avg Label Acc : 0.6676999986171722
+ Testing Std Label Acc : 0.331793320094399
+ Poison Acc: 1.0
+======
+
+Client 3
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   3, Average loss 0.264609 ===
+ 100 users; time 16:13:51
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.6672999858856201 loss: 1.44639
+ Testing Label Acc: [0.8389999866485596, 0.7609999775886536, 0.05299999937415123, 0.8230000138282776, 0.8379999995231628, 0.47699999809265137, 0.20000000298023224, 0.9520000219345093, 0.8339999914169312, 0.8960000276565552]
+ Testing Avg Label Acc : 0.6673000019043684
+ Testing Std Label Acc : 0.29744514054630594
+ Poison Acc: 0.947
+======
+
+Client 4
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   3, Average loss 0.403435 ===
+ 100 users; time 16:14:09
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7376999855041504 loss: 0.878902
+ Testing Label Acc: [0.7570000290870667, 0.9190000295639038, 0.4909999966621399, 0.9200000166893005, 0.5920000076293945, 0.9269999861717224, 0.21799999475479126, 0.7549999952316284, 0.8899999856948853, 0.9079999923706055]
+ Testing Avg Label Acc : 0.7377000033855439
+ Testing Std Label Acc : 0.22516307655715603
+ Poison Acc: 0.509
+======
+
+Client 5
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   3, Average loss 0.362504 ===
+ 100 users; time 16:14:26
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.6947000026702881 loss: 1.17912
+ Testing Label Acc: [0.7269999980926514, 0.968999981880188, 0.0, 0.6430000066757202, 0.6000000238418579, 0.7950000166893005, 0.5270000100135803, 0.8830000162124634, 0.8970000147819519, 0.906000018119812]
+ Testing Avg Label Acc : 0.6947000086307525
+ Testing Std Label Acc : 0.2701381321589907
+ Poison Acc: 1.0
+======
+
+Client 6
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   3, Average loss 0.348303 ===
+ 100 users; time 16:14:44
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7448999881744385 loss: 0.82418
+ Testing Label Acc: [0.800000011920929, 0.949999988079071, 0.3440000116825104, 0.800000011920929, 0.8759999871253967, 0.7440000176429749, 0.20499999821186066, 0.9200000166893005, 0.9100000262260437, 0.8999999761581421]
+ Testing Avg Label Acc : 0.7449000045657158
+ Testing Std Label Acc : 0.24484952399431292
+ Poison Acc: 0.656
+======
+
+Client 7
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   3, Average loss 0.357581 ===
+ 100 users; time 16:15:01
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.6305999755859375 loss: 1.42157
+ Testing Label Acc: [0.6710000038146973, 0.6850000023841858, 0.0, 0.9559999704360962, 0.7279999852180481, 0.44999998807907104, 0.13699999451637268, 0.9380000233650208, 0.8320000171661377, 0.9089999794960022]
+ Testing Avg Label Acc : 0.6305999964475631
+ Testing Std Label Acc : 0.31724444802547797
+ Poison Acc: 1.0
+======
+
+Client 8
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   3, Average loss 0.331840 ===
+ 100 users; time 16:15:19
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7069000005722046 loss: 1.14239
+ Testing Label Acc: [0.7689999938011169, 0.8880000114440918, 0.04600000008940697, 0.8299999833106995, 0.8349999785423279, 0.6830000281333923, 0.3400000035762787, 0.8949999809265137, 0.8349999785423279, 0.9480000138282776]
+ Testing Avg Label Acc : 0.7068999972194433
+ Testing Std Label Acc : 0.27388188762250354
+ Poison Acc: 0.954
+======
+
+Client 9
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   3, Average loss 0.332108 ===
+ 100 users; time 16:15:36
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7421000003814697 loss: 0.834124
+ Testing Label Acc: [0.7570000290870667, 0.9419999718666077, 0.19499999284744263, 0.8159999847412109, 0.5979999899864197, 0.8610000014305115, 0.5450000166893005, 0.8569999933242798, 0.9309999942779541, 0.9190000295639038]
+ Testing Avg Label Acc : 0.7421000003814697
+ Testing Std Label Acc : 0.22335865745503436
+ Poison Acc: 0.805
+======
+
+Test end 16:15:41
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.7448999881744385), (9, 0.7421000003814697), (4, 0.7376999855041504), (0, 0.7278000116348267), (1, 0.7240999937057495), (8, 0.7069000005722046), (5, 0.6947000026702881), (2, 0.6676999926567078), (3, 0.6672999858856201), (7, 0.6305999755859375)]
+acc_avg_difference:  0.23909000255167467
+Acc_Avg (total global): 0.7043800012394785
+Acc_Std (total global): 0.27177756027473415
+
+good_group_acc :  0.7381250023841859
+first save models
+shuffle_clients (in good): [6, 9, 4, 0]
+Shuffle in good !
+
+shuffle_clients (in normal): [1, 8, 5]
+Shuffle in normal!
+
+shuffle_clients (in bad): [2, 3, 7]
+Shuffle in bad !
+
+max_local_ep_time:  12.200387954711914
+round_time:  17.484485864639282
+
+good:  [6, 9, 4, 0]
+normal:  [1, 8, 5]
+bad:  [2, 3, 7]
+Client 0
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   4, Average loss 0.224266 ===
+ 100 users; time 16:15:54
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7642999887466431 loss: 0.741367
+ Testing Label Acc: [0.7680000066757202, 0.9449999928474426, 0.5600000023841858, 0.8460000157356262, 0.7649999856948853, 0.8880000114440918, 0.20600000023841858, 0.8500000238418579, 0.9079999923706055, 0.9070000052452087]
+ Testing Avg Label Acc : 0.7643000036478043
+ Testing Std Label Acc : 0.21364412114479123
+ Poison Acc: 0.44
+======
+
+Client 1
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   4, Average loss 0.255640 ===
+ 100 users; time 16:16:11
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7627999782562256 loss: 0.784131
+ Testing Label Acc: [0.7599999904632568, 0.9459999799728394, 0.39899998903274536, 0.8640000224113464, 0.8259999752044678, 0.8759999871253967, 0.2680000066757202, 0.847000002861023, 0.8939999938011169, 0.9480000138282776]
+ Testing Avg Label Acc : 0.7627999961376191
+ Testing Std Label Acc : 0.22280026852614704
+ Poison Acc: 0.601
+======
+
+Client 2
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   4, Average loss 0.339307 ===
+ 100 users; time 16:16:29
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7239000201225281 loss: 0.923928
+ Testing Label Acc: [0.7929999828338623, 0.8899999856948853, 0.04699999839067459, 0.8999999761581421, 0.7720000147819519, 0.8320000171661377, 0.35600000619888306, 0.8849999904632568, 0.843999981880188, 0.9200000166893005]
+ Testing Avg Label Acc : 0.7238999970257283
+ Testing Std Label Acc : 0.2738157932533688
+ Poison Acc: 0.953
+======
+
+Client 3
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   4, Average loss 0.264697 ===
+ 100 users; time 16:16:46
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 4
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   4, Average loss 0.293438 ===
+ 100 users; time 16:17:04
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7217000126838684 loss: 0.976775
+ Testing Label Acc: [0.7710000276565552, 0.9549999833106995, 0.0949999988079071, 0.8169999718666077, 0.6740000247955322, 0.7250000238418579, 0.42500001192092896, 0.9100000262260437, 0.9240000247955322, 0.9210000038146973]
+ Testing Avg Label Acc : 0.7217000097036361
+ Testing Std Label Acc : 0.25789806188088715
+ Poison Acc: 0.905
+======
+
+Client 5
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   4, Average loss 0.283362 ===
+ 100 users; time 16:17:21
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7639999985694885 loss: 0.838284
+ Testing Label Acc: [0.7440000176429749, 0.9390000104904175, 0.4650000035762787, 0.8799999952316284, 0.7170000076293945, 0.9150000214576721, 0.382999986410141, 0.777999997138977, 0.8790000081062317, 0.9399999976158142]
+ Testing Avg Label Acc : 0.764000004529953
+ Testing Std Label Acc : 0.1866681592518309
+ Poison Acc: 0.535
+======
+
+Client 6
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   4, Average loss 0.302387 ===
+ 100 users; time 16:17:39
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.763700008392334 loss: 0.756483
+ Testing Label Acc: [0.8149999976158142, 0.9430000185966492, 0.36800000071525574, 0.828000009059906, 0.6729999780654907, 0.8920000195503235, 0.4440000057220459, 0.8429999947547913, 0.9049999713897705, 0.9259999990463257]
+ Testing Avg Label Acc : 0.7636999994516372
+ Testing Std Label Acc : 0.19364506271354995
+ Poison Acc: 0.632
+======
+
+Client 7
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   4, Average loss 0.297844 ===
+ 100 users; time 16:17:56
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 8
+ 5/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   4, Average loss 0.348104 ===
+ 100 users; time 16:18:14
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 9
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   4, Average loss 0.304084 ===
+ 100 users; time 16:18:31
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7261000275611877 loss: 0.922358
+ Testing Label Acc: [0.8730000257492065, 0.9210000038146973, 0.039000000804662704, 0.7850000262260437, 0.8230000138282776, 0.8700000047683716, 0.2639999985694885, 0.8259999752044678, 0.906000018119812, 0.9539999961853027]
+ Testing Avg Label Acc : 0.7261000063270331
+ Testing Std Label Acc : 0.29547536551068126
+ Poison Acc: 0.961
+======
+
+Test end 16:18:36
+-------------------------------------------------------------------------
+
+acc_list:  [(0, 0.7642999887466431), (5, 0.7639999985694885), (6, 0.763700008392334), (1, 0.7627999782562256), (9, 0.7261000275611877), (2, 0.7239000201225281), (4, 0.7217000126838684), (3, 0.10000000149011612), (7, 0.10000000149011612), (8, 0.10000000149011612)]
+acc_avg_difference:  0.1517299995571375
+Acc_Avg (total global): 0.552650001682341
+Acc_Std (total global): 0.25439468322812564
+
+good_group_acc :  0.7637000009417534
+models updates
+before:  0.7381250023841859  now: 0.7637000009417534
+normal:  {515, 4, 5, 12, 531, 532, 21, 31, 33, 44, 53, 568, 56, 69, 72, 78, 596, 599, 93, 94, 607, 614, 103, 131, 644, 643, 138, 140, 662, 666, 164, 167, 174, 181, 698, 702, 194, 707, 199, 711, 203, 720, 723, 215, 732, 228, 742, 757, 250, 762, 766, 771, 277, 794, 795, 290, 296, 302, 819, 832, 321, 835, 323, 839, 843, 332, 852, 346, 348, 367, 883, 372, 382, 902, 401, 914, 913, 405, 417, 421, 429, 430, 943, 944, 435, 437, 438, 951, 439, 959, 960, 973, 991, 480, 482, 996, 486, 489, 491, 503}
+
+normal:  {0, 6, 520, 524, 17, 550, 554, 43, 45, 49, 55, 74, 593, 595, 91, 606, 96, 100, 612, 617, 107, 113, 119, 633, 129, 134, 655, 669, 671, 677, 166, 678, 165, 681, 683, 172, 685, 180, 184, 185, 704, 718, 207, 206, 721, 217, 729, 230, 746, 243, 756, 267, 275, 798, 811, 303, 825, 315, 317, 324, 326, 862, 360, 872, 366, 377, 378, 386, 389, 392, 393, 400, 402, 404, 918, 919, 923, 925, 414, 928, 934, 937, 945, 434, 433, 436, 441, 446, 455, 969, 463, 975, 466, 979, 980, 981, 992, 483, 487, 502}
+
+normal:  {7, 527, 16, 25, 537, 541, 39, 42, 559, 567, 575, 75, 79, 82, 83, 95, 619, 114, 631, 122, 641, 642, 650, 141, 658, 659, 665, 157, 173, 687, 694, 695, 186, 705, 706, 198, 716, 208, 725, 727, 741, 235, 747, 240, 244, 247, 761, 255, 265, 778, 278, 291, 803, 808, 300, 815, 818, 830, 834, 327, 842, 844, 336, 848, 338, 850, 855, 347, 866, 868, 356, 362, 875, 365, 885, 895, 898, 909, 398, 916, 922, 929, 933, 422, 942, 947, 949, 442, 443, 452, 965, 968, 458, 976, 476, 479, 481, 484, 488, 507}
+
+shuffle_clients (in good): [0, 5, 6, 1]
+Shuffle in good !
+
+shuffle_clients (in normal): [9, 2, 4]
+Shuffle in normal!
+
+shuffle_clients (in bad): [3, 7, 8]
+Shuffle in bad !
+
+max_local_ep_time:  12.239660263061523
+round_time:  17.4118013381958
+
+good:  [0, 5, 6, 1]
+normal:  [9, 2, 4]
+bad:  [3, 7, 8]
+Client 0
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   5, Average loss 0.251120 ===
+ 100 users; time 16:18:48
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7448999881744385 loss: 0.808188
+ Testing Label Acc: [0.777999997138977, 0.9470000267028809, 0.09799999743700027, 0.8159999847412109, 0.7979999780654907, 0.8560000061988831, 0.4480000138282776, 0.878000020980835, 0.9070000052452087, 0.9229999780654907]
+ Testing Avg Label Acc : 0.7449000008404255
+ Testing Std Label Acc : 0.2538698292549461
+ Poison Acc: 0.902
+======
+
+Client 1
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   5, Average loss 0.244459 ===
+ 100 users; time 16:19:06
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7651000022888184 loss: 0.795687
+ Testing Label Acc: [0.7839999794960022, 0.9449999928474426, 0.25699999928474426, 0.8539999723434448, 0.7609999775886536, 0.9070000052452087, 0.4569999873638153, 0.8140000104904175, 0.9210000038146973, 0.9509999752044678]
+ Testing Avg Label Acc : 0.7650999903678894
+ Testing Std Label Acc : 0.21797313938101517
+ Poison Acc: 0.743
+======
+
+Client 2
+ 5/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   5, Average loss 0.349279 ===
+ 100 users; time 16:19:23
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.6696000099182129 loss: 1.25209
+ Testing Label Acc: [0.7329999804496765, 0.9610000252723694, 0.0, 0.8230000138282776, 0.7730000019073486, 0.7379999756813049, 0.032999999821186066, 0.796999990940094, 0.8679999709129333, 0.9700000286102295]
+ Testing Avg Label Acc : 0.669599998742342
+ Testing Std Label Acc : 0.335751756082734
+ Poison Acc: 1.0
+======
+
+Client 3
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   5, Average loss 0.267535 ===
+ 100 users; time 16:19:41
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7300999760627747 loss: 1.04462
+ Testing Label Acc: [0.7630000114440918, 0.9150000214576721, 0.05000000074505806, 0.8220000267028809, 0.7149999737739563, 0.7319999933242798, 0.5659999847412109, 0.9110000133514404, 0.8970000147819519, 0.9300000071525574]
+ Testing Avg Label Acc : 0.7301000047475099
+ Testing Std Label Acc : 0.2517842193191593
+ Poison Acc: 0.95
+======
+
+Client 4
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   5, Average loss 0.263279 ===
+ 100 users; time 16:19:58
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7682999968528748 loss: 0.803694
+ Testing Label Acc: [0.7910000085830688, 0.921999990940094, 0.44200000166893005, 0.8629999756813049, 0.6759999990463257, 0.8799999952316284, 0.4350000023841858, 0.8410000205039978, 0.8999999761581421, 0.9330000281333923]
+ Testing Avg Label Acc : 0.768299999833107
+ Testing Std Label Acc : 0.17928192753301303
+ Poison Acc: 0.558
+======
+
+Client 5
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   5, Average loss 0.236470 ===
+ 100 users; time 16:20:16
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7516000270843506 loss: 0.839856
+ Testing Label Acc: [0.7519999742507935, 0.9399999976158142, 0.24500000476837158, 0.8669999837875366, 0.8059999942779541, 0.7860000133514404, 0.38499999046325684, 0.9309999942779541, 0.9169999957084656, 0.8870000243186951]
+ Testing Avg Label Acc : 0.7515999972820282
+ Testing Std Label Acc : 0.22844439168188047
+ Poison Acc: 0.755
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   5, Average loss 0.244019 ===
+ 100 users; time 16:20:34
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7818999886512756 loss: 0.684685
+ Testing Label Acc: [0.8109999895095825, 0.9490000009536743, 0.7549999952316284, 0.8209999799728394, 0.5960000157356262, 0.8939999938011169, 0.30799999833106995, 0.8550000190734863, 0.8989999890327454, 0.9309999942779541]
+ Testing Avg Label Acc : 0.7818999975919724
+ Testing Std Label Acc : 0.18547638427945656
+ Poison Acc: 0.245
+======
+
+Client 7
+ 5/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   5, Average loss 0.317796 ===
+ 100 users; time 16:20:51
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.6712999939918518 loss: 1.32434
+ Testing Label Acc: [0.8429999947547913, 0.6980000138282776, 0.0, 0.7570000290870667, 0.9509999752044678, 0.7419999837875366, 0.01600000075995922, 0.9150000214576721, 0.875, 0.9160000085830688]
+ Testing Avg Label Acc : 0.671300002746284
+ Testing Std Label Acc : 0.3408213757120742
+ Poison Acc: 1.0
+======
+
+Client 8
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   5, Average loss 0.323314 ===
+ 100 users; time 16:21:08
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7132999897003174 loss: 1.07395
+ Testing Label Acc: [0.5249999761581421, 0.8730000257492065, 0.0, 0.8190000057220459, 0.8050000071525574, 0.828000009059906, 0.6389999985694885, 0.8679999709129333, 0.8379999995231628, 0.9380000233650208]
+ Testing Avg Label Acc : 0.7133000016212463
+ Testing Std Label Acc : 0.26419464858268
+ Poison Acc: 1.0
+======
+
+Client 9
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   5, Average loss 0.252839 ===
+ 100 users; time 16:21:26
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7681999802589417 loss: 0.804714
+ Testing Label Acc: [0.7710000276565552, 0.9490000009536743, 0.47999998927116394, 0.828000009059906, 0.6660000085830688, 0.9120000004768372, 0.39899998903274536, 0.8450000286102295, 0.9160000085830688, 0.9160000085830688]
+ Testing Avg Label Acc : 0.7682000070810318
+ Testing Std Label Acc : 0.1833989159502352
+ Poison Acc: 0.52
+======
+
+Test end 16:21:31
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.7818999886512756), (4, 0.7682999968528748), (9, 0.7681999802589417), (1, 0.7651000022888184), (5, 0.7516000270843506), (0, 0.7448999881744385), (3, 0.7300999760627747), (8, 0.7132999897003174), (7, 0.6712999939918518), (2, 0.6696000099182129)]
+acc_avg_difference:  0.1837799984030427
+Acc_Avg (total global): 0.7364300000853837
+Acc_Std (total global): 0.2440996587777194
+
+good_group_acc :  0.7708749987185002
+models updates
+before:  0.7637000009417534  now: 0.7708749987185002
+normal:  {513, 521, 533, 536, 539, 30, 36, 552, 40, 561, 51, 57, 569, 571, 65, 67, 585, 86, 600, 92, 605, 613, 104, 620, 623, 629, 637, 639, 128, 144, 148, 663, 151, 153, 667, 672, 163, 169, 700, 189, 192, 712, 212, 726, 218, 730, 223, 736, 737, 236, 237, 749, 241, 763, 256, 776, 273, 788, 791, 793, 282, 286, 301, 304, 821, 823, 836, 331, 335, 860, 350, 863, 871, 874, 876, 370, 887, 376, 888, 903, 905, 906, 397, 399, 406, 410, 926, 935, 940, 948, 956, 961, 963, 461, 462, 467, 985, 993, 995, 997}
+
+normal:  {1, 8, 15, 20, 535, 24, 547, 549, 41, 557, 558, 46, 48, 50, 59, 63, 576, 73, 85, 597, 88, 601, 102, 616, 106, 627, 645, 133, 653, 654, 657, 177, 691, 183, 188, 708, 202, 226, 232, 234, 750, 751, 239, 765, 767, 777, 271, 274, 280, 281, 284, 801, 804, 806, 807, 810, 813, 814, 816, 307, 312, 828, 829, 833, 334, 849, 341, 344, 859, 355, 357, 361, 879, 881, 882, 889, 379, 891, 385, 915, 411, 924, 416, 420, 936, 428, 431, 448, 454, 967, 459, 971, 460, 982, 470, 988, 994, 490, 497, 505}
+
+normal:  {522, 525, 526, 530, 534, 538, 26, 544, 546, 38, 551, 579, 581, 586, 587, 98, 99, 615, 624, 117, 634, 635, 640, 130, 132, 646, 135, 652, 142, 143, 149, 664, 154, 156, 670, 161, 171, 690, 179, 703, 195, 710, 204, 205, 724, 735, 738, 229, 744, 745, 748, 760, 252, 258, 261, 774, 779, 269, 782, 787, 792, 283, 287, 802, 306, 820, 311, 837, 325, 333, 847, 337, 853, 342, 343, 349, 861, 351, 873, 364, 878, 892, 897, 387, 899, 394, 917, 409, 412, 927, 419, 447, 962, 451, 964, 450, 471, 984, 475, 998}
+
+shuffle_clients (in good): [6, 4, 9, 1]
+Shuffle in good !
+
+shuffle_clients (in normal): [5, 0, 3]
+Shuffle in normal!
+
+shuffle_clients (in bad): [8, 7, 2]
+Shuffle in bad !
+
+max_local_ep_time:  12.18822693824768
+round_time:  17.436424016952515
+
+good:  [6, 4, 9, 1]
+normal:  [5, 0, 3]
+bad:  [8, 7, 2]
+Client 0
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   6, Average loss 0.260742 ===
+ 100 users; time 16:21:43
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7454000115394592 loss: 0.877287
+ Testing Label Acc: [0.8040000200271606, 0.921999990940094, 0.18199999630451202, 0.8690000176429749, 0.8149999976158142, 0.8560000061988831, 0.2709999978542328, 0.8610000014305115, 0.9369999766349792, 0.9369999766349792]
+ Testing Avg Label Acc : 0.7453999981284142
+ Testing Std Label Acc : 0.2638625386771768
+ Poison Acc: 0.818
+======
+
+Client 1
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   6, Average loss 0.240165 ===
+ 100 users; time 16:22:01
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7646999955177307 loss: 0.798633
+ Testing Label Acc: [0.8119999766349792, 0.949999988079071, 0.34200000762939453, 0.8320000171661377, 0.878000020980835, 0.8349999785423279, 0.26100000739097595, 0.8939999938011169, 0.9079999923706055, 0.9350000023841858]
+ Testing Avg Label Acc : 0.764699998497963
+ Testing Std Label Acc : 0.23611990186058526
+ Poison Acc: 0.658
+======
+
+Client 2
+ 5/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   6, Average loss 0.351341 ===
+ 100 users; time 16:22:18
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7214000225067139 loss: 0.99836
+ Testing Label Acc: [0.7080000042915344, 0.9610000252723694, 0.0, 0.796999990940094, 0.7739999890327454, 0.7940000295639038, 0.4699999988079071, 0.9440000057220459, 0.8840000033378601, 0.8820000290870667]
+ Testing Avg Label Acc : 0.7214000076055527
+ Testing Std Label Acc : 0.27508951767372947
+ Poison Acc: 1.0
+======
+
+Client 3
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   6, Average loss 0.247333 ===
+ 100 users; time 16:22:35
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7609000205993652 loss: 0.85076
+ Testing Label Acc: [0.800000011920929, 0.9490000009536743, 0.328000009059906, 0.800000011920929, 0.8379999995231628, 0.8799999952316284, 0.32199999690055847, 0.8799999952316284, 0.8790000081062317, 0.9330000281333923]
+ Testing Avg Label Acc : 0.760900005698204
+ Testing Std Label Acc : 0.2227902390933801
+ Poison Acc: 0.672
+======
+
+Client 4
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   6, Average loss 0.246981 ===
+ 100 users; time 16:22:53
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7663999795913696 loss: 0.813196
+ Testing Label Acc: [0.7689999938011169, 0.9430000185966492, 0.2750000059604645, 0.871999979019165, 0.7710000276565552, 0.8579999804496765, 0.4690000116825104, 0.8840000033378601, 0.8960000276565552, 0.9269999861717224]
+ Testing Avg Label Acc : 0.7664000034332276
+ Testing Std Label Acc : 0.20906850300393728
+ Poison Acc: 0.725
+======
+
+Client 5
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   6, Average loss 0.225689 ===
+ 100 users; time 16:23:10
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7574999928474426 loss: 0.807403
+ Testing Label Acc: [0.7760000228881836, 0.9620000123977661, 0.1979999989271164, 0.8019999861717224, 0.734000027179718, 0.8740000128746033, 0.5149999856948853, 0.875, 0.9139999747276306, 0.925000011920929]
+ Testing Avg Label Acc : 0.7575000032782555
+ Testing Std Label Acc : 0.22281573342808803
+ Poison Acc: 0.802
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   6, Average loss 0.244007 ===
+ 100 users; time 16:23:27
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7870000004768372 loss: 0.65796
+ Testing Label Acc: [0.8130000233650208, 0.9449999928474426, 0.6290000081062317, 0.8209999799728394, 0.7820000052452087, 0.878000020980835, 0.27799999713897705, 0.8669999837875366, 0.9190000295639038, 0.9380000233650208]
+ Testing Avg Label Acc : 0.7870000064373016
+ Testing Std Label Acc : 0.19125167031350435
+ Poison Acc: 0.371
+======
+
+Client 7
+ 6/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   6, Average loss 0.383537 ===
+ 100 users; time 16:23:45
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.10000000149011612 loss: nan
+ Testing Label Acc: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+ Testing Avg Label Acc : 0.1
+ Testing Std Label Acc : 0.30000000000000004
+ Poison Acc: 1.0
+======
+
+Client 8
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   6, Average loss 0.250245 ===
+ 100 users; time 16:24:02
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7430999875068665 loss: 0.879704
+ Testing Label Acc: [0.8149999976158142, 0.9470000267028809, 0.13899999856948853, 0.8809999823570251, 0.753000020980835, 0.9089999794960022, 0.39800000190734863, 0.7509999871253967, 0.8740000128746033, 0.9639999866485596]
+ Testing Avg Label Acc : 0.7430999994277954
+ Testing Std Label Acc : 0.25365466622422517
+ Poison Acc: 0.861
+======
+
+Client 9
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   6, Average loss 0.234380 ===
+ 100 users; time 16:24:20
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7754999995231628 loss: 0.78851
+ Testing Label Acc: [0.8040000200271606, 0.9399999976158142, 0.4970000088214874, 0.8840000033378601, 0.7129999995231628, 0.8989999890327454, 0.3240000009536743, 0.8550000190734863, 0.9110000133514404, 0.9279999732971191]
+ Testing Avg Label Acc : 0.7755000025033951
+ Testing Std Label Acc : 0.19701636763578068
+ Poison Acc: 0.503
+======
+
+Test end 16:24:25
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.7870000004768372), (9, 0.7754999995231628), (4, 0.7663999795913696), (1, 0.7646999955177307), (3, 0.7609000205993652), (5, 0.7574999928474426), (0, 0.7454000115394592), (8, 0.7430999875068665), (2, 0.7214000225067139), (7, 0.10000000149011612)]
+acc_avg_difference:  0.044239997584372914
+Acc_Avg (total global): 0.6921900025010108
+Acc_Std (total global): 0.23716691379104068
+
+good_group_acc :  0.7734000027179717
+models updates
+before:  0.7708749987185002  now: 0.7734000027179717
+normal:  {521, 522, 15, 534, 536, 546, 36, 551, 552, 46, 561, 50, 51, 59, 67, 581, 585, 586, 73, 587, 85, 597, 600, 601, 99, 104, 616, 634, 635, 637, 639, 128, 646, 135, 657, 672, 691, 188, 189, 192, 204, 205, 726, 730, 218, 737, 738, 745, 234, 750, 241, 760, 252, 777, 779, 271, 791, 792, 281, 286, 802, 806, 807, 813, 814, 821, 823, 312, 311, 325, 849, 859, 351, 874, 376, 379, 892, 385, 387, 899, 903, 906, 399, 915, 406, 411, 926, 927, 416, 431, 956, 962, 451, 964, 471, 984, 985, 995, 997, 490}
+
+normal:  {8, 526, 530, 20, 533, 30, 549, 40, 41, 48, 569, 571, 576, 65, 86, 92, 98, 613, 620, 629, 645, 654, 142, 144, 148, 663, 151, 153, 667, 670, 161, 177, 703, 708, 202, 724, 735, 229, 744, 236, 748, 749, 237, 751, 763, 765, 258, 774, 269, 273, 274, 787, 788, 282, 283, 801, 810, 301, 816, 304, 306, 307, 828, 833, 836, 333, 334, 847, 853, 342, 343, 344, 860, 349, 355, 357, 871, 873, 876, 879, 888, 905, 397, 917, 410, 924, 935, 428, 940, 948, 963, 454, 967, 459, 460, 467, 470, 475, 993, 998}
+
+normal:  {513, 1, 525, 535, 24, 538, 26, 539, 544, 547, 38, 557, 558, 57, 63, 579, 88, 605, 102, 615, 106, 623, 624, 627, 117, 640, 130, 132, 133, 652, 653, 143, 149, 664, 154, 156, 163, 169, 171, 690, 179, 183, 700, 195, 710, 712, 212, 223, 736, 226, 232, 239, 767, 256, 261, 776, 782, 280, 793, 284, 287, 804, 820, 829, 837, 331, 335, 337, 341, 861, 350, 863, 361, 364, 878, 881, 370, 882, 887, 889, 891, 897, 394, 409, 412, 419, 420, 936, 447, 448, 961, 450, 971, 461, 462, 982, 988, 994, 497, 505}
+
+shuffle_clients (in good): [6, 9, 4, 1]
+Shuffle in good !
+
+shuffle_clients (in normal): [3, 5, 0]
+Shuffle in normal!
+
+shuffle_clients (in bad): [8, 2, 7]
+Shuffle in bad !
+
+max_local_ep_time:  12.419162273406982
+round_time:  17.527885675430298
+
+good:  [6, 9, 4, 1]
+normal:  [3, 5, 0]
+bad:  [8, 2, 7]
+Client 0
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   7, Average loss 0.233860 ===
+ 100 users; time 16:24:37
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7731000185012817 loss: 0.80107
+ Testing Label Acc: [0.8090000152587891, 0.9440000057220459, 0.31700000166893005, 0.8569999933242798, 0.7940000295639038, 0.8690000176429749, 0.4350000023841858, 0.8690000176429749, 0.9070000052452087, 0.9300000071525574]
+ Testing Avg Label Acc : 0.773100009560585
+ Testing Std Label Acc : 0.20524397931470797
+ Poison Acc: 0.683
+======
+
+Client 1
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   7, Average loss 0.193650 ===
+ 100 users; time 16:24:54
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7857999801635742 loss: 0.703003
+ Testing Label Acc: [0.7760000228881836, 0.9470000267028809, 0.6840000152587891, 0.8379999995231628, 0.6729999780654907, 0.8949999809265137, 0.3529999852180481, 0.847000002861023, 0.902999997138977, 0.9419999718666077]
+ Testing Avg Label Acc : 0.7857999980449677
+ Testing Std Label Acc : 0.17117640300948597
+ Poison Acc: 0.316
+======
+
+Client 2
+ 6/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   7, Average loss 0.342396 ===
+ 100 users; time 16:25:12
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.659600019454956 loss: 1.2654
+ Testing Label Acc: [0.7990000247955322, 0.8799999952316284, 0.0, 0.9330000281333923, 0.4909999966621399, 0.9070000052452087, 0.020999999716877937, 0.722000002861023, 0.8899999856948853, 0.953000009059906]
+ Testing Avg Label Acc : 0.6596000047400594
+ Testing Std Label Acc : 0.34904618940170473
+ Poison Acc: 1.0
+======
+
+Client 3
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   7, Average loss 0.262443 ===
+ 100 users; time 16:25:29
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7311000227928162 loss: 1.041
+ Testing Label Acc: [0.7160000205039978, 0.9160000085830688, 0.0, 0.9359999895095825, 0.640999972820282, 0.8149999976158142, 0.5270000100135803, 0.9020000100135803, 0.9290000200271606, 0.9290000200271606]
+ Testing Avg Label Acc : 0.7311000049114227
+ Testing Std Label Acc : 0.27843435814247935
+ Poison Acc: 1.0
+======
+
+Client 4
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   7, Average loss 0.250113 ===
+ 100 users; time 16:25:46
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7378000020980835 loss: 0.918717
+ Testing Label Acc: [0.800000011920929, 0.9390000104904175, 0.14000000059604645, 0.8759999871253967, 0.6359999775886536, 0.7620000243186951, 0.47600001096725464, 0.828000009059906, 0.9509999752044678, 0.9700000286102295]
+ Testing Avg Label Acc : 0.7378000035881996
+ Testing Std Label Acc : 0.24653794956940003
+ Poison Acc: 0.86
+======
+
+Client 5
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   7, Average loss 0.181417 ===
+ 100 users; time 16:26:04
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7839000225067139 loss: 0.71236
+ Testing Label Acc: [0.765999972820282, 0.9520000219345093, 0.5070000290870667, 0.8230000138282776, 0.746999979019165, 0.8799999952316284, 0.4480000138282776, 0.8899999856948853, 0.9070000052452087, 0.9190000295639038]
+ Testing Avg Label Acc : 0.7839000046253204
+ Testing Std Label Acc : 0.16579170392586992
+ Poison Acc: 0.493
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   7, Average loss 0.198071 ===
+ 100 users; time 16:26:21
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7906000018119812 loss: 0.635651
+ Testing Label Acc: [0.7900000214576721, 0.9380000233650208, 0.7310000061988831, 0.8640000224113464, 0.621999979019165, 0.8740000128746033, 0.3630000054836273, 0.8769999742507935, 0.9110000133514404, 0.9359999895095825]
+ Testing Avg Label Acc : 0.7906000047922135
+ Testing Std Label Acc : 0.17087785393693194
+ Poison Acc: 0.269
+======
+
+Client 7
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   7, Average loss 0.312328 ===
+ 100 users; time 16:26:38
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.6945000290870667 loss: 1.22857
+ Testing Label Acc: [0.7580000162124634, 0.8299999833106995, 0.0, 0.8939999938011169, 0.8930000066757202, 0.9160000085830688, 0.03099999949336052, 0.7689999938011169, 0.9010000228881836, 0.953000009059906]
+ Testing Avg Label Acc : 0.6945000033825636
+ Testing Std Label Acc : 0.3447077770229238
+ Poison Acc: 1.0
+======
+
+Client 8
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   7, Average loss 0.260740 ===
+ 100 users; time 16:26:56
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7268000245094299 loss: 1.00884
+ Testing Label Acc: [0.8069999814033508, 0.9620000123977661, 0.017999999225139618, 0.8349999785423279, 0.8539999723434448, 0.75, 0.27900001406669617, 0.906000018119812, 0.9150000214576721, 0.9419999718666077]
+ Testing Avg Label Acc : 0.7267999969422817
+ Testing Std Label Acc : 0.30115470810403205
+ Poison Acc: 0.982
+======
+
+Client 9
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   7, Average loss 0.238391 ===
+ 100 users; time 16:27:13
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7508000135421753 loss: 0.804438
+ Testing Label Acc: [0.847000002861023, 0.9380000233650208, 0.18400000035762787, 0.8169999718666077, 0.878000020980835, 0.8939999938011169, 0.28600001335144043, 0.8339999914169312, 0.8849999904632568, 0.9449999928474426]
+ Testing Avg Label Acc : 0.7508000001311302
+ Testing Std Label Acc : 0.261784947915801
+ Poison Acc: 0.816
+======
+
+Test end 16:27:18
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.7906000018119812), (1, 0.7857999801635742), (5, 0.7839000225067139), (0, 0.7731000185012817), (9, 0.7508000135421753), (4, 0.7378000020980835), (3, 0.7311000227928162), (8, 0.7268000245094299), (7, 0.6945000290870667), (2, 0.659600019454956)]
+acc_avg_difference:  0.051210000570863556
+Acc_Avg (total global): 0.7434000030718744
+Acc_Std (total global): 0.2494755870343337
+
+good_group_acc :  0.7833500042557716
+models updates
+before:  0.7734000027179717  now: 0.7833500042557716
+normal:  {512, 518, 519, 520, 13, 529, 542, 37, 43, 568, 580, 69, 70, 603, 610, 617, 108, 112, 123, 126, 638, 145, 147, 152, 666, 155, 162, 164, 166, 685, 182, 184, 698, 191, 706, 196, 711, 200, 206, 727, 729, 217, 732, 734, 224, 752, 244, 757, 768, 257, 771, 780, 786, 285, 799, 290, 291, 298, 300, 305, 827, 317, 830, 832, 835, 841, 843, 336, 339, 348, 352, 866, 356, 870, 872, 362, 366, 374, 375, 378, 382, 386, 907, 396, 913, 914, 414, 931, 422, 427, 433, 444, 973, 463, 466, 979, 481, 495, 504, 510}
+
+normal:  {7, 12, 528, 17, 25, 27, 540, 541, 33, 556, 49, 562, 53, 56, 573, 61, 75, 76, 594, 595, 83, 105, 641, 643, 134, 650, 656, 665, 671, 673, 165, 682, 693, 694, 187, 713, 203, 718, 207, 722, 211, 723, 216, 220, 740, 240, 243, 251, 769, 770, 262, 775, 264, 265, 272, 277, 790, 794, 297, 299, 819, 826, 322, 840, 852, 854, 862, 865, 868, 869, 359, 365, 369, 883, 884, 885, 893, 393, 911, 922, 930, 421, 430, 944, 432, 437, 949, 441, 968, 457, 458, 972, 975, 976, 473, 476, 486, 487, 491, 503}
+
+normal:  {521, 522, 525, 530, 20, 533, 534, 535, 24, 536, 539, 547, 561, 50, 569, 571, 579, 581, 585, 85, 88, 605, 99, 102, 615, 616, 106, 620, 627, 117, 637, 133, 645, 135, 652, 143, 144, 663, 672, 169, 183, 700, 703, 708, 712, 205, 730, 218, 226, 234, 236, 237, 750, 239, 760, 763, 767, 258, 774, 269, 791, 792, 282, 286, 287, 801, 806, 810, 813, 301, 823, 311, 836, 333, 335, 337, 344, 859, 860, 861, 863, 351, 355, 871, 874, 878, 897, 387, 409, 924, 412, 416, 935, 962, 450, 963, 967, 971, 467, 993}
+
+shuffle_clients (in good): [6, 1, 5, 0]
+Shuffle in good !
+
+shuffle_clients (in normal): [9, 4, 3]
+Shuffle in normal!
+
+shuffle_clients (in bad): [8, 7, 2]
+Shuffle in bad !
+
+max_local_ep_time:  12.270196676254272
+round_time:  17.487704277038574
+
+good:  [6, 1, 5, 0]
+normal:  [9, 4, 3]
+bad:  [8, 7, 2]
+Client 0
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   8, Average loss 0.183421 ===
+ 100 users; time 16:27:31
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7843000292778015 loss: 0.704258
+ Testing Label Acc: [0.753000020980835, 0.9490000009536743, 0.5450000166893005, 0.8420000076293945, 0.7739999890327454, 0.8949999809265137, 0.4009999930858612, 0.8539999723434448, 0.9020000100135803, 0.9279999732971191]
+ Testing Avg Label Acc : 0.7842999964952468
+ Testing Std Label Acc : 0.16951108637035373
+ Poison Acc: 0.455
+======
+
+Client 1
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   8, Average loss 0.216600 ===
+ 100 users; time 16:27:48
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7616999745368958 loss: 0.792096
+ Testing Label Acc: [0.7870000004768372, 0.9430000185966492, 0.16200000047683716, 0.8399999737739563, 0.8240000009536743, 0.8870000243186951, 0.4690000116825104, 0.875, 0.8960000276565552, 0.9340000152587891]
+ Testing Avg Label Acc : 0.7617000073194504
+ Testing Std Label Acc : 0.23771750338358322
+ Poison Acc: 0.838
+======
+
+Client 2
+ 7/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   8, Average loss 0.393854 ===
+ 100 users; time 16:28:05
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7052000164985657 loss: 1.02559
+ Testing Label Acc: [0.7440000176429749, 0.9639999866485596, 0.0, 0.8029999732971191, 0.550000011920929, 0.9279999732971191, 0.6269999742507935, 0.8159999847412109, 0.7229999899864197, 0.8970000147819519]
+ Testing Avg Label Acc : 0.7051999926567077
+ Testing Std Label Acc : 0.2654388026638061
+ Poison Acc: 1.0
+======
+
+Client 3
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   8, Average loss 0.247529 ===
+ 100 users; time 16:28:23
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7777000069618225 loss: 0.820101
+ Testing Label Acc: [0.8460000157356262, 0.9480000138282776, 0.4169999957084656, 0.8159999847412109, 0.7540000081062317, 0.8989999890327454, 0.42100000381469727, 0.8379999995231628, 0.8870000243186951, 0.9509999752044678]
+ Testing Avg Label Acc : 0.777700001001358
+ Testing Std Label Acc : 0.1879798126620574
+ Poison Acc: 0.583
+======
+
+Client 4
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   8, Average loss 0.260388 ===
+ 100 users; time 16:28:40
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7465000152587891 loss: 0.850111
+ Testing Label Acc: [0.7950000166893005, 0.9359999895095825, 0.1420000046491623, 0.8050000071525574, 0.7310000061988831, 0.9380000233650208, 0.5189999938011169, 0.800000011920929, 0.8709999918937683, 0.9279999732971191]
+ Testing Avg Label Acc : 0.746500001847744
+ Testing Std Label Acc : 0.23389709147402393
+ Poison Acc: 0.858
+======
+
+Client 5
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   8, Average loss 0.176278 ===
+ 100 users; time 16:28:58
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.788100004196167 loss: 0.675165
+ Testing Label Acc: [0.7889999747276306, 0.9449999928474426, 0.7440000176429749, 0.8650000095367432, 0.6639999747276306, 0.8790000081062317, 0.2680000066757202, 0.8769999742507935, 0.9110000133514404, 0.9390000104904175]
+ Testing Avg Label Acc : 0.7880999982357025
+ Testing Std Label Acc : 0.1929826158731648
+ Poison Acc: 0.256
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   8, Average loss 0.225271 ===
+ 100 users; time 16:29:15
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7944999933242798 loss: 0.621675
+ Testing Label Acc: [0.765999972820282, 0.9509999752044678, 0.6269999742507935, 0.8529999852180481, 0.6290000081062317, 0.8790000081062317, 0.4950000047683716, 0.8730000257492065, 0.9300000071525574, 0.9419999718666077]
+ Testing Avg Label Acc : 0.7944999933242798
+ Testing Std Label Acc : 0.15076222809341047
+ Poison Acc: 0.373
+======
+
+Client 7
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   8, Average loss 0.298206 ===
+ 100 users; time 16:29:32
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7021999955177307 loss: 0.91469
+ Testing Label Acc: [0.8019999861717224, 0.9800000190734863, 0.0, 0.699999988079071, 0.30000001192092896, 0.9010000228881836, 0.7009999752044678, 0.8169999718666077, 0.8899999856948853, 0.9309999942779541]
+ Testing Avg Label Acc : 0.7021999955177307
+ Testing Std Label Acc : 0.297036629560965
+ Poison Acc: 1.0
+======
+
+Client 8
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   8, Average loss 0.256432 ===
+ 100 users; time 16:29:50
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7631000280380249 loss: 0.873433
+ Testing Label Acc: [0.8050000071525574, 0.9470000267028809, 0.2680000066757202, 0.8429999947547913, 0.8379999995231628, 0.8289999961853027, 0.382999986410141, 0.9279999732971191, 0.8980000019073486, 0.8920000195503235]
+ Testing Avg Label Acc : 0.7631000012159348
+ Testing Std Label Acc : 0.22439182460087376
+ Poison Acc: 0.732
+======
+
+Client 9
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   8, Average loss 0.275995 ===
+ 100 users; time 16:30:08
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7351999878883362 loss: 0.938575
+ Testing Label Acc: [0.7149999737739563, 0.9309999942779541, 0.028999999165534973, 0.9340000152587891, 0.7799999713897705, 0.8519999980926514, 0.4390000104904175, 0.9359999895095825, 0.8870000243186951, 0.8489999771118164]
+ Testing Avg Label Acc : 0.7351999953389168
+ Testing Std Label Acc : 0.2750788241216637
+ Poison Acc: 0.971
+======
+
+Test end 16:30:13
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.7944999933242798), (5, 0.788100004196167), (0, 0.7843000292778015), (3, 0.7777000069618225), (8, 0.7631000280380249), (1, 0.7616999745368958), (4, 0.7465000152587891), (9, 0.7351999878883362), (2, 0.7052000164985657), (7, 0.7021999955177307)]
+acc_avg_difference:  0.012449995223432708
+Acc_Avg (total global): 0.7558499982953071
+Acc_Std (total global): 0.2234796418803902
+
+good_group_acc :  0.7861499972641467
+models updates
+before:  0.7833500042557716  now: 0.7861499972641467
+normal:  {2, 6, 14, 28, 548, 559, 54, 58, 577, 578, 582, 74, 588, 77, 589, 590, 80, 598, 599, 91, 609, 103, 622, 118, 121, 125, 137, 651, 146, 658, 150, 676, 680, 683, 173, 688, 689, 696, 186, 221, 228, 233, 756, 246, 249, 253, 254, 260, 772, 263, 785, 797, 798, 295, 296, 302, 817, 314, 315, 318, 319, 831, 320, 844, 848, 851, 340, 856, 354, 867, 363, 875, 377, 894, 384, 902, 395, 908, 402, 916, 919, 923, 932, 425, 945, 946, 435, 959, 966, 456, 465, 980, 987, 989, 991, 992, 492, 493, 494, 508}
+
+normal:  {515, 8, 11, 544, 34, 551, 42, 565, 566, 567, 57, 67, 71, 87, 98, 613, 107, 619, 623, 624, 122, 640, 129, 648, 141, 657, 148, 664, 154, 157, 670, 159, 178, 179, 185, 705, 195, 710, 714, 716, 720, 208, 209, 728, 738, 742, 744, 749, 238, 252, 256, 776, 271, 274, 787, 788, 279, 802, 804, 293, 809, 811, 815, 821, 828, 324, 849, 341, 342, 346, 864, 353, 357, 360, 880, 370, 887, 376, 889, 899, 906, 909, 915, 406, 926, 415, 417, 419, 434, 948, 436, 445, 448, 452, 462, 974, 471, 477, 478, 505}
+
+normal:  {518, 522, 528, 17, 530, 529, 534, 541, 33, 37, 568, 571, 573, 580, 70, 85, 88, 610, 105, 108, 123, 126, 641, 650, 144, 663, 152, 666, 671, 162, 165, 182, 183, 187, 703, 196, 206, 718, 211, 723, 727, 216, 217, 740, 239, 240, 243, 244, 760, 251, 257, 770, 771, 258, 269, 277, 792, 794, 285, 290, 291, 298, 300, 305, 819, 827, 830, 322, 840, 843, 336, 854, 860, 861, 866, 359, 871, 366, 883, 884, 885, 893, 382, 387, 922, 414, 421, 422, 935, 430, 437, 444, 967, 973, 463, 466, 473, 476, 486, 510}
+
+shuffle_clients (in good): [6, 5, 0, 3]
+Shuffle in good !
+
+shuffle_clients (in normal): [8, 1, 4]
+Shuffle in normal!
+
+shuffle_clients (in bad): [9, 2, 7]
+Shuffle in bad !
+
+max_local_ep_time:  12.299755811691284
+round_time:  17.520554065704346
+
+good:  [6, 5, 0, 3]
+normal:  [8, 1, 4]
+bad:  [9, 2, 7]
+Client 0
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   9, Average loss 0.183114 ===
+ 100 users; time 16:30:25
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7860000133514404 loss: 0.676941
+ Testing Label Acc: [0.7480000257492065, 0.953000009059906, 0.6510000228881836, 0.8519999980926514, 0.7639999985694885, 0.8629999756813049, 0.30799999833106995, 0.8859999775886536, 0.9039999842643738, 0.9309999942779541]
+ Testing Avg Label Acc : 0.7859999984502792
+ Testing Std Label Acc : 0.1821427963702057
+ Poison Acc: 0.349
+======
+
+Client 1
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   9, Average loss 0.232936 ===
+ 100 users; time 16:30:42
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.755299985408783 loss: 0.866966
+ Testing Label Acc: [0.7749999761581421, 0.9440000057220459, 0.21699999272823334, 0.8399999737739563, 0.8640000224113464, 0.7549999952316284, 0.36399999260902405, 0.9419999718666077, 0.9300000071525574, 0.921999990940094]
+ Testing Avg Label Acc : 0.7552999928593636
+ Testing Std Label Acc : 0.24311192982636887
+ Poison Acc: 0.783
+======
+
+Client 2
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   9, Average loss 0.300633 ===
+ 100 users; time 16:31:00
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7221999764442444 loss: 1.10396
+ Testing Label Acc: [0.8550000190734863, 0.9240000247955322, 0.05700000002980232, 0.8370000123977661, 0.8100000023841858, 0.7459999918937683, 0.2280000001192093, 0.8539999723434448, 0.9490000009536743, 0.9620000123977661]
+ Testing Avg Label Acc : 0.7222000036388636
+ Testing Std Label Acc : 0.2988062276599238
+ Poison Acc: 0.943
+======
+
+Client 3
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   9, Average loss 0.177902 ===
+ 100 users; time 16:31:17
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7860000133514404 loss: 0.736367
+ Testing Label Acc: [0.8069999814033508, 0.9470000267028809, 0.6610000133514404, 0.8399999737739563, 0.5989999771118164, 0.8899999856948853, 0.4129999876022339, 0.8759999871253967, 0.8920000195503235, 0.9350000023841858]
+ Testing Avg Label Acc : 0.785999995470047
+ Testing Std Label Acc : 0.16472826685732367
+ Poison Acc: 0.339
+======
+
+Client 4
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   9, Average loss 0.269778 ===
+ 100 users; time 16:31:35
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7402999997138977 loss: 0.978459
+ Testing Label Acc: [0.8539999723434448, 0.9570000171661377, 0.008999999612569809, 0.8040000200271606, 0.7649999856948853, 0.8610000014305115, 0.5009999871253967, 0.8500000238418579, 0.8389999866485596, 0.9629999995231628]
+ Testing Avg Label Acc : 0.7402999993413687
+ Testing Std Label Acc : 0.27249919494416963
+ Poison Acc: 0.991
+======
+
+Client 5
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   9, Average loss 0.192485 ===
+ 100 users; time 16:31:52
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.760699987411499 loss: 0.762624
+ Testing Label Acc: [0.8709999918937683, 0.9509999752044678, 0.11299999803304672, 0.7950000166893005, 0.8610000014305115, 0.9229999780654907, 0.3709999918937683, 0.8309999704360962, 0.9449999928474426, 0.9459999799728394]
+ Testing Avg Label Acc : 0.7606999896466732
+ Testing Std Label Acc : 0.27029318854482765
+ Poison Acc: 0.887
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   9, Average loss 0.176015 ===
+ 100 users; time 16:32:10
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7990999817848206 loss: 0.600285
+ Testing Label Acc: [0.8090000152587891, 0.9449999928474426, 0.6759999990463257, 0.8450000286102295, 0.765999972820282, 0.8949999809265137, 0.30799999833106995, 0.8690000176429749, 0.9340000152587891, 0.9440000057220459]
+ Testing Avg Label Acc : 0.7991000026464462
+ Testing Std Label Acc : 0.18281053281964035
+ Poison Acc: 0.324
+======
+
+Client 7
+ 5/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   9, Average loss 0.321305 ===
+ 100 users; time 16:32:27
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7056000232696533 loss: 1.2
+ Testing Label Acc: [0.7490000128746033, 0.9150000214576721, 0.0, 0.8190000057220459, 0.9369999766349792, 0.8980000019073486, 0.03700000047683716, 0.8700000047683716, 0.8980000019073486, 0.9330000281333923]
+ Testing Avg Label Acc : 0.7056000053882598
+ Testing Std Label Acc : 0.3478230032331955
+ Poison Acc: 1.0
+======
+
+Client 8
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   9, Average loss 0.199641 ===
+ 100 users; time 16:32:44
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7840999960899353 loss: 0.748121
+ Testing Label Acc: [0.7730000019073486, 0.953000009059906, 0.7200000286102295, 0.8330000042915344, 0.6620000004768372, 0.8920000195503235, 0.3179999887943268, 0.8809999823570251, 0.8799999952316284, 0.9290000200271606]
+ Testing Avg Label Acc : 0.784100005030632
+ Testing Std Label Acc : 0.17847490461925156
+ Poison Acc: 0.28
+======
+
+Client 9
+ 5/100 are attackers with poison attack 
+ count(target label):  100
+=== Round   9, Average loss 0.305982 ===
+ 100 users; time 16:33:01
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.6916999816894531 loss: 1.11792
+ Testing Label Acc: [0.9120000004768372, 0.921999990940094, 0.0, 0.7509999871253967, 0.7649999856948853, 0.9449999928474426, 0.10000000149011612, 0.6489999890327454, 0.9120000004768372, 0.9610000252723694]
+ Testing Avg Label Acc : 0.6916999973356723
+ Testing Std Label Acc : 0.335567594052905
+ Poison Acc: 1.0
+======
+
+Test end 16:33:06
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.7990999817848206), (0, 0.7860000133514404), (3, 0.7860000133514404), (8, 0.7840999960899353), (5, 0.760699987411499), (1, 0.755299985408783), (4, 0.7402999997138977), (2, 0.7221999764442444), (7, 0.7056000232696533), (9, 0.6916999816894531)]
+acc_avg_difference:  0.0027499993145464474
+Acc_Avg (total global): 0.7530999989807606
+Acc_Std (total global): 0.24762576389278115
+
+good_group_acc :  0.788800000399351
+models updates
+before:  0.7861499972641467  now: 0.788800000399351
+normal:  {0, 519, 13, 533, 535, 27, 549, 41, 557, 48, 64, 66, 73, 586, 92, 612, 615, 104, 106, 626, 628, 629, 642, 646, 655, 145, 662, 151, 156, 163, 172, 685, 174, 189, 191, 712, 717, 721, 732, 227, 229, 241, 765, 264, 273, 786, 280, 283, 807, 813, 303, 816, 307, 310, 312, 323, 835, 331, 332, 846, 850, 853, 343, 859, 349, 865, 356, 362, 874, 374, 886, 375, 378, 891, 379, 381, 897, 903, 391, 393, 392, 404, 917, 409, 927, 931, 934, 937, 942, 947, 951, 953, 443, 956, 964, 460, 461, 982, 990, 483}
+
+normal:  {515, 518, 11, 14, 28, 33, 37, 42, 566, 571, 573, 67, 77, 590, 598, 91, 609, 98, 610, 613, 623, 624, 123, 125, 126, 640, 641, 137, 650, 651, 657, 146, 150, 154, 670, 159, 162, 173, 688, 689, 178, 179, 187, 703, 718, 211, 727, 217, 742, 233, 239, 243, 760, 251, 253, 770, 263, 787, 788, 277, 798, 296, 811, 305, 828, 318, 322, 840, 849, 851, 340, 856, 860, 864, 353, 866, 883, 885, 889, 377, 899, 906, 908, 402, 919, 414, 932, 434, 435, 445, 959, 452, 456, 974, 473, 987, 991, 486, 492, 510}
+
+normal:  {6, 8, 528, 17, 530, 544, 34, 551, 559, 567, 57, 58, 577, 578, 71, 588, 85, 87, 599, 88, 103, 107, 141, 148, 664, 671, 165, 182, 696, 705, 196, 710, 716, 206, 720, 723, 216, 738, 740, 744, 238, 244, 756, 246, 249, 257, 771, 772, 260, 269, 271, 274, 797, 285, 290, 804, 293, 295, 298, 300, 302, 815, 817, 819, 821, 314, 827, 315, 336, 341, 342, 861, 357, 359, 363, 366, 880, 370, 376, 893, 387, 395, 915, 406, 922, 923, 415, 419, 935, 425, 948, 967, 462, 463, 466, 980, 476, 478, 493, 505}
+
+shuffle_clients (in good): [6, 0, 3, 8]
+Shuffle in good !
+
+shuffle_clients (in normal): [5, 1, 4]
+Shuffle in normal!
+
+shuffle_clients (in bad): [2, 7, 9]
+Shuffle in bad !
+
+max_local_ep_time:  12.41939663887024
+round_time:  17.51482319831848
+
+good:  [6, 0, 3, 8]
+normal:  [5, 1, 4]
+bad:  [2, 7, 9]
+Client 0
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  10, Average loss 0.184361 ===
+ 100 users; time 16:33:19
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7906000018119812 loss: 0.657523
+ Testing Label Acc: [0.7699999809265137, 0.9570000171661377, 0.6769999861717224, 0.8579999804496765, 0.7480000257492065, 0.875, 0.3070000112056732, 0.8830000162124634, 0.8999999761581421, 0.9309999942779541]
+ Testing Avg Label Acc : 0.7905999988317489
+ Testing Std Label Acc : 0.18126952036839425
+ Poison Acc: 0.323
+======
+
+Client 1
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  10, Average loss 0.247234 ===
+ 100 users; time 16:33:35
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7599999904632568 loss: 0.858807
+ Testing Label Acc: [0.8180000185966492, 0.9660000205039978, 0.15000000596046448, 0.7940000295639038, 0.8700000047683716, 0.9079999923706055, 0.3840000033378601, 0.8349999785423279, 0.9259999990463257, 0.9490000009536743]
+ Testing Avg Label Acc : 0.760000005364418
+ Testing Std Label Acc : 0.2575534892889878
+ Poison Acc: 0.85
+======
+
+Client 2
+ 7/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  10, Average loss 0.347953 ===
+ 100 users; time 16:33:52
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.6340000033378601 loss: 1.32199
+ Testing Label Acc: [0.7889999747276306, 0.9430000185966492, 0.0, 0.8349999785423279, 0.009999999776482582, 0.9139999747276306, 0.4959999918937683, 0.8820000290870667, 0.6389999985694885, 0.8320000171661377]
+ Testing Avg Label Acc : 0.6339999983087182
+ Testing Std Label Acc : 0.33903038279875847
+ Poison Acc: 1.0
+======
+
+Client 3
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  10, Average loss 0.170351 ===
+ 100 users; time 16:34:09
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7912999987602234 loss: 0.700671
+ Testing Label Acc: [0.7839999794960022, 0.9470000267028809, 0.6690000295639038, 0.8510000109672546, 0.6880000233650208, 0.8949999809265137, 0.36500000953674316, 0.8740000128746033, 0.9089999794960022, 0.9309999942779541]
+ Testing Avg Label Acc : 0.7913000047206878
+ Testing Std Label Acc : 0.1691691702062747
+ Poison Acc: 0.331
+======
+
+Client 4
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  10, Average loss 0.240664 ===
+ 100 users; time 16:34:27
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7688000202178955 loss: 0.859367
+ Testing Label Acc: [0.796999990940094, 0.9359999895095825, 0.4189999997615814, 0.8769999742507935, 0.8679999709129333, 0.847000002861023, 0.20800000429153442, 0.9390000104904175, 0.9169999957084656, 0.8799999952316284]
+ Testing Avg Label Acc : 0.7687999933958054
+ Testing Std Label Acc : 0.2359168458752666
+ Poison Acc: 0.581
+======
+
+Client 5
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  10, Average loss 0.223410 ===
+ 100 users; time 16:34:44
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7574999928474426 loss: 0.868648
+ Testing Label Acc: [0.7279999852180481, 0.9319999814033508, 0.23899999260902405, 0.890999972820282, 0.6940000057220459, 0.8069999814033508, 0.4970000088214874, 0.9240000247955322, 0.9459999799728394, 0.9169999957084656]
+ Testing Avg Label Acc : 0.7574999928474426
+ Testing Std Label Acc : 0.21932224852104595
+ Poison Acc: 0.761
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  10, Average loss 0.191763 ===
+ 100 users; time 16:35:01
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8016999959945679 loss: 0.593132
+ Testing Label Acc: [0.8220000267028809, 0.9520000219345093, 0.7129999995231628, 0.8320000171661377, 0.6209999918937683, 0.8899999856948853, 0.4300000071525574, 0.8799999952316284, 0.9369999766349792, 0.9399999976158142]
+ Testing Avg Label Acc : 0.8017000019550323
+ Testing Std Label Acc : 0.159361882569152
+ Poison Acc: 0.287
+======
+
+Client 7
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  10, Average loss 0.293006 ===
+ 100 users; time 16:35:18
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7412999868392944 loss: 0.850045
+ Testing Label Acc: [0.8320000171661377, 0.9380000233650208, 0.12700000405311584, 0.8539999723434448, 0.5820000171661377, 0.9419999718666077, 0.5559999942779541, 0.7229999899864197, 0.906000018119812, 0.953000009059906]
+ Testing Avg Label Acc : 0.7413000017404556
+ Testing Std Label Acc : 0.24683073078977352
+ Poison Acc: 0.873
+======
+
+Client 8
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  10, Average loss 0.178700 ===
+ 100 users; time 16:35:36
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.788100004196167 loss: 0.706877
+ Testing Label Acc: [0.7670000195503235, 0.9520000219345093, 0.7210000157356262, 0.8379999995231628, 0.6480000019073486, 0.8930000066757202, 0.3569999933242798, 0.8629999756813049, 0.9020000100135803, 0.9399999976158142]
+ Testing Avg Label Acc : 0.788100004196167
+ Testing Std Label Acc : 0.17100786787208688
+ Poison Acc: 0.279
+======
+
+Client 9
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  10, Average loss 0.292162 ===
+ 100 users; time 16:35:53
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7458000183105469 loss: 0.981348
+ Testing Label Acc: [0.7480000257492065, 0.9620000123977661, 0.1899999976158142, 0.9010000228881836, 0.746999979019165, 0.8830000162124634, 0.3569999933242798, 0.8960000276565552, 0.878000020980835, 0.8960000276565552]
+ Testing Avg Label Acc : 0.7458000123500824
+ Testing Std Label Acc : 0.24745416686360794
+ Poison Acc: 0.81
+======
+
+Test end 16:35:58
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.8016999959945679), (3, 0.7912999987602234), (0, 0.7906000018119812), (8, 0.788100004196167), (4, 0.7688000202178955), (1, 0.7599999904632568), (5, 0.7574999928474426), (9, 0.7458000183105469), (7, 0.7412999868392944), (2, 0.6340000033378601)]
+acc_avg_difference:  0.004810002390295165
+Acc_Avg (total global): 0.7579100013710558
+Acc_Std (total global): 0.22269163051533486
+
+good_group_acc :  0.792925002425909
+models updates
+before:  0.788800000399351  now: 0.792925002425909
+normal:  {11, 14, 528, 533, 535, 544, 34, 551, 41, 557, 58, 577, 66, 578, 71, 73, 598, 92, 98, 613, 615, 624, 642, 137, 141, 662, 151, 173, 689, 178, 179, 191, 703, 705, 196, 721, 211, 740, 744, 233, 238, 241, 243, 246, 253, 770, 263, 269, 273, 285, 290, 807, 296, 303, 816, 817, 815, 821, 312, 314, 828, 322, 835, 849, 851, 859, 860, 349, 864, 865, 866, 356, 357, 362, 370, 883, 885, 375, 379, 899, 903, 393, 908, 917, 406, 409, 923, 425, 942, 435, 947, 951, 956, 452, 456, 463, 982, 473, 476, 478}
+
+normal:  {0, 518, 6, 8, 13, 17, 27, 33, 559, 573, 64, 586, 588, 85, 87, 88, 609, 610, 103, 107, 623, 626, 126, 641, 646, 655, 657, 156, 670, 162, 163, 172, 685, 174, 688, 182, 710, 718, 720, 723, 217, 229, 742, 239, 756, 251, 765, 257, 260, 274, 786, 280, 283, 798, 804, 293, 295, 811, 300, 305, 819, 310, 827, 318, 323, 840, 332, 336, 850, 340, 853, 856, 861, 353, 359, 366, 880, 886, 376, 378, 891, 387, 392, 906, 395, 915, 404, 927, 419, 948, 443, 445, 967, 462, 974, 466, 990, 483, 492, 510}
+
+normal:  {515, 519, 530, 28, 37, 549, 42, 48, 566, 567, 57, 571, 67, 77, 590, 599, 91, 612, 104, 106, 628, 629, 123, 125, 640, 650, 651, 145, 146, 148, 150, 664, 154, 159, 671, 165, 696, 187, 189, 712, 716, 717, 206, 727, 216, 732, 738, 227, 244, 760, 249, 771, 772, 264, 271, 787, 788, 277, 797, 298, 813, 302, 307, 315, 331, 846, 341, 342, 343, 874, 363, 374, 889, 377, 381, 893, 897, 391, 402, 919, 922, 414, 415, 931, 932, 934, 935, 937, 434, 953, 959, 964, 460, 461, 980, 987, 991, 486, 493, 505}
+
+shuffle_clients (in good): [6, 3, 0, 8]
+Shuffle in good !
+
+shuffle_clients (in normal): [4, 1, 5]
+Shuffle in normal!
+
+shuffle_clients (in bad): [9, 7, 2]
+Shuffle in bad !
+
+max_local_ep_time:  12.252948522567749
+round_time:  17.490484476089478
+
+good:  [6, 3, 0, 8]
+normal:  [4, 1, 5]
+bad:  [9, 7, 2]
+Client 0
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  11, Average loss 0.177428 ===
+ 100 users; time 16:36:10
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7939000129699707 loss: 0.641686
+ Testing Label Acc: [0.7459999918937683, 0.9549999833106995, 0.699999988079071, 0.8579999804496765, 0.6119999885559082, 0.8859999775886536, 0.4659999907016754, 0.8730000257492065, 0.9070000052452087, 0.9359999895095825]
+ Testing Avg Label Acc : 0.793899992108345
+ Testing Std Label Acc : 0.1514935323844985
+ Poison Acc: 0.3
+======
+
+Client 1
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  11, Average loss 0.253576 ===
+ 100 users; time 16:36:28
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7426000237464905 loss: 0.94756
+ Testing Label Acc: [0.7850000262260437, 0.9580000042915344, 0.09000000357627869, 0.8309999704360962, 0.7549999952316284, 0.7860000133514404, 0.44600000977516174, 0.8650000095367432, 0.9419999718666077, 0.9679999947547913]
+ Testing Avg Label Acc : 0.7425999999046325
+ Testing Std Label Acc : 0.2602791536352054
+ Poison Acc: 0.91
+======
+
+Client 2
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  11, Average loss 0.359858 ===
+ 100 users; time 16:36:45
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7505999803543091 loss: 1.01621
+ Testing Label Acc: [0.777999997138977, 0.9440000057220459, 0.1599999964237213, 0.8999999761581421, 0.8040000200271606, 0.8690000176429749, 0.37700000405311584, 0.8730000257492065, 0.8640000224113464, 0.9369999766349792]
+ Testing Avg Label Acc : 0.750600004196167
+ Testing Std Label Acc : 0.2506624034674821
+ Poison Acc: 0.84
+======
+
+Client 3
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  11, Average loss 0.184341 ===
+ 100 users; time 16:37:02
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7961999773979187 loss: 0.681625
+ Testing Label Acc: [0.7900000214576721, 0.9480000138282776, 0.6869999766349792, 0.8479999899864197, 0.7070000171661377, 0.8920000195503235, 0.3569999933242798, 0.8740000128746033, 0.9210000038146973, 0.9380000233650208]
+ Testing Avg Label Acc : 0.7962000072002411
+ Testing Std Label Acc : 0.1701339543203584
+ Poison Acc: 0.313
+======
+
+Client 4
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  11, Average loss 0.215438 ===
+ 100 users; time 16:37:20
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7555000185966492 loss: 0.867348
+ Testing Label Acc: [0.8399999737739563, 0.9419999718666077, 0.10199999809265137, 0.8069999814033508, 0.7689999938011169, 0.8529999852180481, 0.48500001430511475, 0.8740000128746033, 0.9259999990463257, 0.9570000171661377]
+ Testing Avg Label Acc : 0.7554999947547912
+ Testing Std Label Acc : 0.2526282811774267
+ Poison Acc: 0.898
+======
+
+Client 5
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  11, Average loss 0.219847 ===
+ 100 users; time 16:37:37
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7907000184059143 loss: 0.743969
+ Testing Label Acc: [0.847000002861023, 0.9509999752044678, 0.48899999260902405, 0.847000002861023, 0.7720000147819519, 0.9010000228881836, 0.4009999930858612, 0.8579999804496765, 0.8930000066757202, 0.9480000138282776]
+ Testing Avg Label Acc : 0.7907000005245208
+ Testing Std Label Acc : 0.1808806540579989
+ Poison Acc: 0.511
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  11, Average loss 0.173450 ===
+ 100 users; time 16:37:54
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8041999936103821 loss: 0.580301
+ Testing Label Acc: [0.8330000042915344, 0.9520000219345093, 0.6930000185966492, 0.847000002861023, 0.7260000109672546, 0.871999979019165, 0.3499999940395355, 0.8949999809265137, 0.9390000104904175, 0.9350000023841858]
+ Testing Avg Label Acc : 0.8042000025510788
+ Testing Std Label Acc : 0.1724545168102084
+ Poison Acc: 0.307
+======
+
+Client 7
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  11, Average loss 0.245307 ===
+ 100 users; time 16:38:12
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7432000041007996 loss: 1.01122
+ Testing Label Acc: [0.8600000143051147, 0.9359999895095825, 0.0010000000474974513, 0.8299999833106995, 0.7950000166893005, 0.8740000128746033, 0.4050000011920929, 0.906000018119812, 0.9100000262260437, 0.9150000214576721]
+ Testing Avg Label Acc : 0.7432000083732418
+ Testing Std Label Acc : 0.2876146071814078
+ Poison Acc: 0.999
+======
+
+Client 8
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  11, Average loss 0.169055 ===
+ 100 users; time 16:38:29
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7889000177383423 loss: 0.685748
+ Testing Label Acc: [0.800000011920929, 0.9520000219345093, 0.7429999709129333, 0.8389999866485596, 0.6880000233650208, 0.8769999742507935, 0.2630000114440918, 0.8899999856948853, 0.9039999842643738, 0.9330000281333923]
+ Testing Avg Label Acc : 0.7888999998569488
+ Testing Std Label Acc : 0.19237694483911147
+ Poison Acc: 0.257
+======
+
+Client 9
+ 7/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  11, Average loss 0.346247 ===
+ 100 users; time 16:38:47
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.6747999787330627 loss: 1.28464
+ Testing Label Acc: [0.925000011920929, 0.9369999766349792, 0.0, 0.6549999713897705, 0.47999998927116394, 0.7979999780654907, 0.1720000058412552, 0.890999972820282, 0.9369999766349792, 0.953000009059906]
+ Testing Avg Label Acc : 0.6747999891638756
+ Testing Std Label Acc : 0.32953233055084497
+ Poison Acc: 1.0
+======
+
+Test end 16:38:52
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.8041999936103821), (3, 0.7961999773979187), (0, 0.7939000129699707), (5, 0.7907000184059143), (8, 0.7889000177383423), (4, 0.7555000185966492), (2, 0.7505999803543091), (7, 0.7432000041007996), (1, 0.7426000237464905), (9, 0.6747999787330627)]
+acc_avg_difference:  0.006149998492328557
+Acc_Avg (total global): 0.7640599998633844
+Acc_Std (total global): 0.22480563784245428
+
+good_group_acc :  0.7962500005960464
+models updates
+before:  0.792925002425909  now: 0.7962500005960464
+normal:  {7, 520, 15, 18, 538, 552, 40, 47, 561, 59, 70, 589, 591, 80, 595, 86, 611, 110, 119, 634, 128, 130, 132, 653, 142, 152, 667, 155, 161, 676, 169, 682, 690, 186, 702, 190, 707, 199, 714, 208, 215, 729, 221, 734, 228, 741, 252, 767, 776, 785, 276, 790, 792, 794, 284, 800, 802, 809, 810, 299, 814, 313, 320, 845, 847, 848, 852, 855, 350, 876, 877, 884, 382, 390, 905, 394, 910, 399, 914, 410, 412, 924, 417, 420, 428, 430, 432, 433, 945, 946, 444, 957, 457, 971, 467, 989, 995, 495, 504, 507}
+
+normal:  {6, 11, 13, 530, 533, 535, 34, 549, 58, 571, 573, 66, 71, 590, 599, 609, 613, 103, 107, 126, 642, 137, 651, 655, 146, 664, 670, 165, 685, 688, 696, 189, 703, 196, 710, 716, 206, 718, 727, 229, 742, 744, 239, 243, 244, 249, 765, 257, 271, 273, 788, 283, 798, 293, 295, 296, 298, 811, 821, 310, 315, 323, 840, 332, 846, 340, 342, 859, 353, 866, 874, 362, 363, 880, 375, 889, 387, 392, 393, 915, 406, 919, 409, 923, 927, 425, 947, 948, 951, 956, 959, 964, 460, 974, 463, 982, 987, 476, 493, 510}
+
+normal:  {12, 527, 16, 19, 20, 21, 536, 24, 539, 29, 35, 550, 554, 564, 56, 569, 585, 593, 82, 83, 602, 605, 94, 606, 97, 617, 618, 115, 124, 645, 647, 661, 158, 674, 167, 686, 175, 176, 687, 692, 180, 184, 699, 701, 704, 711, 201, 715, 214, 731, 739, 230, 231, 235, 237, 242, 755, 762, 250, 769, 259, 773, 262, 780, 268, 270, 799, 287, 806, 812, 309, 823, 826, 321, 836, 326, 329, 339, 348, 869, 870, 872, 896, 901, 389, 401, 403, 413, 418, 427, 941, 453, 458, 977, 479, 482, 485, 999, 500, 509}
+
+shuffle_clients (in good): [6, 3, 0, 5]
+Shuffle in good !
+
+shuffle_clients (in normal): [8, 4, 2]
+Shuffle in normal!
+
+shuffle_clients (in bad): [7, 1, 9]
+Shuffle in bad !
+
+max_local_ep_time:  12.391002416610718
+round_time:  17.266193389892578
+
+good:  [6, 3, 0, 5]
+normal:  [8, 4, 2]
+bad:  [7, 1, 9]
+Client 0
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  12, Average loss 0.170873 ===
+ 100 users; time 16:39:04
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7975999712944031 loss: 0.620757
+ Testing Label Acc: [0.8069999814033508, 0.9520000219345093, 0.7210000157356262, 0.8519999980926514, 0.6959999799728394, 0.8880000114440918, 0.33500000834465027, 0.8700000047683716, 0.9150000214576721, 0.9399999976158142]
+ Testing Avg Label Acc : 0.7976000040769577
+ Testing Std Label Acc : 0.17451372647255858
+ Poison Acc: 0.279
+======
+
+Client 1
+ 5/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  12, Average loss 0.283747 ===
+ 100 users; time 16:39:21
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7132999897003174 loss: 1.11958
+ Testing Label Acc: [0.9079999923706055, 0.8970000147819519, 0.0, 0.8500000238418579, 0.6830000281333923, 0.871999979019165, 0.18700000643730164, 0.875, 0.9200000166893005, 0.9409999847412109]
+ Testing Avg Label Acc : 0.7133000046014786
+ Testing Std Label Acc : 0.31983622274357376
+ Poison Acc: 1.0
+======
+
+Client 2
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  12, Average loss 0.262683 ===
+ 100 users; time 16:39:38
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7366999983787537 loss: 0.970812
+ Testing Label Acc: [0.8140000104904175, 0.9559999704360962, 0.004000000189989805, 0.7879999876022339, 0.8320000171661377, 0.8889999985694885, 0.39899998903274536, 0.8679999709129333, 0.8709999918937683, 0.9459999799728394]
+ Testing Avg Label Acc : 0.736699991626665
+ Testing Std Label Acc : 0.28617303841367014
+ Poison Acc: 0.996
+======
+
+Client 3
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  12, Average loss 0.182307 ===
+ 100 users; time 16:39:55
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7950999736785889 loss: 0.668142
+ Testing Label Acc: [0.7670000195503235, 0.949999988079071, 0.7369999885559082, 0.8700000047683716, 0.6690000295639038, 0.8849999904632568, 0.34200000762939453, 0.8870000243186951, 0.9049999713897705, 0.9390000104904175]
+ Testing Avg Label Acc : 0.7951000034809113
+ Testing Std Label Acc : 0.17443706096130668
+ Poison Acc: 0.263
+======
+
+Client 4
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  12, Average loss 0.218725 ===
+ 100 users; time 16:40:12
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7649000287055969 loss: 0.874557
+ Testing Label Acc: [0.8420000076293945, 0.9509999752044678, 0.23999999463558197, 0.8299999833106995, 0.8659999966621399, 0.8420000076293945, 0.35499998927116394, 0.9449999928474426, 0.8880000114440918, 0.8899999856948853]
+ Testing Avg Label Acc : 0.7648999944329262
+ Testing Std Label Acc : 0.23827691901761225
+ Poison Acc: 0.76
+======
+
+Client 5
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  12, Average loss 0.191181 ===
+ 100 users; time 16:40:29
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.776199996471405 loss: 0.760792
+ Testing Label Acc: [0.7649999856948853, 0.9549999833106995, 0.2750000059604645, 0.8669999837875366, 0.7200000286102295, 0.8970000147819519, 0.5519999861717224, 0.8420000076293945, 0.9300000071525574, 0.9589999914169312]
+ Testing Avg Label Acc : 0.7761999994516373
+ Testing Std Label Acc : 0.2051725108428769
+ Poison Acc: 0.725
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  12, Average loss 0.204728 ===
+ 100 users; time 16:40:47
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8079000115394592 loss: 0.574554
+ Testing Label Acc: [0.800000011920929, 0.953000009059906, 0.6710000038146973, 0.8410000205039978, 0.7059999704360962, 0.921999990940094, 0.43799999356269836, 0.8579999804496765, 0.9440000057220459, 0.9459999799728394]
+ Testing Avg Label Acc : 0.807899996638298
+ Testing Std Label Acc : 0.15533412552971174
+ Poison Acc: 0.329
+======
+
+Client 7
+ 5/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  12, Average loss 0.292447 ===
+ 100 users; time 16:41:04
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7263000011444092 loss: 1.03209
+ Testing Label Acc: [0.7519999742507935, 0.9520000219345093, 0.0, 0.8069999814033508, 0.925000011920929, 0.8870000243186951, 0.23000000417232513, 0.8080000281333923, 0.9399999976158142, 0.9620000123977661]
+ Testing Avg Label Acc : 0.7263000056147575
+ Testing Std Label Acc : 0.31703976460540245
+ Poison Acc: 1.0
+======
+
+Client 8
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  12, Average loss 0.192085 ===
+ 100 users; time 16:41:21
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7857999801635742 loss: 0.746544
+ Testing Label Acc: [0.7990000247955322, 0.953000009059906, 0.33899998664855957, 0.8669999837875366, 0.796999990940094, 0.8899999856948853, 0.4729999899864197, 0.843999981880188, 0.9350000023841858, 0.9610000252723694]
+ Testing Avg Label Acc : 0.7857999980449677
+ Testing Std Label Acc : 0.1998808704004166
+ Poison Acc: 0.661
+======
+
+Client 9
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  12, Average loss 0.312273 ===
+ 100 users; time 16:41:39
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7631999850273132 loss: 0.911896
+ Testing Label Acc: [0.699999988079071, 0.9490000009536743, 0.30399999022483826, 0.8820000290870667, 0.8050000071525574, 0.9549999833106995, 0.4580000042915344, 0.7559999823570251, 0.8849999904632568, 0.9380000233650208]
+ Testing Avg Label Acc : 0.7631999999284744
+ Testing Std Label Acc : 0.2099089363094134
+ Poison Acc: 0.696
+======
+
+Test end 16:41:44
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.8079000115394592), (0, 0.7975999712944031), (3, 0.7950999736785889), (8, 0.7857999801635742), (5, 0.776199996471405), (4, 0.7649000287055969), (9, 0.7631999850273132), (2, 0.7366999983787537), (7, 0.7263000011444092), (1, 0.7132999897003174)]
+acc_avg_difference:  0.0026399999263229113
+Acc_Avg (total global): 0.7666999997897073
+Acc_Std (total global): 0.22805731752965425
+
+good_group_acc :  0.7966000005602836
+models updates
+before:  0.7962500005960464  now: 0.7966000005602836
+normal:  {8, 9, 525, 14, 532, 534, 26, 27, 546, 38, 553, 557, 558, 55, 574, 575, 65, 588, 85, 612, 624, 117, 118, 639, 641, 131, 133, 138, 650, 141, 658, 148, 151, 672, 673, 162, 164, 683, 172, 171, 173, 177, 178, 181, 183, 185, 195, 202, 717, 211, 213, 219, 737, 746, 752, 251, 267, 278, 797, 804, 303, 304, 829, 830, 832, 327, 843, 336, 338, 858, 867, 357, 358, 360, 879, 881, 886, 379, 892, 381, 384, 386, 391, 397, 916, 928, 419, 421, 935, 936, 431, 438, 448, 462, 465, 985, 474, 994, 483, 486}
+
+normal:  {6, 7, 13, 16, 24, 536, 29, 549, 40, 47, 569, 573, 585, 82, 595, 86, 605, 94, 115, 124, 126, 128, 653, 142, 655, 661, 664, 670, 161, 685, 687, 699, 189, 702, 190, 704, 703, 710, 208, 215, 729, 221, 228, 237, 242, 249, 252, 769, 259, 773, 262, 268, 270, 792, 794, 283, 284, 802, 295, 296, 809, 811, 814, 821, 315, 321, 846, 847, 852, 340, 353, 866, 869, 874, 362, 877, 375, 896, 901, 401, 923, 412, 927, 420, 425, 428, 430, 946, 951, 956, 444, 453, 457, 971, 974, 977, 467, 982, 989, 482}
+
+normal:  {0, 516, 5, 523, 524, 528, 17, 545, 547, 551, 43, 559, 566, 567, 572, 578, 581, 586, 75, 598, 87, 603, 93, 608, 610, 615, 106, 620, 623, 112, 627, 628, 629, 632, 120, 652, 145, 659, 671, 174, 193, 198, 207, 217, 225, 233, 236, 241, 754, 763, 775, 781, 274, 277, 280, 289, 290, 803, 301, 308, 311, 835, 841, 333, 853, 345, 347, 349, 863, 864, 368, 370, 883, 885, 374, 890, 899, 398, 400, 404, 414, 416, 930, 423, 424, 939, 943, 434, 435, 950, 441, 955, 958, 963, 452, 979, 469, 491, 498, 499}
+
+shuffle_clients (in good): [6, 0, 3, 8]
+Shuffle in good !
+
+shuffle_clients (in normal): [5, 4, 9]
+Shuffle in normal!
+
+shuffle_clients (in bad): [2, 7, 1]
+Shuffle in bad !
+
+max_local_ep_time:  12.279094934463501
+round_time:  17.427167892456055
+
+good:  [6, 0, 3, 8]
+normal:  [5, 4, 9]
+bad:  [2, 7, 1]
+Client 0
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  13, Average loss 0.167773 ===
+ 100 users; time 16:41:56
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7993999719619751 loss: 0.612556
+ Testing Label Acc: [0.7730000019073486, 0.9509999752044678, 0.7160000205039978, 0.8539999723434448, 0.6119999885559082, 0.9160000085830688, 0.46700000762939453, 0.8420000076293945, 0.9129999876022339, 0.949999988079071]
+ Testing Avg Label Acc : 0.799399995803833
+ Testing Std Label Acc : 0.15173014908138402
+ Poison Acc: 0.284
+======
+
+Client 1
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  13, Average loss 0.274418 ===
+ 100 users; time 16:42:13
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.728600025177002 loss: 0.953176
+ Testing Label Acc: [0.5600000023841858, 0.953000009059906, 0.02500000037252903, 0.7170000076293945, 0.7239999771118164, 0.859000027179718, 0.7720000147819519, 0.8270000219345093, 0.8730000257492065, 0.9760000109672546]
+ Testing Avg Label Acc : 0.7286000097170472
+ Testing Std Label Acc : 0.2616521408899057
+ Poison Acc: 0.975
+======
+
+Client 2
+ 5/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  13, Average loss 0.303797 ===
+ 100 users; time 16:42:31
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7254999876022339 loss: 1.11761
+ Testing Label Acc: [0.7689999938011169, 0.9570000171661377, 0.0, 0.9169999957084656, 0.7749999761581421, 0.8299999833106995, 0.2879999876022339, 0.9300000071525574, 0.8809999823570251, 0.9079999923706055]
+ Testing Avg Label Acc : 0.7254999935626983
+ Testing Std Label Acc : 0.3037417497510512
+ Poison Acc: 1.0
+======
+
+Client 3
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  13, Average loss 0.192415 ===
+ 100 users; time 16:42:48
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7760000228881836 loss: 0.749209
+ Testing Label Acc: [0.8230000138282776, 0.9459999799728394, 0.2630000114440918, 0.8679999709129333, 0.8370000123977661, 0.8849999904632568, 0.3970000147819519, 0.8640000224113464, 0.9269999861717224, 0.949999988079071]
+ Testing Avg Label Acc : 0.7759999990463257
+ Testing Std Label Acc : 0.22864950497334116
+ Poison Acc: 0.737
+======
+
+Client 4
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  13, Average loss 0.235882 ===
+ 100 users; time 16:43:05
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7461000084877014 loss: 0.945811
+ Testing Label Acc: [0.8040000200271606, 0.9319999814033508, 0.01600000075995922, 0.8069999814033508, 0.8379999995231628, 0.9309999942779541, 0.43799999356269836, 0.7910000085830688, 0.9480000138282776, 0.9559999704360962]
+ Testing Avg Label Acc : 0.746099996380508
+ Testing Std Label Acc : 0.2826770043241668
+ Poison Acc: 0.984
+======
+
+Client 5
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  13, Average loss 0.229318 ===
+ 100 users; time 16:43:22
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.746399998664856 loss: 0.942086
+ Testing Label Acc: [0.9049999713897705, 0.9509999752044678, 0.0010000000474974513, 0.7870000004768372, 0.878000020980835, 0.8539999723434448, 0.35600000619888306, 0.9210000038146973, 0.9010000228881836, 0.9100000262260437]
+ Testing Avg Label Acc : 0.7463999999570661
+ Testing Std Label Acc : 0.2977825368397339
+ Poison Acc: 0.999
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  13, Average loss 0.184987 ===
+ 100 users; time 16:43:40
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8091999888420105 loss: 0.56274
+ Testing Label Acc: [0.7910000085830688, 0.9520000219345093, 0.703000009059906, 0.8560000061988831, 0.6729999780654907, 0.8999999761581421, 0.4490000009536743, 0.9079999923706055, 0.9359999895095825, 0.9240000247955322]
+ Testing Avg Label Acc : 0.8092000007629394
+ Testing Std Label Acc : 0.15157493430357608
+ Poison Acc: 0.297
+======
+
+Client 7
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  13, Average loss 0.289294 ===
+ 100 users; time 16:43:57
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7480999827384949 loss: 0.988551
+ Testing Label Acc: [0.8270000219345093, 0.9399999976158142, 0.0020000000949949026, 0.8949999809265137, 0.7289999723434448, 0.8679999709129333, 0.4659999907016754, 0.9089999794960022, 0.9150000214576721, 0.9300000071525574]
+ Testing Avg Label Acc : 0.7480999942636117
+ Testing Std Label Acc : 0.28327529000862006
+ Poison Acc: 0.998
+======
+
+Client 8
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  13, Average loss 0.176739 ===
+ 100 users; time 16:44:14
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8025000095367432 loss: 0.662014
+ Testing Label Acc: [0.7710000276565552, 0.953000009059906, 0.7279999852180481, 0.871999979019165, 0.6959999799728394, 0.8970000147819519, 0.3840000033378601, 0.8690000176429749, 0.9139999747276306, 0.9409999847412109]
+ Testing Avg Label Acc : 0.8024999976158143
+ Testing Std Label Acc : 0.16293388138159748
+ Poison Acc: 0.272
+======
+
+Client 9
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  13, Average loss 0.183314 ===
+ 100 users; time 16:44:31
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7968000173568726 loss: 0.745739
+ Testing Label Acc: [0.7680000066757202, 0.9480000138282776, 0.6940000057220459, 0.8429999947547913, 0.6650000214576721, 0.9269999861717224, 0.43700000643730164, 0.8309999704360962, 0.9089999794960022, 0.9459999799728394]
+ Testing Avg Label Acc : 0.7967999964952469
+ Testing Std Label Acc : 0.15368525487087606
+ Poison Acc: 0.306
+======
+
+Test end 16:44:36
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.8091999888420105), (8, 0.8025000095367432), (0, 0.7993999719619751), (9, 0.7968000173568726), (3, 0.7760000228881836), (7, 0.7480999827384949), (5, 0.746399998664856), (4, 0.7461000084877014), (1, 0.728600025177002), (2, 0.7254999876022339)]
+acc_avg_difference:  0.0011599985708018457
+Acc_Avg (total global): 0.7678599983605091
+Acc_Std (total global): 0.22777024464242523
+
+good_group_acc :  0.8019749976694583
+models updates
+before:  0.7966000005602836  now: 0.8019749976694583
+normal:  {11, 20, 533, 548, 39, 554, 565, 568, 66, 69, 584, 72, 587, 597, 91, 96, 609, 97, 613, 109, 622, 114, 121, 637, 642, 643, 135, 651, 654, 144, 149, 157, 158, 675, 166, 679, 169, 170, 179, 698, 701, 196, 203, 719, 724, 728, 732, 220, 222, 224, 230, 751, 245, 247, 760, 761, 765, 779, 269, 793, 800, 808, 302, 815, 825, 826, 831, 319, 833, 326, 343, 348, 870, 871, 376, 889, 385, 389, 393, 911, 410, 924, 931, 933, 422, 953, 442, 957, 966, 972, 463, 980, 477, 478, 998, 492, 495, 500, 507, 509}
+
+normal:  {512, 3, 4, 10, 527, 531, 23, 31, 544, 33, 34, 35, 42, 44, 562, 62, 64, 583, 76, 78, 80, 594, 83, 90, 100, 617, 107, 110, 113, 633, 634, 123, 127, 130, 132, 140, 656, 150, 152, 665, 678, 167, 681, 686, 180, 696, 705, 714, 731, 229, 231, 750, 759, 767, 798, 801, 293, 294, 807, 818, 819, 307, 823, 827, 317, 320, 836, 328, 842, 332, 845, 849, 339, 856, 857, 351, 372, 897, 392, 907, 908, 914, 408, 921, 929, 932, 938, 942, 945, 449, 455, 456, 969, 981, 986, 995, 487, 502, 504, 510}
+
+normal:  {523, 16, 17, 534, 536, 545, 547, 549, 38, 553, 43, 557, 559, 55, 567, 573, 575, 65, 581, 82, 85, 598, 603, 94, 608, 610, 106, 623, 627, 629, 639, 138, 145, 659, 661, 151, 664, 162, 164, 685, 177, 178, 710, 717, 217, 225, 241, 242, 249, 763, 252, 773, 262, 270, 280, 792, 794, 797, 289, 809, 301, 304, 315, 832, 321, 327, 841, 846, 847, 852, 853, 345, 858, 864, 869, 358, 360, 362, 877, 883, 374, 381, 386, 398, 419, 936, 939, 430, 431, 946, 441, 955, 956, 958, 963, 979, 469, 982, 985, 491}
+
+shuffle_clients (in good): [6, 8, 0, 9]
+Shuffle in good !
+
+shuffle_clients (in normal): [3, 7, 5]
+Shuffle in normal!
+
+shuffle_clients (in bad): [4, 1, 2]
+Shuffle in bad !
+
+max_local_ep_time:  12.293056011199951
+round_time:  17.416701078414917
+
+good:  [6, 8, 0, 9]
+normal:  [3, 7, 5]
+bad:  [4, 1, 2]
+Client 0
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  14, Average loss 0.165781 ===
+ 100 users; time 16:44:49
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.801800012588501 loss: 0.601475
+ Testing Label Acc: [0.765999972820282, 0.9480000138282776, 0.6850000023841858, 0.8539999723434448, 0.6079999804496765, 0.9160000085830688, 0.5260000228881836, 0.8560000061988831, 0.9129999876022339, 0.9459999799728394]
+ Testing Avg Label Acc : 0.8017999947071075
+ Testing Std Label Acc : 0.14205125539641947
+ Poison Acc: 0.315
+======
+
+Client 1
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  14, Average loss 0.267492 ===
+ 100 users; time 16:45:06
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.722000002861023 loss: 1.03774
+ Testing Label Acc: [0.9229999780654907, 0.9509999752044678, 0.0, 0.8080000281333923, 0.8790000081062317, 0.9319999814033508, 0.08500000089406967, 0.8190000057220459, 0.8889999985694885, 0.9340000152587891]
+ Testing Avg Label Acc : 0.7219999991357327
+ Testing Std Label Acc : 0.34326112296073547
+ Poison Acc: 1.0
+======
+
+Client 2
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  14, Average loss 0.285603 ===
+ 100 users; time 16:45:23
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7411999702453613 loss: 0.951523
+ Testing Label Acc: [0.7850000262260437, 0.9369999766349792, 0.02800000086426735, 0.8460000157356262, 0.6949999928474426, 0.9269999861717224, 0.5379999876022339, 0.7620000243186951, 0.9319999814033508, 0.9620000123977661]
+ Testing Avg Label Acc : 0.7412000004202127
+ Testing Std Label Acc : 0.268966465412298
+ Poison Acc: 0.972
+======
+
+Client 3
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  14, Average loss 0.239167 ===
+ 100 users; time 16:45:41
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7224000096321106 loss: 1.09724
+ Testing Label Acc: [0.781000018119812, 0.9449999928474426, 0.0, 0.843999981880188, 0.8999999761581421, 0.7870000004768372, 0.17399999499320984, 0.9110000133514404, 0.9350000023841858, 0.9470000267028809]
+ Testing Avg Label Acc : 0.7224000006914139
+ Testing Std Label Acc : 0.32516217640769157
+ Poison Acc: 1.0
+======
+
+Client 4
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  14, Average loss 0.266769 ===
+ 100 users; time 16:45:58
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7197999954223633 loss: 1.0188
+ Testing Label Acc: [0.7390000224113464, 0.9610000252723694, 0.013000000268220901, 0.9039999842643738, 0.5099999904632568, 0.8190000057220459, 0.5820000171661377, 0.972000002861023, 0.8650000095367432, 0.8330000042915344]
+ Testing Avg Label Acc : 0.7198000062257052
+ Testing Std Label Acc : 0.2761140366706995
+ Poison Acc: 0.987
+======
+
+Client 5
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  14, Average loss 0.221609 ===
+ 100 users; time 16:46:15
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.798799991607666 loss: 0.727029
+ Testing Label Acc: [0.7990000247955322, 0.949999988079071, 0.5059999823570251, 0.8560000061988831, 0.8539999723434448, 0.9240000247955322, 0.38600000739097595, 0.8330000042915344, 0.9319999814033508, 0.9480000138282776]
+ Testing Avg Label Acc : 0.7988000005483628
+ Testing Std Label Acc : 0.18497664824652602
+ Poison Acc: 0.494
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  14, Average loss 0.171321 ===
+ 100 users; time 16:46:32
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8098000288009644 loss: 0.557851
+ Testing Label Acc: [0.7310000061988831, 0.9490000009536743, 0.6150000095367432, 0.8569999933242798, 0.6850000023841858, 0.9100000262260437, 0.5860000252723694, 0.9129999876022339, 0.9309999942779541, 0.9210000038146973]
+ Testing Avg Label Acc : 0.8098000049591064
+ Testing Std Label Acc : 0.13385349647805878
+ Poison Acc: 0.385
+======
+
+Client 7
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  14, Average loss 0.265924 ===
+ 100 users; time 16:46:50
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.753000020980835 loss: 0.915768
+ Testing Label Acc: [0.8140000104904175, 0.9340000152587891, 0.10100000351667404, 0.8790000081062317, 0.8420000076293945, 0.9049999713897705, 0.31299999356269836, 0.8650000095367432, 0.9409999847412109, 0.9359999895095825]
+ Testing Avg Label Acc : 0.7529999993741512
+ Testing Std Label Acc : 0.2799042684821585
+ Poison Acc: 0.899
+======
+
+Client 8
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  14, Average loss 0.155528 ===
+ 100 users; time 16:47:07
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.800599992275238 loss: 0.646692
+ Testing Label Acc: [0.8050000071525574, 0.9559999704360962, 0.7549999952316284, 0.8539999723434448, 0.6930000185966492, 0.906000018119812, 0.3240000009536743, 0.8529999852180481, 0.9120000004768372, 0.9480000138282776]
+ Testing Avg Label Acc : 0.8005999982357025
+ Testing Std Label Acc : 0.1777122364661256
+ Poison Acc: 0.245
+======
+
+Client 9
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  14, Average loss 0.170295 ===
+ 100 users; time 16:47:25
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7997000217437744 loss: 0.69793
+ Testing Label Acc: [0.7879999876022339, 0.9470000267028809, 0.7160000205039978, 0.8460000157356262, 0.7509999871253967, 0.925000011920929, 0.3100000023841858, 0.8489999771118164, 0.9229999780654907, 0.9419999718666077]
+ Testing Avg Label Acc : 0.7996999979019165
+ Testing Std Label Acc : 0.18076064074218176
+ Poison Acc: 0.284
+======
+
+Test end 16:47:30
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.8098000288009644), (0, 0.801800012588501), (8, 0.800599992275238), (9, 0.7997000217437744), (5, 0.798799991607666), (7, 0.753000020980835), (2, 0.7411999702453613), (3, 0.7224000096321106), (1, 0.722000002861023), (4, 0.7197999954223633)]
+acc_avg_difference:  0.0009499981405680646
+Acc_Avg (total global): 0.766910000219941
+Acc_Std (total global): 0.23127623472628947
+
+good_group_acc :  0.8029749989509583
+models updates
+before:  0.8019749976694583  now: 0.8029749989509583
+normal:  {4, 16, 20, 533, 536, 34, 547, 549, 38, 559, 568, 62, 575, 65, 66, 69, 583, 72, 82, 85, 598, 597, 603, 91, 97, 100, 109, 622, 623, 113, 633, 121, 123, 127, 642, 132, 140, 654, 144, 149, 151, 152, 162, 679, 169, 177, 696, 698, 701, 714, 717, 222, 225, 750, 241, 247, 760, 280, 800, 293, 807, 815, 827, 842, 332, 846, 853, 858, 870, 360, 877, 374, 381, 385, 386, 907, 921, 931, 936, 942, 431, 945, 441, 442, 955, 449, 963, 455, 456, 969, 972, 463, 980, 469, 982, 986, 477, 995, 492, 507}
+
+normal:  {10, 11, 527, 17, 531, 23, 544, 33, 35, 39, 553, 42, 557, 562, 565, 55, 581, 584, 80, 83, 90, 94, 96, 609, 610, 627, 629, 639, 643, 651, 656, 661, 664, 665, 157, 158, 170, 685, 178, 705, 196, 203, 719, 724, 728, 220, 224, 230, 231, 751, 245, 759, 761, 765, 767, 262, 269, 798, 289, 809, 301, 819, 823, 826, 831, 320, 832, 836, 328, 841, 343, 345, 351, 358, 871, 362, 883, 889, 897, 389, 398, 911, 914, 408, 410, 924, 929, 419, 932, 422, 958, 966, 981, 487, 491, 495, 500, 502, 504, 509}
+
+normal:  {514, 8, 13, 14, 528, 18, 22, 535, 28, 41, 49, 563, 56, 57, 59, 61, 75, 588, 589, 595, 602, 604, 606, 101, 614, 111, 117, 118, 119, 126, 131, 644, 649, 139, 653, 670, 160, 682, 684, 687, 185, 708, 197, 202, 716, 733, 226, 739, 753, 243, 758, 255, 768, 263, 264, 784, 785, 276, 795, 284, 288, 292, 805, 298, 300, 308, 824, 838, 331, 335, 848, 865, 878, 367, 881, 884, 382, 896, 388, 390, 394, 910, 403, 916, 409, 923, 413, 428, 943, 950, 440, 445, 965, 968, 461, 977, 467, 993, 486, 493}
+
+shuffle_clients (in good): [6, 0, 8, 9]
+Shuffle in good !
+
+shuffle_clients (in normal): [5, 7, 2]
+Shuffle in normal!
+
+shuffle_clients (in bad): [3, 1, 4]
+Shuffle in bad !
+
+max_local_ep_time:  12.396674871444702
+round_time:  17.45399308204651
+
+good:  [6, 0, 8, 9]
+normal:  [5, 7, 2]
+bad:  [3, 1, 4]
+Client 0
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  15, Average loss 0.153471 ===
+ 100 users; time 16:47:42
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8079000115394592 loss: 0.586363
+ Testing Label Acc: [0.7850000262260437, 0.949999988079071, 0.7080000042915344, 0.8799999952316284, 0.652999997138977, 0.9139999747276306, 0.45399999618530273, 0.8659999966621399, 0.921999990940094, 0.9470000267028809]
+ Testing Avg Label Acc : 0.8078999996185303
+ Testing Std Label Acc : 0.1523597378124799
+ Poison Acc: 0.292
+======
+
+Client 1
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  15, Average loss 0.263372 ===
+ 100 users; time 16:47:59
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7728000283241272 loss: 0.897742
+ Testing Label Acc: [0.7710000276565552, 0.953000009059906, 0.17900000512599945, 0.8489999771118164, 0.75, 0.8679999709129333, 0.5860000252723694, 0.8999999761581421, 0.9300000071525574, 0.9419999718666077]
+ Testing Avg Label Acc : 0.7727999970316887
+ Testing Std Label Acc : 0.22469480752188187
+ Poison Acc: 0.821
+======
+
+Client 2
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  15, Average loss 0.218582 ===
+ 100 users; time 16:48:16
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7786999940872192 loss: 0.816264
+ Testing Label Acc: [0.8140000104904175, 0.9559999704360962, 0.44200000166893005, 0.8360000252723694, 0.8519999980926514, 0.8769999742507935, 0.29499998688697815, 0.9399999976158142, 0.8799999952316284, 0.8949999809265137]
+ Testing Avg Label Acc : 0.7786999940872192
+ Testing Std Label Acc : 0.2116927238243073
+ Poison Acc: 0.558
+======
+
+Client 3
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  15, Average loss 0.294575 ===
+ 100 users; time 16:48:34
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.746399998664856 loss: 0.862345
+ Testing Label Acc: [0.7739999890327454, 0.9340000152587891, 0.008999999612569809, 0.8429999947547913, 0.625, 0.9279999732971191, 0.656000018119812, 0.8330000042915344, 0.9190000295639038, 0.9430000185966492]
+ Testing Avg Label Acc : 0.7464000042527914
+ Testing Std Label Acc : 0.26849141698835044
+ Poison Acc: 0.991
+======
+
+Client 4
+ 5/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  15, Average loss 0.295602 ===
+ 100 users; time 16:48:51
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7394000291824341 loss: 1.08598
+ Testing Label Acc: [0.8820000290870667, 0.9160000085830688, 0.0, 0.722000002861023, 0.800000011920929, 0.8669999837875366, 0.43700000643730164, 0.8579999804496765, 0.953000009059906, 0.9589999914169312]
+ Testing Avg Label Acc : 0.739400002360344
+ Testing Std Label Acc : 0.2859811882108851
+ Poison Acc: 1.0
+======
+
+Client 5
+ 5/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  15, Average loss 0.270555 ===
+ 100 users; time 16:49:08
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.6937000155448914 loss: 1.23767
+ Testing Label Acc: [0.8090000152587891, 0.8880000114440918, 0.0, 0.906000018119812, 0.42100000381469727, 0.8700000047683716, 0.3889999985694885, 0.949999988079071, 0.8790000081062317, 0.824999988079071]
+ Testing Avg Label Acc : 0.6937000036239624
+ Testing Std Label Acc : 0.2988130033808996
+ Poison Acc: 1.0
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  15, Average loss 0.160352 ===
+ 100 users; time 16:49:26
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8131999969482422 loss: 0.548151
+ Testing Label Acc: [0.7549999952316284, 0.9570000171661377, 0.6499999761581421, 0.847000002861023, 0.7129999995231628, 0.9240000247955322, 0.5389999747276306, 0.8690000176429749, 0.9369999766349792, 0.9409999847412109]
+ Testing Avg Label Acc : 0.8131999969482422
+ Testing Std Label Acc : 0.13568994995969902
+ Poison Acc: 0.35
+======
+
+Client 7
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  15, Average loss 0.241803 ===
+ 100 users; time 16:49:43
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7829999923706055 loss: 0.818788
+ Testing Label Acc: [0.7789999842643738, 0.9380000233650208, 0.3499999940395355, 0.8579999804496765, 0.800000011920929, 0.921999990940094, 0.47699999809265137, 0.8199999928474426, 0.9269999861717224, 0.9589999914169312]
+ Testing Avg Label Acc : 0.7829999953508378
+ Testing Std Label Acc : 0.19582696472118907
+ Poison Acc: 0.65
+======
+
+Client 8
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  15, Average loss 0.151409 ===
+ 100 users; time 16:50:01
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8068000078201294 loss: 0.631206
+ Testing Label Acc: [0.800000011920929, 0.9580000042915344, 0.7210000157356262, 0.8429999947547913, 0.6880000233650208, 0.8980000019073486, 0.40799999237060547, 0.8820000290870667, 0.9279999732971191, 0.9419999718666077]
+ Testing Avg Label Acc : 0.8068000018596649
+ Testing Std Label Acc : 0.1586428659700385
+ Poison Acc: 0.279
+======
+
+Client 9
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  15, Average loss 0.179211 ===
+ 100 users; time 16:50:18
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8025000095367432 loss: 0.670123
+ Testing Label Acc: [0.8009999990463257, 0.9459999799728394, 0.7760000228881836, 0.8450000286102295, 0.6420000195503235, 0.921999990940094, 0.3790000081062317, 0.8629999756813049, 0.9150000214576721, 0.9359999895095825]
+ Testing Avg Label Acc : 0.8025000035762787
+ Testing Std Label Acc : 0.1663233234550669
+ Poison Acc: 0.224
+======
+
+Test end 16:50:23
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.8131999969482422), (0, 0.8079000115394592), (8, 0.8068000078201294), (9, 0.8025000095367432), (7, 0.7829999923706055), (2, 0.7786999940872192), (1, 0.7728000283241272), (3, 0.746399998664856), (4, 0.7394000291824341), (5, 0.6937000155448914)]
+acc_avg_difference:  0.007529999651014974
+Acc_Avg (total global): 0.774439999870956
+Acc_Std (total global): 0.20985159818447974
+
+good_group_acc :  0.807600000500679
+models updates
+before:  0.8029749989509583  now: 0.807600000500679
+normal:  {8, 14, 18, 533, 23, 547, 39, 41, 49, 568, 56, 581, 69, 588, 589, 83, 85, 602, 90, 96, 609, 614, 623, 642, 140, 654, 656, 149, 151, 664, 160, 685, 178, 196, 197, 202, 724, 733, 222, 226, 739, 230, 750, 751, 241, 243, 758, 765, 269, 280, 284, 798, 800, 289, 298, 300, 308, 823, 831, 832, 320, 836, 328, 842, 335, 853, 343, 870, 877, 367, 884, 374, 889, 897, 389, 394, 914, 921, 410, 924, 419, 932, 431, 943, 945, 950, 440, 955, 445, 958, 449, 965, 461, 469, 982, 993, 995, 491, 492, 504}
+
+normal:  {11, 17, 531, 22, 535, 33, 549, 38, 42, 57, 59, 72, 584, 82, 595, 597, 604, 610, 100, 101, 111, 113, 629, 118, 119, 121, 123, 127, 132, 644, 649, 139, 651, 653, 144, 158, 169, 682, 170, 684, 687, 177, 696, 185, 705, 708, 714, 224, 225, 753, 245, 761, 262, 784, 785, 276, 805, 293, 807, 301, 824, 826, 827, 841, 331, 332, 846, 848, 858, 865, 358, 362, 881, 883, 896, 390, 910, 398, 916, 408, 409, 923, 413, 929, 931, 422, 936, 942, 442, 966, 455, 456, 467, 986, 477, 486, 487, 493, 500, 507}
+
+normal:  {516, 5, 520, 551, 43, 558, 570, 58, 572, 64, 76, 592, 596, 605, 608, 612, 613, 103, 617, 107, 112, 626, 120, 130, 141, 142, 156, 673, 161, 675, 676, 166, 168, 172, 174, 694, 183, 186, 189, 190, 191, 710, 201, 720, 213, 214, 729, 218, 219, 737, 738, 743, 237, 754, 766, 259, 260, 773, 789, 794, 285, 801, 806, 304, 310, 840, 845, 341, 862, 355, 356, 869, 874, 886, 376, 892, 387, 392, 913, 915, 919, 935, 424, 425, 939, 941, 432, 434, 946, 951, 953, 956, 460, 979, 983, 985, 989, 478, 483, 999}
+
+shuffle_clients (in good): [6, 0, 8, 9]
+Shuffle in good !
+
+shuffle_clients (in normal): [7, 2, 1]
+Shuffle in normal!
+
+shuffle_clients (in bad): [3, 4, 5]
+Shuffle in bad !
+
+max_local_ep_time:  12.609063863754272
+round_time:  17.456867218017578
+
+good:  [6, 0, 8, 9]
+normal:  [7, 2, 1]
+bad:  [3, 4, 5]
+Client 0
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  16, Average loss 0.151072 ===
+ 100 users; time 16:50:35
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8129000067710876 loss: 0.585016
+ Testing Label Acc: [0.8040000200271606, 0.953000009059906, 0.6830000281333923, 0.8659999966621399, 0.7289999723434448, 0.9079999923706055, 0.4339999854564667, 0.8709999918937683, 0.9330000281333923, 0.9480000138282776]
+ Testing Avg Label Acc : 0.8129000037908554
+ Testing Std Label Acc : 0.15333000954849488
+ Poison Acc: 0.317
+======
+
+Client 1
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  16, Average loss 0.241443 ===
+ 100 users; time 16:50:52
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.760200023651123 loss: 0.932817
+ Testing Label Acc: [0.8550000190734863, 0.9549999833106995, 0.14300000667572021, 0.878000020980835, 0.7699999809265137, 0.9399999976158142, 0.4429999887943268, 0.8109999895095825, 0.8669999837875366, 0.9399999976158142]
+ Testing Avg Label Acc : 0.7601999968290329
+ Testing Std Label Acc : 0.2492190992496929
+ Poison Acc: 0.857
+======
+
+Client 2
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  16, Average loss 0.220723 ===
+ 100 users; time 16:51:09
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7445999979972839 loss: 0.885919
+ Testing Label Acc: [0.8429999947547913, 0.9409999847412109, 0.04500000178813934, 0.7789999842643738, 0.9120000004768372, 0.8550000190734863, 0.29499998688697815, 0.8920000195503235, 0.9319999814033508, 0.9520000219345093]
+ Testing Avg Label Acc : 0.7445999994874001
+ Testing Std Label Acc : 0.2968316717339413
+ Poison Acc: 0.955
+======
+
+Client 3
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  16, Average loss 0.251052 ===
+ 100 users; time 16:51:26
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7207000255584717 loss: 1.06458
+ Testing Label Acc: [0.8230000138282776, 0.9399999976158142, 0.0, 0.8199999928474426, 0.9330000281333923, 0.8759999871253967, 0.014999999664723873, 0.9110000133514404, 0.9549999833106995, 0.9340000152587891]
+ Testing Avg Label Acc : 0.7207000031135976
+ Testing Std Label Acc : 0.35939339344974225
+ Poison Acc: 1.0
+======
+
+Client 4
+ 5/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  16, Average loss 0.304233 ===
+ 100 users; time 16:51:43
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7001000046730042 loss: 1.01423
+ Testing Label Acc: [0.7870000004768372, 0.9670000076293945, 0.12399999797344208, 0.8410000205039978, 0.8479999899864197, 0.8289999961853027, 0.11599999666213989, 0.8960000276565552, 0.6330000162124634, 0.9599999785423279]
+ Testing Avg Label Acc : 0.700100003182888
+ Testing Std Label Acc : 0.30341735443588974
+ Poison Acc: 0.876
+======
+
+Client 5
+ 5/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  16, Average loss 0.344944 ===
+ 100 users; time 16:52:00
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.739799976348877 loss: 0.885196
+ Testing Label Acc: [0.7599999904632568, 0.949999988079071, 0.00800000037997961, 0.8389999866485596, 0.9139999747276306, 0.8600000143051147, 0.38999998569488525, 0.8190000057220459, 0.8840000033378601, 0.9739999771118164]
+ Testing Avg Label Acc : 0.739799992647022
+ Testing Std Label Acc : 0.28966076489372783
+ Poison Acc: 0.992
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  16, Average loss 0.155383 ===
+ 100 users; time 16:52:17
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8133000135421753 loss: 0.543024
+ Testing Label Acc: [0.824999988079071, 0.9480000138282776, 0.7730000019073486, 0.8790000081062317, 0.6890000104904175, 0.9129999876022339, 0.3400000035762787, 0.878000020980835, 0.9430000185966492, 0.9449999928474426]
+ Testing Avg Label Acc : 0.8133000046014786
+ Testing Std Label Acc : 0.1766290184390395
+ Poison Acc: 0.227
+======
+
+Client 7
+ 1/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  16, Average loss 0.204772 ===
+ 100 users; time 16:52:34
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7875999808311462 loss: 0.766744
+ Testing Label Acc: [0.8130000233650208, 0.9440000057220459, 0.3700000047683716, 0.8330000042915344, 0.746999979019165, 0.9139999747276306, 0.5260000228881836, 0.8809999823570251, 0.9210000038146973, 0.9269999861717224]
+ Testing Avg Label Acc : 0.7875999987125397
+ Testing Std Label Acc : 0.1826385437388149
+ Poison Acc: 0.63
+======
+
+Client 8
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  16, Average loss 0.147655 ===
+ 100 users; time 16:52:51
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8093000054359436 loss: 0.614631
+ Testing Label Acc: [0.7929999828338623, 0.9559999704360962, 0.7269999980926514, 0.8640000224113464, 0.734000027179718, 0.8999999761581421, 0.36399999260902405, 0.8849999904632568, 0.9279999732971191, 0.9419999718666077]
+ Testing Avg Label Acc : 0.8092999905347824
+ Testing Std Label Acc : 0.16768126835333064
+ Poison Acc: 0.273
+======
+
+Client 9
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  16, Average loss 0.185429 ===
+ 100 users; time 16:53:09
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.803600013256073 loss: 0.655684
+ Testing Label Acc: [0.7549999952316284, 0.9449999928474426, 0.7390000224113464, 0.828000009059906, 0.5730000138282776, 0.9369999766349792, 0.5690000057220459, 0.8270000219345093, 0.9150000214576721, 0.9480000138282776]
+ Testing Avg Label Acc : 0.8036000072956085
+ Testing Std Label Acc : 0.13672687756694357
+ Poison Acc: 0.261
+======
+
+Test end 16:53:14
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.8133000135421753), (0, 0.8129000067710876), (8, 0.8093000054359436), (9, 0.803600013256073), (7, 0.7875999808311462), (1, 0.760200023651123), (2, 0.7445999979972839), (5, 0.739799976348877), (3, 0.7207000255584717), (4, 0.7001000046730042)]
+acc_avg_difference:  0.005229999851435574
+Acc_Avg (total global): 0.7692100000195204
+Acc_Std (total global): 0.23155280014096175
+
+good_group_acc :  0.8097750015556812
+models updates
+before:  0.807600000500679  now: 0.8097750015556812
+normal:  {516, 5, 8, 11, 531, 535, 23, 33, 39, 551, 56, 568, 58, 57, 584, 72, 588, 83, 595, 608, 96, 609, 101, 103, 617, 120, 123, 642, 130, 653, 151, 673, 676, 170, 682, 687, 177, 189, 196, 710, 201, 202, 720, 729, 219, 733, 222, 226, 739, 743, 751, 753, 761, 766, 259, 269, 280, 794, 284, 800, 801, 289, 823, 824, 826, 320, 842, 853, 343, 858, 355, 362, 367, 884, 374, 889, 896, 897, 390, 392, 398, 919, 408, 413, 419, 422, 424, 942, 432, 434, 956, 461, 467, 478, 993, 999, 487, 500, 504, 507}
+
+normal:  {520, 14, 17, 533, 22, 42, 558, 570, 572, 76, 82, 596, 597, 602, 604, 612, 613, 100, 107, 111, 623, 112, 119, 121, 127, 644, 132, 649, 139, 140, 141, 654, 651, 142, 149, 158, 675, 166, 168, 172, 684, 174, 178, 183, 191, 708, 724, 213, 218, 224, 737, 758, 260, 262, 784, 276, 285, 805, 807, 298, 301, 308, 827, 831, 840, 332, 335, 356, 869, 358, 874, 877, 883, 886, 892, 914, 916, 409, 410, 924, 936, 425, 946, 953, 955, 445, 958, 965, 455, 456, 979, 469, 982, 983, 985, 986, 989, 995, 486, 492}
+
+normal:  {18, 547, 549, 38, 41, 43, 49, 59, 64, 69, 581, 589, 592, 85, 90, 605, 610, 614, 113, 626, 629, 118, 144, 656, 664, 156, 160, 161, 169, 685, 694, 696, 185, 186, 190, 705, 197, 714, 214, 225, 738, 230, 237, 750, 241, 754, 243, 245, 765, 773, 785, 789, 798, 293, 806, 300, 304, 310, 832, 836, 328, 841, 331, 845, 846, 848, 341, 862, 865, 870, 881, 376, 387, 389, 394, 910, 913, 915, 921, 923, 929, 931, 932, 935, 939, 941, 431, 943, 945, 950, 951, 440, 442, 449, 966, 460, 477, 483, 491, 493}
+
+shuffle_clients (in good): [6, 0, 8, 9]
+Shuffle in good !
+
+shuffle_clients (in normal): [7, 1, 2]
+Shuffle in normal!
+
+shuffle_clients (in bad): [5, 3, 4]
+Shuffle in bad !
+
+max_local_ep_time:  12.267897129058838
+round_time:  17.20898461341858
+
+good:  [6, 0, 8, 9]
+normal:  [7, 1, 2]
+bad:  [5, 3, 4]
+Client 0
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  17, Average loss 0.166319 ===
+ 100 users; time 16:53:26
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8123000264167786 loss: 0.569954
+ Testing Label Acc: [0.8130000233650208, 0.953000009059906, 0.7210000157356262, 0.8539999723434448, 0.6840000152587891, 0.9120000004768372, 0.4390000104904175, 0.8840000033378601, 0.9259999990463257, 0.9369999766349792]
+ Testing Avg Label Acc : 0.8123000025749206
+ Testing Std Label Acc : 0.15140808438929765
+ Poison Acc: 0.279
+======
+
+Client 1
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  17, Average loss 0.243030 ===
+ 100 users; time 16:53:43
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7644000053405762 loss: 0.913023
+ Testing Label Acc: [0.800000011920929, 0.9470000267028809, 0.1589999943971634, 0.8610000014305115, 0.7139999866485596, 0.8190000057220459, 0.5709999799728394, 0.9150000214576721, 0.9179999828338623, 0.9399999976158142]
+ Testing Avg Label Acc : 0.7644000008702279
+ Testing Std Label Acc : 0.2303224756141744
+ Poison Acc: 0.841
+======
+
+Client 2
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  17, Average loss 0.185169 ===
+ 100 users; time 16:54:00
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7967000007629395 loss: 0.707732
+ Testing Label Acc: [0.8009999990463257, 0.9470000267028809, 0.5630000233650208, 0.8230000138282776, 0.8050000071525574, 0.8949999809265137, 0.3840000033378601, 0.8980000019073486, 0.9200000166893005, 0.9309999942779541]
+ Testing Avg Label Acc : 0.7967000067234039
+ Testing Std Label Acc : 0.17362894182829283
+ Poison Acc: 0.437
+======
+
+Client 3
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  17, Average loss 0.270974 ===
+ 100 users; time 16:54:17
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7534000277519226 loss: 0.905193
+ Testing Label Acc: [0.7850000262260437, 0.9430000185966492, 0.02500000037252903, 0.8709999918937683, 0.7310000061988831, 0.9129999876022339, 0.5370000004768372, 0.8420000076293945, 0.9399999976158142, 0.9470000267028809]
+ Testing Avg Label Acc : 0.7534000063315034
+ Testing Std Label Acc : 0.27097904210844515
+ Poison Acc: 0.975
+======
+
+Client 4
+ 4/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  17, Average loss 0.273848 ===
+ 100 users; time 16:54:34
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7461000084877014 loss: 1.02048
+ Testing Label Acc: [0.8500000238418579, 0.9110000133514404, 0.0, 0.8080000281333923, 0.7110000252723694, 0.9160000085830688, 0.5099999904632568, 0.8700000047683716, 0.9480000138282776, 0.9369999766349792]
+ Testing Avg Label Acc : 0.7461000084877014
+ Testing Std Label Acc : 0.27872619473793847
+ Poison Acc: 1.0
+======
+
+Client 5
+ 6/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  17, Average loss 0.311218 ===
+ 100 users; time 16:54:51
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7055000066757202 loss: 1.21927
+ Testing Label Acc: [0.8379999995231628, 0.9020000100135803, 0.0, 0.9129999876022339, 0.453000009059906, 0.8999999761581421, 0.382999986410141, 0.8880000114440918, 0.8519999980926514, 0.9259999990463257]
+ Testing Avg Label Acc : 0.7054999977350235
+ Testing Std Label Acc : 0.3009877899146903
+ Poison Acc: 1.0
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  17, Average loss 0.170611 ===
+ 100 users; time 16:55:08
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8177000284194946 loss: 0.535673
+ Testing Label Acc: [0.7789999842643738, 0.9490000009536743, 0.675000011920929, 0.8849999904632568, 0.6869999766349792, 0.9279999732971191, 0.5139999985694885, 0.8700000047683716, 0.9399999976158142, 0.949999988079071]
+ Testing Avg Label Acc : 0.8176999926567078
+ Testing Std Label Acc : 0.14153024222040694
+ Poison Acc: 0.325
+======
+
+Client 7
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  17, Average loss 0.233474 ===
+ 100 users; time 16:55:25
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.748199999332428 loss: 0.984631
+ Testing Label Acc: [0.843999981880188, 0.9409999847412109, 0.0, 0.8370000123977661, 0.8199999928474426, 0.8939999938011169, 0.37700000405311584, 0.8700000047683716, 0.9449999928474426, 0.9539999961853027]
+ Testing Avg Label Acc : 0.7481999963521957
+ Testing Std Label Acc : 0.29566189875916776
+ Poison Acc: 1.0
+======
+
+Client 8
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  17, Average loss 0.156253 ===
+ 100 users; time 16:55:42
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8133999705314636 loss: 0.599398
+ Testing Label Acc: [0.7850000262260437, 0.9520000219345093, 0.7350000143051147, 0.8679999709129333, 0.6869999766349792, 0.9010000228881836, 0.44200000166893005, 0.8930000066757202, 0.9300000071525574, 0.9409999847412109]
+ Testing Avg Label Acc : 0.8134000033140183
+ Testing Std Label Acc : 0.15064740511703956
+ Poison Acc: 0.265
+======
+
+Client 9
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  17, Average loss 0.133950 ===
+ 100 users; time 16:55:59
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8079000115394592 loss: 0.63373
+ Testing Label Acc: [0.7919999957084656, 0.9549999833106995, 0.7419999837875366, 0.8299999833106995, 0.671999990940094, 0.9350000023841858, 0.4399999976158142, 0.8420000076293945, 0.9269999861717224, 0.9440000057220459]
+ Testing Avg Label Acc : 0.8078999936580658
+ Testing Std Label Acc : 0.15184429532663096
+ Poison Acc: 0.258
+======
+
+Test end 16:56:04
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.8177000284194946), (8, 0.8133999705314636), (0, 0.8123000264167786), (9, 0.8079000115394592), (2, 0.7967000007629395), (1, 0.7644000053405762), (3, 0.7534000277519226), (7, 0.748199999332428), (4, 0.7461000084877014), (5, 0.7055000066757202)]
+acc_avg_difference:  0.007350000850856353
+Acc_Avg (total global): 0.7765600008703768
+Acc_Std (total global): 0.2145736370016084
+
+good_group_acc :  0.8128249980509281
+models updates
+before:  0.8097750015556812  now: 0.8128249980509281
+normal:  {14, 17, 531, 22, 23, 551, 41, 43, 558, 49, 56, 58, 572, 64, 69, 72, 584, 76, 592, 597, 85, 101, 103, 111, 113, 626, 120, 121, 123, 130, 139, 140, 653, 142, 654, 149, 151, 676, 169, 684, 174, 177, 178, 186, 190, 191, 196, 708, 213, 729, 218, 733, 224, 737, 739, 743, 753, 754, 766, 259, 789, 801, 293, 310, 826, 320, 841, 842, 331, 332, 845, 848, 343, 355, 356, 869, 870, 883, 884, 889, 896, 897, 394, 913, 915, 921, 936, 939, 942, 431, 432, 445, 456, 461, 469, 989, 478, 483, 995, 507}
+
+normal:  {516, 5, 8, 520, 11, 535, 33, 547, 549, 38, 39, 42, 568, 57, 581, 588, 595, 83, 604, 608, 614, 107, 118, 127, 144, 656, 664, 675, 166, 168, 170, 183, 696, 189, 714, 219, 226, 738, 237, 751, 241, 758, 260, 269, 276, 794, 285, 798, 289, 298, 300, 301, 304, 308, 824, 831, 832, 840, 335, 853, 341, 858, 862, 362, 877, 367, 881, 374, 376, 392, 398, 916, 408, 409, 929, 932, 422, 935, 424, 425, 941, 943, 945, 946, 434, 950, 953, 955, 958, 449, 965, 966, 455, 460, 467, 979, 983, 487, 491, 492}
+
+normal:  {4, 521, 10, 534, 29, 31, 544, 34, 548, 553, 554, 556, 559, 564, 566, 65, 67, 78, 79, 594, 91, 615, 110, 625, 114, 627, 117, 633, 639, 134, 135, 137, 138, 657, 659, 152, 665, 678, 686, 695, 698, 706, 205, 719, 725, 215, 731, 732, 746, 239, 757, 759, 767, 255, 265, 270, 791, 288, 292, 294, 808, 813, 814, 816, 309, 318, 319, 326, 838, 333, 847, 852, 857, 345, 859, 348, 861, 864, 872, 360, 363, 878, 879, 372, 388, 901, 907, 416, 418, 435, 438, 954, 960, 450, 972, 987, 480, 498, 509, 510}
+
+shuffle_clients (in good): [6, 8, 0, 9]
+Shuffle in good !
+
+shuffle_clients (in normal): [2, 1, 3]
+Shuffle in normal!
+
+shuffle_clients (in bad): [7, 4, 5]
+Shuffle in bad !
+
+max_local_ep_time:  12.318883180618286
+round_time:  17.35477924346924
+
+good:  [6, 8, 0, 9]
+normal:  [2, 1, 3]
+bad:  [7, 4, 5]
+Client 0
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  18, Average loss 0.170819 ===
+ 100 users; time 16:56:17
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.814300000667572 loss: 0.57188
+ Testing Label Acc: [0.7839999794960022, 0.953000009059906, 0.6930000185966492, 0.8550000190734863, 0.6330000162124634, 0.9139999747276306, 0.5580000281333923, 0.878000020980835, 0.9330000281333923, 0.9419999718666077]
+ Testing Avg Label Acc : 0.8143000066280365
+ Testing Std Label Acc : 0.13397017489882967
+ Poison Acc: 0.307
+======
+
+Client 1
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  18, Average loss 0.218479 ===
+ 100 users; time 16:56:34
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7824000120162964 loss: 0.795122
+ Testing Label Acc: [0.8240000009536743, 0.9539999961853027, 0.328000009059906, 0.8379999995231628, 0.8569999933242798, 0.8500000238418579, 0.3919999897480011, 0.9319999814033508, 0.9200000166893005, 0.9290000200271606]
+ Testing Avg Label Acc : 0.7824000030755996
+ Testing Std Label Acc : 0.2158935861984743
+ Poison Acc: 0.672
+======
+
+Client 2
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  18, Average loss 0.231947 ===
+ 100 users; time 16:56:51
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7466999888420105 loss: 1.00244
+ Testing Label Acc: [0.8190000057220459, 0.9480000138282776, 0.0, 0.8159999847412109, 0.7250000238418579, 0.8820000290870667, 0.5569999814033508, 0.9010000228881836, 0.8859999775886536, 0.9330000281333923]
+ Testing Avg Label Acc : 0.746700006723404
+ Testing Std Label Acc : 0.2721757023456713
+ Poison Acc: 1.0
+======
+
+Client 3
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  18, Average loss 0.230099 ===
+ 100 users; time 16:57:09
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7818999886512756 loss: 0.882083
+ Testing Label Acc: [0.7730000019073486, 0.9480000138282776, 0.3100000023841858, 0.8790000081062317, 0.7799999713897705, 0.8799999952316284, 0.47699999809265137, 0.8989999890327454, 0.9330000281333923, 0.9399999976158142]
+ Testing Avg Label Acc : 0.7819000005722045
+ Testing Std Label Acc : 0.2058924256498055
+ Poison Acc: 0.69
+======
+
+Client 4
+ 6/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  18, Average loss 0.322431 ===
+ 100 users; time 16:57:26
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.73580002784729 loss: 0.999526
+ Testing Label Acc: [0.7099999785423279, 0.9629999995231628, 0.004000000189989805, 0.8360000252723694, 0.8700000047683716, 0.8629999756813049, 0.41600000858306885, 0.8349999785423279, 0.8880000114440918, 0.9729999899864197]
+ Testing Avg Label Acc : 0.7357999972533434
+ Testing Std Label Acc : 0.28698215793955173
+ Poison Acc: 0.996
+======
+
+Client 5
+ 7/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  18, Average loss 0.369772 ===
+ 100 users; time 16:57:43
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7337999939918518 loss: 1.00183
+ Testing Label Acc: [0.8029999732971191, 0.9620000123977661, 0.0, 0.7950000166893005, 0.8230000138282776, 0.9480000138282776, 0.31200000643730164, 0.7990000247955322, 0.953000009059906, 0.9430000185966492]
+ Testing Avg Label Acc : 0.733800008893013
+ Testing Std Label Acc : 0.30444861995942163
+ Poison Acc: 1.0
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  18, Average loss 0.163636 ===
+ 100 users; time 16:58:00
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8216999769210815 loss: 0.532559
+ Testing Label Acc: [0.8270000219345093, 0.9580000042915344, 0.6589999794960022, 0.8529999852180481, 0.7369999885559082, 0.9279999732971191, 0.4959999918937683, 0.8730000257492065, 0.9390000104904175, 0.9470000267028809]
+ Testing Avg Label Acc : 0.8217000007629395
+ Testing Std Label Acc : 0.14237349489483314
+ Poison Acc: 0.341
+======
+
+Client 7
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  18, Average loss 0.191222 ===
+ 100 users; time 16:58:18
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8008999824523926 loss: 0.701328
+ Testing Label Acc: [0.8339999914169312, 0.9470000267028809, 0.6240000128746033, 0.8069999814033508, 0.8119999766349792, 0.906000018119812, 0.33000001311302185, 0.8939999938011169, 0.9240000247955322, 0.9309999942779541]
+ Testing Avg Label Acc : 0.8009000033140182
+ Testing Std Label Acc : 0.1809516225001203
+ Poison Acc: 0.376
+======
+
+Client 8
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  18, Average loss 0.141986 ===
+ 100 users; time 16:58:35
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8091999888420105 loss: 0.590663
+ Testing Label Acc: [0.8109999895095825, 0.949999988079071, 0.7799999713897705, 0.8669999837875366, 0.7020000219345093, 0.9190000295639038, 0.3179999887943268, 0.8709999918937683, 0.9259999990463257, 0.9480000138282776]
+ Testing Avg Label Acc : 0.8091999977827072
+ Testing Std Label Acc : 0.1804365849305317
+ Poison Acc: 0.22
+======
+
+Client 9
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  18, Average loss 0.143409 ===
+ 100 users; time 16:58:53
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8090999722480774 loss: 0.614564
+ Testing Label Acc: [0.7770000100135803, 0.949999988079071, 0.7419999837875366, 0.8529999852180481, 0.6389999985694885, 0.9139999747276306, 0.460999995470047, 0.8759999871253967, 0.9380000233650208, 0.9409999847412109]
+ Testing Avg Label Acc : 0.809099993109703
+ Testing Std Label Acc : 0.15063628231257947
+ Poison Acc: 0.258
+======
+
+Test end 16:58:58
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.8216999769210815), (0, 0.814300000667572), (8, 0.8091999888420105), (9, 0.8090999722480774), (7, 0.8008999824523926), (1, 0.7824000120162964), (3, 0.7818999886512756), (2, 0.7466999888420105), (4, 0.73580002784729), (5, 0.7337999939918518)]
+acc_avg_difference:  0.007020000941120208
+Acc_Avg (total global): 0.783580001811497
+Acc_Std (total global): 0.20737606516298185
+
+good_group_acc :  0.8135749995708466
+models updates
+before:  0.8128249980509281  now: 0.8135749995708466
+normal:  {523, 527, 528, 19, 20, 536, 543, 59, 573, 62, 575, 587, 589, 82, 97, 610, 100, 612, 617, 622, 638, 642, 136, 651, 670, 162, 674, 172, 179, 693, 694, 701, 193, 705, 197, 711, 202, 203, 716, 722, 214, 217, 222, 741, 230, 233, 750, 243, 249, 765, 253, 773, 262, 263, 264, 784, 792, 283, 795, 797, 805, 806, 810, 819, 822, 827, 315, 322, 843, 846, 850, 338, 865, 357, 874, 371, 886, 382, 895, 383, 385, 899, 390, 903, 393, 914, 421, 933, 426, 430, 443, 957, 962, 970, 971, 975, 473, 999, 493, 504}
+
+normal:  {4, 516, 17, 531, 535, 544, 34, 547, 553, 554, 43, 49, 566, 57, 588, 76, 79, 595, 85, 91, 608, 615, 107, 110, 627, 120, 633, 639, 127, 138, 140, 144, 657, 676, 678, 168, 169, 684, 174, 177, 183, 695, 706, 714, 205, 719, 725, 729, 731, 224, 226, 746, 757, 758, 255, 259, 260, 265, 270, 789, 285, 808, 304, 310, 824, 826, 318, 832, 326, 842, 332, 355, 363, 879, 367, 896, 388, 398, 408, 416, 932, 424, 425, 941, 942, 431, 434, 438, 450, 965, 966, 455, 460, 469, 478, 480, 492, 507, 509, 510}
+
+normal:  {8, 14, 22, 534, 29, 548, 549, 551, 41, 42, 556, 558, 559, 58, 64, 65, 69, 584, 592, 594, 604, 101, 625, 114, 117, 121, 123, 130, 134, 137, 142, 659, 149, 170, 686, 178, 696, 191, 218, 732, 733, 737, 739, 237, 241, 754, 759, 269, 794, 798, 801, 289, 293, 298, 301, 814, 816, 309, 831, 838, 840, 841, 333, 335, 343, 345, 859, 861, 862, 356, 869, 870, 360, 877, 878, 881, 883, 901, 394, 907, 916, 929, 418, 422, 935, 939, 943, 945, 435, 953, 954, 445, 972, 461, 467, 979, 983, 995, 487, 498}
+
+shuffle_clients (in good): [6, 0, 8, 9]
+Shuffle in good !
+
+shuffle_clients (in normal): [7, 1, 3]
+Shuffle in normal!
+
+shuffle_clients (in bad): [2, 4, 5]
+Shuffle in bad !
+
+max_local_ep_time:  12.289506912231445
+round_time:  17.389520168304443
+
+good:  [6, 0, 8, 9]
+normal:  [7, 1, 3]
+bad:  [2, 4, 5]
+Client 0
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  19, Average loss 0.138661 ===
+ 100 users; time 16:59:10
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8163999915122986 loss: 0.554977
+ Testing Label Acc: [0.8169999718666077, 0.9480000138282776, 0.7390000224113464, 0.8759999871253967, 0.7350000143051147, 0.9160000085830688, 0.3779999911785126, 0.8809999823570251, 0.9350000023841858, 0.9390000104904175]
+ Testing Avg Label Acc : 0.8164000004529953
+ Testing Std Label Acc : 0.16397329251307288
+ Poison Acc: 0.261
+======
+
+Client 1
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  19, Average loss 0.162978 ===
+ 100 users; time 16:59:26
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8052999973297119 loss: 0.6813
+ Testing Label Acc: [0.8140000104904175, 0.9570000171661377, 0.7519999742507935, 0.8330000042915344, 0.6980000138282776, 0.902999997138977, 0.3310000002384186, 0.9100000262260437, 0.9259999990463257, 0.9290000200271606]
+ Testing Avg Label Acc : 0.8053000062704087
+ Testing Std Label Acc : 0.1770728987837602
+ Poison Acc: 0.248
+======
+
+Client 2
+ 3/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  19, Average loss 0.264747 ===
+ 100 users; time 16:59:38
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7727000117301941 loss: 0.846752
+ Testing Label Acc: [0.8370000123977661, 0.9480000138282776, 0.27799999713897705, 0.8999999761581421, 0.8220000267028809, 0.8899999856948853, 0.2879999876022339, 0.875, 0.9390000104904175, 0.949999988079071]
+ Testing Avg Label Acc : 0.7726999998092652
+ Testing Std Label Acc : 0.24828977299928773
+ Poison Acc: 0.722
+======
+
+Client 3
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  19, Average loss 0.218842 ===
+ 100 users; time 16:59:53
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7671999931335449 loss: 0.879226
+ Testing Label Acc: [0.8090000152587891, 0.9559999704360962, 0.18700000643730164, 0.8299999833106995, 0.871999979019165, 0.8970000147819519, 0.35499998927116394, 0.8970000147819519, 0.9380000233650208, 0.9309999942779541]
+ Testing Avg Label Acc : 0.7671999990940094
+ Testing Std Label Acc : 0.25466833308742853
+ Poison Acc: 0.813
+======
+
+Client 4
+ 6/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  19, Average loss 0.308083 ===
+ 100 users; time 17:00:10
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7343999743461609 loss: 1.16949
+ Testing Label Acc: [0.8650000095367432, 0.9240000247955322, 0.0, 0.796999990940094, 0.7630000114440918, 0.9190000295639038, 0.41200000047683716, 0.9200000166893005, 0.8489999771118164, 0.8949999809265137]
+ Testing Avg Label Acc : 0.7344000041484833
+ Testing Std Label Acc : 0.28433719715225253
+ Poison Acc: 1.0
+======
+
+Client 5
+ 7/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  19, Average loss 0.332193 ===
+ 100 users; time 17:00:27
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.6523000001907349 loss: 1.36558
+ Testing Label Acc: [0.7170000076293945, 0.8009999990463257, 0.0, 0.9620000123977661, 0.0430000014603138, 0.8640000224113464, 0.4390000104904175, 0.8880000114440918, 0.8809999823570251, 0.9279999732971191]
+ Testing Avg Label Acc : 0.65230000205338
+ Testing Std Label Acc : 0.345418021275366
+ Poison Acc: 1.0
+======
+
+Client 6
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  19, Average loss 0.143591 ===
+ 100 users; time 17:00:45
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8208000063896179 loss: 0.52804
+ Testing Label Acc: [0.7910000085830688, 0.9559999704360962, 0.7630000114440918, 0.8859999775886536, 0.6520000100135803, 0.9350000023841858, 0.45100000500679016, 0.9079999923706055, 0.9350000023841858, 0.9309999942779541]
+ Testing Avg Label Acc : 0.8207999974489212
+ Testing Std Label Acc : 0.15421918773705776
+ Poison Acc: 0.237
+======
+
+Client 7
+ 2/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  19, Average loss 0.194434 ===
+ 100 users; time 17:01:02
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.7592999935150146 loss: 0.860175
+ Testing Label Acc: [0.8130000233650208, 0.9350000023841858, 0.029999999329447746, 0.8479999899864197, 0.8169999718666077, 0.847000002861023, 0.503000020980835, 0.9150000214576721, 0.9459999799728394, 0.9390000104904175]
+ Testing Avg Label Acc : 0.7593000022694468
+ Testing Std Label Acc : 0.2723237213360883
+ Poison Acc: 0.97
+======
+
+Client 8
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  19, Average loss 0.154200 ===
+ 100 users; time 17:01:19
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8162000179290771 loss: 0.587602
+ Testing Label Acc: [0.8180000185966492, 0.9589999914169312, 0.6819999814033508, 0.8379999995231628, 0.7379999756813049, 0.9319999814033508, 0.46399998664855957, 0.8500000238418579, 0.9300000071525574, 0.9509999752044678]
+ Testing Avg Label Acc : 0.8161999940872192
+ Testing Std Label Acc : 0.14653109159565678
+ Poison Acc: 0.318
+======
+
+Client 9
+ 0/100 are attackers with poison attack 
+ count(target label):  100
+=== Round  19, Average loss 0.160136 ===
+ 100 users; time 17:01:36
+ test data_loader(per batch size): 79
+ Testing accuracy: 0.8115000128746033 loss: 0.604371
+ Testing Label Acc: [0.7670000195503235, 0.9539999961853027, 0.7239999771118164, 0.8420000076293945, 0.6370000243186951, 0.9139999747276306, 0.5329999923706055, 0.8579999804496765, 0.9340000152587891, 0.9520000219345093]
+ Testing Avg Label Acc : 0.8115000009536744
+ Testing Std Label Acc : 0.13649194126723888
+ Poison Acc: 0.276
+======
+
+Test end 17:01:41
+-------------------------------------------------------------------------
+
+acc_list:  [(6, 0.8208000063896179), (0, 0.8163999915122986), (8, 0.8162000179290771), (9, 0.8115000128746033), (1, 0.8052999973297119), (2, 0.7727000117301941), (3, 0.7671999931335449), (7, 0.7592999935150146), (4, 0.7343999743461609), (5, 0.6523000001907349)]
+acc_avg_difference:  0.007970001152716732
+Acc_Avg (total global): 0.7756100006587803
+Acc_Std (total global): 0.21833254577472094
+
+good_group_acc :  0.8162249982357026
+models updates
+before:  0.8135749995708466  now: 0.8162249982357026
+normal:  {528, 19, 535, 536, 547, 548, 553, 42, 43, 558, 559, 49, 64, 65, 69, 584, 608, 97, 101, 617, 117, 127, 639, 130, 642, 134, 137, 142, 657, 149, 674, 162, 678, 168, 174, 177, 178, 694, 183, 696, 695, 191, 193, 706, 705, 714, 203, 716, 737, 226, 741, 241, 243, 758, 765, 773, 784, 285, 797, 801, 806, 810, 298, 814, 309, 822, 827, 332, 335, 345, 859, 874, 877, 878, 367, 371, 382, 899, 901, 390, 398, 408, 929, 932, 933, 422, 935, 424, 426, 942, 945, 435, 953, 957, 962, 460, 492, 493, 504, 509}
+
+normal:  {512, 521, 11, 18, 21, 533, 23, 31, 33, 38, 552, 564, 567, 56, 55, 571, 66, 583, 78, 597, 88, 96, 609, 106, 109, 111, 113, 119, 636, 637, 643, 135, 656, 145, 658, 164, 679, 687, 180, 697, 190, 708, 717, 724, 213, 219, 225, 229, 751, 761, 763, 766, 767, 768, 268, 276, 277, 280, 284, 300, 815, 825, 833, 321, 836, 849, 339, 347, 864, 872, 362, 381, 386, 395, 910, 401, 403, 919, 410, 413, 419, 931, 934, 938, 432, 442, 960, 963, 453, 968, 977, 980, 987, 477, 998, 491, 495, 500, 502, 511}
+
+normal:  {4, 516, 527, 20, 22, 534, 29, 544, 34, 551, 41, 57, 58, 59, 62, 588, 589, 592, 595, 85, 604, 610, 615, 114, 633, 638, 136, 138, 651, 676, 172, 684, 686, 179, 197, 711, 202, 205, 722, 217, 729, 731, 732, 218, 222, 224, 739, 746, 237, 759, 259, 262, 269, 789, 794, 795, 293, 805, 301, 304, 816, 819, 824, 826, 315, 318, 831, 838, 842, 843, 333, 846, 343, 861, 869, 870, 360, 363, 883, 383, 896, 895, 903, 907, 916, 418, 421, 425, 939, 941, 431, 438, 443, 966, 970, 975, 979, 983, 487, 999}
+
+
+
+
+max_local_ep_time:  12.425174713134766
+round_time:  17.508546590805054
+
+Round:  19
+save 4 models
+locals:  {6, 24, 538, 541, 32, 54, 74, 591, 84, 599, 87, 92, 624, 630, 635, 641, 646, 652, 146, 660, 154, 155, 671, 175, 176, 692, 181, 704, 194, 195, 709, 712, 713, 715, 721, 209, 726, 735, 736, 227, 745, 748, 752, 244, 254, 770, 772, 777, 272, 275, 278, 279, 796, 799, 802, 296, 811, 305, 314, 828, 316, 835, 336, 342, 353, 867, 361, 365, 366, 880, 882, 885, 887, 893, 905, 400, 912, 404, 406, 926, 415, 928, 927, 423, 937, 940, 436, 444, 447, 451, 457, 974, 465, 470, 472, 988, 990, 994, 482, 488}
+
+locals:  {513, 515, 522, 12, 525, 526, 15, 530, 537, 25, 542, 46, 561, 52, 577, 579, 68, 73, 590, 86, 600, 616, 618, 620, 115, 125, 640, 648, 143, 153, 666, 171, 683, 173, 688, 700, 188, 702, 192, 199, 207, 210, 212, 730, 228, 742, 232, 744, 240, 755, 769, 261, 774, 781, 271, 273, 788, 281, 804, 299, 306, 821, 311, 323, 837, 839, 334, 340, 855, 344, 868, 359, 875, 368, 370, 380, 900, 399, 407, 920, 922, 411, 427, 429, 944, 952, 964, 454, 459, 973, 462, 976, 978, 466, 474, 481, 996, 997, 499, 501}
+
+locals:  {1, 519, 529, 532, 30, 546, 36, 550, 40, 45, 48, 51, 60, 63, 578, 580, 71, 586, 77, 81, 601, 607, 98, 99, 104, 122, 124, 128, 133, 650, 655, 662, 663, 669, 672, 165, 690, 691, 182, 699, 187, 198, 200, 211, 727, 221, 740, 747, 236, 238, 756, 246, 764, 257, 258, 776, 274, 786, 290, 812, 303, 817, 820, 830, 324, 329, 844, 337, 854, 860, 349, 863, 352, 354, 369, 375, 379, 894, 384, 902, 391, 397, 402, 925, 414, 417, 930, 948, 437, 446, 961, 458, 475, 484, 489, 490, 496, 503, 506, 508}
+
+locals:  {0, 2, 517, 518, 26, 539, 540, 37, 555, 47, 560, 53, 569, 574, 576, 582, 70, 585, 93, 611, 105, 619, 108, 621, 631, 632, 129, 645, 647, 147, 148, 667, 668, 159, 677, 680, 184, 707, 204, 206, 718, 208, 223, 234, 235, 749, 250, 251, 762, 256, 771, 775, 778, 267, 780, 782, 783, 787, 286, 287, 291, 295, 312, 829, 834, 325, 330, 851, 346, 350, 866, 873, 364, 373, 888, 377, 378, 891, 890, 898, 904, 906, 909, 412, 433, 947, 949, 439, 959, 452, 464, 468, 471, 984, 476, 479, 992, 494, 497, 505}
+
+clients (in good): [6, 0, 8, 9]
+clients (in normal): [1, 2, 3]
+clients (in bad): [7, 4, 5]
+total_time:  349.1421673297882
+=== End ===
