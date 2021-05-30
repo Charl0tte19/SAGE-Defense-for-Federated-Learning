@@ -1,7 +1,5 @@
 # Result Charts
 
-# Result Charts
-
 ### MNIST, non-IID degree K = 0.4, case LD (Low damage level)
 
  Attack ratio  | Number of attackers assigned to each subset in each group | Average number of attackers assigned to each subset in each group | Validation accuracy
