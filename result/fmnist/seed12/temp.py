@@ -1,19 +1,19 @@
 seed = 'seed_12'
 
-s = open('/home/charlotte/My_FL/src/fmnist/' + seed + '/poison.txt', 'r')
+s = open('/home/ubuntu/My_FL/src/fmnist/' + seed + '/poison.txt', 'r')
 r = s.readlines()
 
-localfile = open('/home/charlotte/My_FL/src/fmnist/' + seed + '/local.txt', 'r')
+localfile = open('/home/ubuntu/My_FL/src/fmnist/' + seed + '/local.txt', 'r')
 localfile = localfile.readlines()
 
-attackfile = open('/home/charlotte/My_FL/src/fmnist/' + seed + '/attacker.txt', 'r')
+attackfile = open('/home/ubuntu/My_FL/src/fmnist/' + seed + '/attacker.txt', 'r')
 attackfile = attackfile.readlines()
 
 print(len(attackfile))
 attacker = (attackfile[1][15:])
 
-com = open('/home/charlotte/My_FL/src/fmnist/' + seed + '/cur.txt', 'r')
-comm = open('/home/charlotte/My_FL/src/fmnist/' + seed + '/com.txt', 'w')
+com = open('/home/ubuntu/My_FL/src/fmnist/' + seed + '/cur.txt', 'r')
+comm = open('/home/ubuntu/My_FL/src/fmnist/' + seed + '/com.txt', 'w')
 
 com = com.readlines()
 com[0] = com[0][:-1]
@@ -111,9 +111,9 @@ else:
 	comm.write(c)
 
 
-localo = open('/home/charlotte/My_FL/src/fmnist/' + seed + '/localout.txt', 'w')
+localo = open('/home/ubuntu/My_FL/src/fmnist/' + seed + '/localout.txt', 'w')
 
-attacko = open('/home/charlotte/My_FL/src/fmnist/' + seed + '/attackerout.txt', 'w')
+attacko = open('/home/ubuntu/My_FL/src/fmnist/' + seed + '/attackerout.txt', 'w')
 
 attacko.write(attacker)
 localo.write(localout)
