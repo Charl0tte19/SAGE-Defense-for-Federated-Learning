@@ -61,7 +61,7 @@ bash ./fmnist/origin/make_dir.sh
 python -u main_origin_fmnist.py --gpu 0 --seed 32 --epoch 100 --noniid 0.4 --attack_mode="poison" --attack_ratio 0.2 --test_label_acc --target_random --dataset="fmnist" --model_path="./fmnist/origin/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.pt" 2>&1 | tee ./fmnist/origin/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.txt
 ```
 
-5. Testing the trained global model.
+5. Test the trained global model.
 
 ```
 python -u test_trained_models_mnist.py --gpu 0 --seed 32 --target_random --test_label_acc --final_model="./mnist/noniid_0.8/ratio_0.02/final.pt" 2>&1 | tee ./mnist/seed_32/noniid_0.4/ratio_0.02/testing.txt
@@ -103,7 +103,7 @@ bash ./mnist/origin/make_dir.sh
 python -u main_origin_mnist.py --gpu 0 --seed 32 --scale --epoch 100 --noniid 0.8 --attack_mode="poison" --attack_ratio 0.02 --test_label_acc --target_random --dataset="mnist" --model_path="./mnist/origin/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.pt" 2>&1 | tee ./mnist/origin/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.txt
 ```
 
-5. Testing the trained global model.
+5. Test the trained global model.
 
 ```
 python -u test_trained_models_mnist.py --gpu 0 --seed 32 --target_random --test_label_acc --final_model="./mnist/noniid_0.8/ratio_0.02/final.pt" 2>&1 | tee ./mnist/seed_32/noniid_0.4/ratio_0.02/testing.txt
