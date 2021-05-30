@@ -4,7 +4,7 @@ Implementation of Shuffling and Regrouping Based Defense for Federated Learning
 
 ## Prerequisites
 
-Our experiments were run on GeForce RTX 3090. We use Python 3.8 and the required packages are listed as follows.
+Our experiments were run on Ubuntu server with GeForce RTX 3090. We use Python 3.8 and the required packages are listed as follows.
 
 - pytorch 1.8.0
 - torchvision 0.9.0
@@ -14,3 +14,11 @@ Our experiments were run on GeForce RTX 3090. We use Python 3.8 and the required
 - scipy 1.5.4
 - matplotlib 3.3.4
 - numpy 1.19.5
+
+You can also build the environment and install the requirements as follows.
+
+```
+conda create -n SAGE python=3.8
+source activate SAGE
+pip install -r requirement.txt 
+```
