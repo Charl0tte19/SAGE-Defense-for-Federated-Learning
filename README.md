@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 ## Reproduce the results
 
-- ### Run a single case
+### - Run a single case
 
 #### For example, run the case (Fashion-MNIST, non-IID degree K = 0.4)
 
