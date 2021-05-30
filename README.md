@@ -160,3 +160,6 @@ bash ./origin4_fmnist.sh
 
 Please check the path before running each sh script.
 
+## Result Charts
+
+We show the complete version of the result charts in ./result/chart/.
