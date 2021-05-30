@@ -162,10 +162,21 @@ Please check the path before running each sh script.
 
 ## Result Charts
 
-We show the complete version of the result charts in [./result/](https://github.com/Charl0tte19/SAGE-Defense-for-Federated-Learning/tree/main/result).
+We show the complete version of the result charts in [result/](https://github.com/Charl0tte19/SAGE-Defense-for-Federated-Learning/tree/main/result).
 
 ### - Example ( MNIST, non-IID degree K = 0.4, case LD )
 
  Attack ratio  | Number of attackers assigned to each subset in each group | Average number of attackers assigned to each subset in each group | Validation accuracy
  ------------- |-------------| ----------- | --------------
  0.3      | ![alt text](https://raw.githubusercontent.com/Charl0tte19/SAGE-Defense-for-Federated-Learning/main/result/chart/amount/noniid_0.4_ratio_0.3_mnist_regroup.png) | ![alt text](https://raw.githubusercontent.com/Charl0tte19/SAGE-Defense-for-Federated-Learning/main/result/chart/amount/noniid_0.4_ratio_0.3_mnist_attacker_in_group.png) | ![alt text](https://github.com/Charl0tte19/SAGE-Defense-for-Federated-Learning/blob/main/result/chart/accuracy/noniid_0.4_ratio_0.3_mnist_acc.png)
+
+## Comments of each file
+
+```
+code/                      # Code for our experiments.
+    fmnist/                # Store the master models and training logs for fmnist
+    mnist/                 # Store the master models and training logs for mnist
+    models/                # CNN models code
+    utils/                 #
+    *.py                   #
+```
