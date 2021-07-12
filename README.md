@@ -15,13 +15,7 @@ Our experiments were run on Ubuntu server with GeForce RTX 3090. We use Python 3
 - matplotlib 3.3.4
 - numpy 1.19.5
 
-You can also build the environment and install the requirements as follows.
-
-```
-conda create -n SAGE python=3.8
-conda activate SAGE
-pip install -r requirements.txt 
-```
+The requirements.txt is also provided for your reference.
 
 ## Reproduce the results
 
