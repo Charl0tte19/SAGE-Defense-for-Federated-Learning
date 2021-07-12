@@ -14,7 +14,7 @@ Our experiments were run on Ubuntu server with GeForce RTX 3090. We use Python 3
 - scipy 1.5.4
 - matplotlib 3.3.4
 - numpy 1.19.5
-- requests
+- requests 2.25.1
 
 The requirements.txt is also provided for your reference.
 
