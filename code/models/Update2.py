@@ -311,7 +311,7 @@ class Final_test(object):
         for i in range(len(net_g)):
             test_loss[i] /= len(self.data_loader.dataset)
         
-        test_loss = sum(test_loss)/3
+        test_loss = sum(test_loss)/len(test_loss)
 
         accuracy = (sum(correct) / sum(gold_all)).item()
     
