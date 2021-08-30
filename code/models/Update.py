@@ -141,7 +141,7 @@ class LocalUpdate_1(object):
                     if(self.args.attack_mode == 'poison') and (labels[label_idx] in self.args.target_label):
                         count = 1
                         
-                    if (self.args.attack_mode == 'poison') and (labels[label_idx] in self.args.target_label) and (self.round % self.args.frequency == 0) and (self.user_idx in self.attack_idxs):
+                    if (self.args.attack_mode == 'poison') and (labels[label_idx] in self.args.target_label) and (self.user_idx in self.attack_idxs):
                         self.attacker_flag = True
                             
                         if(self.args.target_random == True):
