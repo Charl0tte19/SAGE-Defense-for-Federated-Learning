@@ -134,9 +134,6 @@ if __name__ == '__main__':
             if(attack_flag):
                 attacker_idxs.append(idx)
                 attack_set[1] += 1
-
-                if(attack_set[2]>1):
-                    attack_set[2] -= 1 / (100*args.attack_ratio)
             
             if(attack_set[1]==attack_set[0]):
                 break
