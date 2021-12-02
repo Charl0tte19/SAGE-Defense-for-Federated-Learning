@@ -8,5 +8,5 @@ do
 done
 
 mkdir ./fmnist/noniid_0.4
-mv ra* ./fmnist/noniid_0.4/
+mv ./fmnist/ra* ./fmnist/noniid_0.4/
 cp -r ./fmnist/noniid_0.4 ./fmnist/noniid_0.8
