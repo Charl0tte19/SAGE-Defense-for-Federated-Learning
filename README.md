@@ -50,11 +50,10 @@ python -u after_preprocess_FL_fmnist.py --dataset=fmnist --noniid 0.4 --seed 32 
 
 ```
 mkdir ./fmnist/origin/
-
 cp ./fmnist/make_dir.sh ./fmnist/origin
-
+cd ./fmnist/origin
 bash ./fmnist/origin/make_dir.sh
-
+cd ../..
 python -u main_origin_fmnist.py --gpu 0 --seed 32 --epoch 100 --noniid 0.4 --attack_mode="poison" --attack_ratio 0.2 --test_label_acc --target_random --dataset="fmnist" --model_path="./fmnist/origin/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.pt" 2>&1 | tee ./fmnist/origin/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.txt
 ```
 
@@ -94,11 +93,10 @@ python -u after_preprocess_FL_mnist.py --seed 12 --epoch 80 --noniid 0.8 --attac
 
 ```
 mkdir ./mnist/origin/
-
 cp ./mnist/make_dir.sh ./mnist/origin
-
+cd ./mnist/origin
 bash ./mnist/origin/make_dir.sh
-
+cd ../..
 python -u main_origin_mnist.py --gpu 0 --seed 32 --scale --epoch 100 --noniid 0.8 --attack_mode="poison" --attack_ratio 0.02 --test_label_acc --target_random --dataset="mnist" --model_path="./mnist/origin/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.pt" 2>&1 | tee ./mnist/origin/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.txt
 ```
 
@@ -120,7 +118,9 @@ run the following code in ./code/
 2. Create the directories ./fmnist/noniid_0.4/ and ./fmnist/noniid_0.8/.
 
 ```
+cd ./fmnist
 bash ./fmnist/make_dir.sh
+cd ..
 ```
 
 3. Train the model by SAGE.
@@ -136,11 +136,8 @@ bash ./shuffle4_fmnist.sh
 
 ```
 mkdir ./fmnist/seed_32
-
 cp ./fmnist/file.sh ./fmnist/seed_32/
-
 mkdir ./fmnist/seed_32/command/
-
 bash ./fmnist/seed_32/file.sh
 ```
 
@@ -157,11 +154,10 @@ bash ./after4_fmnist.sh
 
 ```
 mkdir ./fmnist/origin/
-
 cp ./fmnist/make_dir.sh ./fmnist/origin
-
+cd ./fmnist/origin
 bash ./fmnist/origin/make_dir.sh
-
+cd ../..
 bash ./origin1_fmnist.sh
 bash ./origin2_fmnist.sh
 bash ./origin3_fmnist.sh
