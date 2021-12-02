@@ -29,7 +29,9 @@ run the following code in ./code/
 1. Create the directories ./fmnist/noniid_0.4/ and ./fmnist/noniid_0.8/.
 
 ```
+cd ./fmnist
 bash ./fmnist/make_dir.sh
+cd ..
 ```
 
 2. Train the model by SAGE.
@@ -71,7 +73,9 @@ run the following code in ./code/
 1. Create the directories ./mnist/noniid_0.4/ and ./mnist/noniid_0.8/.
 
 ```
+cd ./mnist
 bash ./mnist/make_dir.sh
+cd ..
 ```
 
 2. Train the model by SAGE.
