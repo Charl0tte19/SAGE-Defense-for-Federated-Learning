@@ -86,7 +86,7 @@ python -u main_shuffle_mnist.py --gpu 0 --seed 32 --dataset="mnist" --scale --ep
 3. Continue to train the model by FL after SAGE. Assuming the best master model is No.6 master model.
 
 ```
-python -u after_preprocess_FL_mnist.py --seed 12 --epoch 80 --noniid 0.8 --attack_ratio 0.02 --test_label_acc --target_random --scale --model_path=./mnist/seed_12/noniid_0.8/ratio_0.02/final.pt --pretrained_model=./mnist/seed_12/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.pt(4).pt1 --local_file=./mnist/seed_12/noniid_0.8/ratio_0.02/local.txt --attacker_file=./mnist/seed_12/noniid_0.8/ratio_0.02/attacker.txt 2>&1 | tee ./mnist/noniid_0.8/ratio_0.02/log.txt
+python -u after_preprocess_FL_mnist.py --seed 12 --epoch 80 --noniid 0.8 --attack_ratio 0.02 --test_label_acc --target_random --scale --model_path="./mnist/seed_12/noniid_0.8/ratio_0.02/final.pt" --pretrained_model="./mnist/seed_12/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.pt(4).pt1" --local_file="./mnist/seed_12/noniid_0.8/ratio_0.02/local.txt" --attacker_file="./mnist/seed_12/noniid_0.8/ratio_0.02/attacker.txt" 2>&1 | tee ./mnist/noniid_0.8/ratio_0.02/log.txt
 ```
 
 4. Train the model by typical FL.
