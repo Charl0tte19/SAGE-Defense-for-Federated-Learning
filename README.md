@@ -46,29 +46,32 @@ python -u main_shuffle_fmnist.py --gpu 0 --seed 32 --dataset="fmnist" --epoch 20
 cd ./fmnist
 mkdir seed_32
 cp file.sh temp.py seed_32
-cp -r noniid* seed_32
+mv noniid* seed_32
 cd seed_32
 mkdir command
 bash ./file.sh
-cd ../..
+cd ../../
 python -u after_preprocess_FL_fmnist.py --dataset=fmnist --noniid 0.4 --seed 32 --epoch 80 --attack_mode=poison --attack_ratio 0.2 --test_label_acc --target_random --model_path="./fmnist/seed_32/noniid_0.4/ratio_0.2/final.pt" --pretrained_model="./fmnist/seed_32/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.pt(6).pt1" --local_file="./fmnist/seed_32/noniid_0.4/ratio_0.2/local.txt" --attacker_file="./fmnist/seed_32/noniid_0.4/ratio_0.2/attacker.txt" 2>&1 | tee ./fmnist/seed_32/noniid_0.4/ratio_0.2/log.txt
 ```
 
 4. Train the model by typical FL.
 
 ```
-mkdir ./fmnist/origin/
-cp ./fmnist/make_dir.sh ./fmnist/origin
-cd ./fmnist/origin
-bash ./fmnist/origin/make_dir.sh
-cd ../..
-python -u main_origin_fmnist.py --gpu 0 --seed 32 --epoch 100 --noniid 0.4 --attack_mode="poison" --attack_ratio 0.2 --test_label_acc --target_random --dataset="fmnist" --model_path="./fmnist/origin/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.pt" 2>&1 | tee ./fmnist/origin/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.txt
+cd ./fmnist
+mkdir origin
+cp make_dir.sh origin
+cd origin
+bash ./make_dir.sh
+mkdir seed_32
+mv noniid* seed_32
+cd ../../
+python -u main_origin_fmnist.py --gpu 0 --seed 32 --epoch 100 --noniid 0.4 --attack_mode="poison" --attack_ratio 0.2 --test_label_acc --target_random --dataset="fmnist" --model_path="./fmnist/origin/seed_32/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.pt" 2>&1 | tee ./fmnist/origin/seed_32/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.txt
 ```
 
 5. Test the trained global model.
 
 ```
-python -u test_trained_models_mnist.py --gpu 0 --seed 32 --target_random --test_label_acc --final_model="./mnist/noniid_0.8/ratio_0.02/final.pt" 2>&1 | tee ./mnist/seed_32/noniid_0.4/ratio_0.02/testing.txt
+python -u test_trained_models_fmnist.py --gpu 0 --seed 32 --target_random --test_label_acc --final_model="./fmnist/seed_32/noniid_0.4/ratio_0.2/final.pt" 2>&1 | tee ./fmnist/seed_32/noniid_0.4/ratio_0.2/testing.txt
 ```
 ___
 
@@ -88,30 +91,41 @@ cd ..
 2. Train the model by SAGE.
 
 ```
-python -u main_shuffle_mnist.py --gpu 0 --seed 32 --dataset="mnist" --scale --epoch 20 --noniid 0.8 --attack_mode="poison" --attack_ratio 0.02 --test_label_acc --target_random --shuffle --model_path="./mnist/noniid_0.8/ratio_0.02/poison_${ratio4}0.02_Scale_0.pt" 2>&1 | tee ./mnist/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.txt
+python -u main_shuffle_mnist.py --gpu 0 --seed 32 --dataset="mnist" --scale --epoch 20 --noniid 0.8 --attack_mode="poison" --attack_ratio 0.02 --test_label_acc --target_random --shuffle --model_path="./mnist/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.pt" 2>&1 | tee ./mnist/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.txt
 ```
 
 3. Continue to train the model by FL after SAGE. Assuming the best master model is No.6 master model.
-
+ Before run the following command, check that the path and seed in file.sh and temp.py is right.
 ```
-python -u after_preprocess_FL_mnist.py --seed 12 --epoch 80 --noniid 0.8 --attack_ratio 0.02 --test_label_acc --target_random --scale --model_path="./mnist/seed_12/noniid_0.8/ratio_0.02/final.pt" --pretrained_model="./mnist/seed_12/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.pt(4).pt1" --local_file="./mnist/seed_12/noniid_0.8/ratio_0.02/local.txt" --attacker_file="./mnist/seed_12/noniid_0.8/ratio_0.02/attacker.txt" 2>&1 | tee ./mnist/noniid_0.8/ratio_0.02/log.txt
+cd ./mnist
+mkdir seed_32
+cp file.sh temp.py seed_32
+mv noniid* seed_32
+cd seed_32
+mkdir command
+bash ./file.sh
+cd ../../
+python -u after_preprocess_FL_mnist.py --seed 32 --epoch 80 --noniid 0.8 --attack_ratio 0.02 --test_label_acc --target_random --scale --model_path="./mnist/seed_32/noniid_0.8/ratio_0.02/final.pt" --pretrained_model="./mnist/seed_32/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.pt(6).pt1" --local_file="./mnist/seed_32/noniid_0.8/ratio_0.02/local.txt" --attacker_file="./mnist/seed_32/noniid_0.8/ratio_0.02/attacker.txt" 2>&1 | tee ./mnist/seed_32/noniid_0.8/ratio_0.02/log.txt
 ```
 
 4. Train the model by typical FL.
 
 ```
-mkdir ./mnist/origin/
-cp ./mnist/make_dir.sh ./mnist/origin
-cd ./mnist/origin
-bash ./mnist/origin/make_dir.sh
-cd ../..
-python -u main_origin_mnist.py --gpu 0 --seed 32 --scale --epoch 100 --noniid 0.8 --attack_mode="poison" --attack_ratio 0.02 --test_label_acc --target_random --dataset="mnist" --model_path="./mnist/origin/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.pt" 2>&1 | tee ./mnist/origin/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.txt
+cd ./mnist
+mkdir origin
+cp make_dir.sh origin
+cd origin
+bash ./make_dir.sh
+mkdir seed_32
+mv noniid* seed_32
+cd ../../
+python -u main_origin_mnist.py --gpu 0 --seed 32 --scale --epoch 100 --noniid 0.8 --attack_mode="poison" --attack_ratio 0.02 --test_label_acc --target_random --dataset="mnist" --model_path="./mnist/origin/seed_32/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.pt" 2>&1 | tee ./mnist/origin/seed_32/noniid_0.8/ratio_0.02/poison_0.02_Scale_0.txt
 ```
 
 5. Test the trained global model.
 
 ```
-python -u test_trained_models_mnist.py --gpu 0 --seed 32 --target_random --test_label_acc --final_model="./mnist/noniid_0.8/ratio_0.02/final.pt" 2>&1 | tee ./mnist/seed_32/noniid_0.4/ratio_0.02/testing.txt
+python -u test_trained_models_mnist.py --gpu 0 --seed 32 --target_random --test_label_acc --final_model="./mnist/seed_32/noniid_0.8/ratio_0.02/final.pt" 2>&1 | tee ./mnist/seed_32/noniid_0.8/ratio_0.02/testing.txt
 ```
 ___
 
@@ -127,7 +141,7 @@ run the following code in ./code/
 
 ```
 cd ./fmnist
-bash ./fmnist/make_dir.sh
+bash ./make_dir.sh
 cd ..
 ```
 
@@ -143,10 +157,14 @@ bash ./shuffle4_fmnist.sh
 4. Create the directories for the chosen seed. Assuming the seed is 32.
 
 ```
-mkdir ./fmnist/seed_32
-cp ./fmnist/file.sh ./fmnist/seed_32/
-mkdir ./fmnist/seed_32/command/
-bash ./fmnist/seed_32/file.sh
+cd ./fmnist
+mkdir seed_32
+cp file.sh temp.py seed_32
+mv noniid* seed_32
+cd seed_32
+mkdir command
+bash ./file.sh
+cd ../../
 ```
 
 4. Continue to train the model by FL after SAGE. Assuming the seed is 32.
@@ -161,11 +179,14 @@ bash ./after4_fmnist.sh
 5. Train the model by typical FL.
 
 ```
-mkdir ./fmnist/origin/
-cp ./fmnist/make_dir.sh ./fmnist/origin
-cd ./fmnist/origin
-bash ./fmnist/origin/make_dir.sh
-cd ../..
+cd ./fmnist
+mkdir origin
+cp make_dir.sh origin
+cd origin
+bash ./make_dir.sh
+mkdir seed_32
+mv noniid* seed_32
+cd ../../
 bash ./origin1_fmnist.sh
 bash ./origin2_fmnist.sh
 bash ./origin3_fmnist.sh
