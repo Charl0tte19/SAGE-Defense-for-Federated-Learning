@@ -41,14 +41,15 @@ python -u main_shuffle_fmnist.py --gpu 0 --seed 32 --dataset="fmnist" --epoch 20
 ```
 
 3. Continue to train the model by FL after SAGE. Assuming the best master model is No.6 master model.
-Before run the following command, check that the path and seed in file.sh and temp.py is right.
+ Before run the following command, check that the path and seed in file.sh and temp.py is right.
 ```
 cd ./fmnist
 mkdir seed_32
 cp file.sh temp.py seed_32
+cp -r noniid* seed_32
 cd seed_32
 mkdir command
-./file.sh
+bash ./file.sh
 cd ../..
 python -u after_preprocess_FL_fmnist.py --dataset=fmnist --noniid 0.4 --seed 32 --epoch 80 --attack_mode=poison --attack_ratio 0.2 --test_label_acc --target_random --model_path="./fmnist/seed_32/noniid_0.4/ratio_0.2/final.pt" --pretrained_model="./fmnist/seed_32/noniid_0.4/ratio_0.2/poison_0.2_notScale_0.pt(6).pt1" --local_file="./fmnist/seed_32/noniid_0.4/ratio_0.2/local.txt" --attacker_file="./fmnist/seed_32/noniid_0.4/ratio_0.2/attacker.txt" 2>&1 | tee ./fmnist/seed_32/noniid_0.4/ratio_0.2/log.txt
 ```
