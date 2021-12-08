@@ -24,7 +24,7 @@ The requirements.txt is also provided for your reference.
 
 #### For example, run the case (Fashion-MNIST, non-IID degree K = 0.4, attack ratio = 0.2)
 
-run the following code in ./code/
+Run the following command in ./code/
 
 1. Create the directories ./fmnist/noniid_0.4/ and ./fmnist/noniid_0.8/.
 
